@@ -1,18 +1,74 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import {AngularFireModule} from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { SuperSecretComponent } from './super-secret/super-secret.component';
+import { TutordashboardComponent } from './tutordashboard/tutordashboard.component';
+import { TutorprofileComponent } from './tutorprofile/tutorprofile.component';
+import { componentFactoryName } from '@angular/compiler';
+import { CorsedescriptionComponent } from './corsedescription/corsedescription.component';
+import { CorsefeedComponent } from './corsefeed/corsefeed.component';
+import { PlaylistmenuComponent } from './playlistmenu/playlistmenu.component';
+import { VideoplaylistComponent } from './videoplaylist/videoplaylist.component';
+import { QuizdesignComponent } from './quizdesign/quizdesign.component';
+import { ArticledesignComponent } from './articledesign/articledesign.component';
+import { CookieService } from 'ngx-cookie-service';
+import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
+import {DataService} from './services/dataService';
+import { HttpClientModule } from '@angular/common/http';
+import { TutorDescriptionComponent } from './tutor-description/tutor-description.component';
+
+const appRoutes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'tutordashboard', component: TutordashboardComponent},
+  { path: 'tutorprofile', component: TutorprofileComponent},
+  { path: 'coursedescription', component: CorsedescriptionComponent },
+  { path: 'corsefeed', component: CorsefeedComponent },
+  { path: 'playlistmenu', component: PlaylistmenuComponent},
+  { path: 'videoplaylist', component: VideoplaylistComponent},
+  { path: 'quizdesign', component: QuizdesignComponent},
+  {path:'articledesign', component: ArticledesignComponent},
+  {path: 'loadingScreen', component: LoadingScreenComponent},
+  {path: 'tutordescription', component: TutorDescriptionComponent},
+  {path: '', redirectTo: '/loadingScreen', pathMatch: 'full'} 
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    SuperSecretComponent,
+    TutordashboardComponent,
+    TutorprofileComponent,
+    CorsedescriptionComponent,
+    CorsefeedComponent,
+    PlaylistmenuComponent,
+    VideoplaylistComponent,
+    QuizdesignComponent,
+    ArticledesignComponent,
+    LoadingScreenComponent,
+    TutorDescriptionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
+    CoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    HttpClientModule 
   ],
-  providers: [],
+  providers: [CookieService],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,40 @@
+.row{
+    margin: 0% !important;
+  }
+#home_body{
+    background-color: #303030 !important;
+    height: 100vh;
+}
+.logo_title_lower{
+    color: #4885ED;
+}
+.logo_title{
+    color: #4885ED;
+}
+/* .category{
+    background-color:lightsteelblue;
+    background-color:#DBDBDC;
+    display: flow-root;
+} */
+    /* letter-spacing: 1px; */
+/* }
+/* .logo{
+    padding-top: 20%;
+    padding-left: 25%;
+}
+.logo_title{
+    color: #4885ED;
+    font-size: 20px;
+    padding-left: 22%;
+    padding-top: 5%;
+    /* letter-spacing: 1px; */
+/* }
+.logo_title_lower{
+    color: #4885ED;
+    font-size: 20px;
+    padding-left: 15%;
+    padding-top:  8%;
+}
+.category{
+    background-color:lightsteelblue;
+} */ 

@@ -1,0 +1,53 @@
+<div class="container-fluid" style="padding: 0px !important;margin: 0px !important;">
+<div id="login_body">
+    <div class="row">
+      <br>
+      <br>
+      <br>
+        <div class="col-sm-12  logo text-center">
+            <!-- <h3 class="logo_title">GEEK</h3> -->
+            <img class="img-responsive center-block" src="assets/img/login_page_logo.png" alt="logo" width="200" height="345" style="display: block;"> 
+            <!-- <h3 class="logo_title_lower">CHARGE</h3> -->
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+<!-- <h3 class="logo_title">GEEK</h3>
+<div><img src="assets/img/logo.png" id="login_logo"></div>
+<h3 class="logo_title">CHARGE</h3> -->
+
+<!-- <div *ngIf= "auth.user$ | async as user;">
+    <pre>
+        {{ user | json }}
+    </pre>
+    <hr>
+</div> -->
+<!-- <ng-template #login>
+    <button class="button"  (click)="auth.signIn()"><span>Login</span></button>
+</ng-template> -->
+<div class="row">
+  <div class="col-sm-12 text-center">
+      <div id="gSignInWrapper">
+          <!-- <div id="customBtn" class="customGPlusSignIn" (click)="auth.signIn()"> -->
+          <button type="button" class="btn btn-default customGPlusSignIn" (click)="auth.signIn()"> 
+            <span class="icon"></span>
+            <span class="buttonText">Google</span>
+          </button>
+          <!-- </div> -->
+        </div>
+  </div>
+</div>
+
+<!-- <div id="gSignInWrapper">
+    <div id="customBtn" class="customGPlusSignIn" (click)="auth.signIn()">
+      <span class="icon"></span>
+      <span class="buttonText">Google</span>
+    </div>
+  </div> -->
+
+<router-outlet></router-outlet>
+<!-- <button id="googleBtn">Google</button> -->
+<!-- <button (click)= "handleClick($event)" type="button">Button</button> -->
+</div>
+</div>

@@ -1,0 +1,67 @@
+<div class="container" id="tplaylistmenu_body">
+    <div id="wrapper">
+        <div id="content">
+            <div id="inner">
+            <div class="row">
+            <br>
+            <div class="col-sm-12" style="float: left">
+                    <a (click)= "coursedesign1($event)">
+                            <img class="img-responsive" src="assets/img/back_btn.png">
+                    </a>
+            </div>
+                <div class="col-sm-0" >
+                    <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center" style="color: white;">
+                    <h1 >Java Script</h1>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <div class="row category">
+                <div class="col-sm-12 text-center" style="font-size:20px;font-weight: bold;">
+                    <!-- <img class="img-responsive center-block" src="assets/img/video_yellow.png" id="video" width="40" height="35"> -->
+                    <div>
+                        <a (click)= "video($event)">
+                            <img [src]="imgSrc" (mouseover)="onMouseOver_video()" (mouseout)="onMouseOut_video()"  width="40" height="35"/>
+                        </a>
+                    </div>
+                    <a (click)= "video($event)" style="color: white;">Add Video</a><br>
+                    <br>
+                    <!-- <img class="img-responsive center-block" src="assets/img/Quiz_yellow.png" id="quiz" width="40" height="35"> -->
+                    <div>
+                        <a (click)= "quiz($event)">
+                            <img [src]="imgSrc1" (mouseover)="onMouseOver_quiz()" (mouseout)="onMouseOut_quiz()"  width="40" height="35"/>
+                        </a>
+                    </div>
+                    <a (click)= "quiz($event)" style="color: white;"> Add Quiz</a><br>
+                    <br>
+                    <!-- <img class="img-responsive center-block" src="assets/img/notes_yellow.png" id="article" width="40" height="35"> -->
+                    <div>
+                        <a (click)= "quiz($event)">
+                            <img [src]="imgSrc2" (mouseover)="onMouseOver_article()" (mouseout)="onMouseOut_article()"  width="40" height="35"/>
+                        </a>
+                        
+                    </div>
+                    <a (click)= "article($event)" style="color: white;">Add Notes</a><br>
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+        <div class="row ">
+                <footer class="fixed-bottom" >
+                    <div class="icon-bar">
+                        
+                        <a (click)= "tutorDash($event)"><img class="img-responsive" src="assets/img/profile.png" width="45" height="45"></a> 
+                        <a  (click)= "tutorProfile($event)" style="float: right"><img class="img-responsive" src="assets/img/study.png" width="45" height="45"></a>
+                    </div> 
+
+                </footer>
+        </div>
+</div>

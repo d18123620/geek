@@ -1,0 +1,56 @@
+<div class="container" id="tcoursedesc_body">
+    <div id="wrapper">
+        <div id="content">
+            <div class="inner">
+            <div class="row">
+            <br>
+            <div class="col-sm-12" style="float: left">
+                    <a (click)= "coursedesign1($event)">
+                            <img class="img-responsive" src="assets/img/back_btn.png">
+                    </a>
+            </div>
+                <div class="col-sm-0" >
+                    <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
+                </div>
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-sm-12">
+                    <div class="well well-sm" style="font-weight: bold">Create new course</div>              
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="titleFormControlInput1" style="color: white">Title</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title of the course" style="color: white;background-color: #303030;">
+                <br>
+                <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" placeholder="Overview of the course" style="color: white;background-color: #303030;"></textarea>
+                <br>
+                <label for="previewFormControlInput1" style="color: white">Preview Video</label>
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Youtube embed link for preview video" style="color: white;background-color: #303030;">
+                <br>
+                <label for="iconFormControlInput1" style="color: white">Course Icon</label>
+                <form action="corsedescription.component.html" method="post" enctype="multipart/form-data" style="color: white">
+                    <input type="file" name="file1"/><br>
+                </form>
+                <button type="button" class="btn btn-primary" style="float:right;" (click)= "tutorFeed($event)">Next</button>
+                <!-- <button type="button" class="btn btn-primary" style="float:left;" (click)= "backOption($event)">Back</button> -->
+            </div>
+       
+        </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+        <div class="row ">
+                <footer class="fixed-bottom" >
+                        
+                    <div class="icon-bar">
+                        
+                        <a (click)= "tutorDash($event)"><img class="img-responsive" src="assets/img/profile.png" width="45" height="45"></a> 
+                        <a  (click)= "tutorProfile($event)" style="float: right"><img class="img-responsive" src="assets/img/study.png" width="45" height="45"></a>
+                    </div> 
+
+                </footer>
+        </div>
+</div>
