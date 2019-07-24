@@ -11,6 +11,11 @@
 .logo_title{
     color: #4885ED;
 }
+
+.custom-styles-button{
+    border-top-right-radius: 6px !important;
+    border-bottom-right-radius: 6px !important;
+}
 /* .category{
     background-color:lightsteelblue;
     background-color:#DBDBDC;

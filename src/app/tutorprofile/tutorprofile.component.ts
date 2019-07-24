@@ -31,6 +31,9 @@ export class TutorprofileComponent implements OnInit {
       tutorDash(event: Event) {
         this.router.navigateByUrl('/tutordashboard');
       }
+      Selection(event: Event) {
+        this.router.navigateByUrl('/home');
+      }
       signOut(event: Event) {
         let cookieService = this.cookieService;
         let router = this.router;
