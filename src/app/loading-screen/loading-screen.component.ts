@@ -15,6 +15,7 @@ const httpOptions = {
   templateUrl: './loading-screen.component.html',
   styleUrls: ['./loading-screen.component.css']
 })
+
 export class LoadingScreenComponent implements OnInit {
   private usercheck: Observable<any[]> ; 
   idToken = '';
@@ -35,10 +36,10 @@ export class LoadingScreenComponent implements OnInit {
       let idTokenBearer =  'Bearer '+this.idToken;
 
       const requestOptions = {                                                                                                                                                                                 
-        headers: new Headers({'Authorization': idTokenBearer})
+        headers: new HttpHeaders({'Authorization': idTokenBearer})
       };
       
-      this.http.get('https://geekcharge.firebaseapp.com/api/v1/userCheck/')
+      this.http.get('https://geekcharge.firebaseapp.com/api/v1/userCheck/', requestOptions)
       .subscribe( 
         (res: Response)=> {
           const sachin = res;
