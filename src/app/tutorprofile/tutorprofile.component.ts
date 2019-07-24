@@ -43,7 +43,7 @@ export class TutorprofileComponent implements OnInit {
           Cookie.delete('__session', '/path');
           // this.cookieService.set('__session', '');
 
-          router.navigateByUrl('/loadingScreen');
+          router.navigateByUrl('/login');
 
         }, function(error) {
           console.error('Sign Out Error', error);

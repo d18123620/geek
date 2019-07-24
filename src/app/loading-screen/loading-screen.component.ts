@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 // import { Http } from '@angular/common/http';
@@ -19,10 +19,12 @@ const httpOptions = {
 export class LoadingScreenComponent implements OnInit {
   private usercheck: Observable<any[]> ; 
   idToken = '';
+  
   usercheckObservable: Observable<Object>;
-  constructor(private cookieService: CookieService,private router: Router, private http: HttpClient ) { }
+  constructor(private cookieService: CookieService,private router: Router, private http: HttpClient, private zone: NgZone, ) { }
 
   checkUser(){
+    let zone = this.zone;
     // console.log('__session')
     this.idToken = this.cookieService.get('__session');
     

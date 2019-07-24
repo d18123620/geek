@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { LoginComponent } from './login/login.component';
@@ -9,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import {AngularFireModule} from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
-import { SuperSecretComponent } from './super-secret/super-secret.component';
 import { TutordashboardComponent } from './tutordashboard/tutordashboard.component';
 import { TutorprofileComponent } from './tutorprofile/tutorprofile.component';
 import { componentFactoryName } from '@angular/compiler';
@@ -45,8 +43,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
-    SuperSecretComponent,
+    HomeComponent,    
     TutordashboardComponent,
     TutorprofileComponent,
     CorsedescriptionComponent,
@@ -61,7 +58,6 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    AppRoutingModule,
     CoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,

@@ -33,13 +33,13 @@ export class TutorDescriptionComponent implements OnInit {
   this.idToken = this.cookieService.get('__session');
   console.log(this.idToken);
   let idTokenBearer =  'Bearer '+this.idToken;
-  let headers = new HttpHeaders();
-  headers.append('Content-Type', 'application/json');
-  headers.append('Authorization', idTokenBearer);
-  // const requestOptions = {                                                                                                                                                                                 
-  //   headers: new HttpHeaders({'Authorization': idTokenBearer})
-  // };
-  this.http.get('https://geekcharge.firebaseapp.com/api/v1/profile/', {headers: headers} )
+
+      const requestOptions = {                                                                                                                                                                                 
+        headers: new HttpHeaders({'Authorization': idTokenBearer})
+      };
+      
+ 
+  this.http.get('https://geekcharge.firebaseapp.com/api/v1/profile/', requestOptions )
   .subscribe( 
     (res: Response)=> {
       console.log(res);

@@ -17,9 +17,6 @@ import { CookieService } from 'ngx-cookie-service';
 })
 
 export class LoginComponent  {
-  //implements OnInit
-  // constructor() { }
-  // constructor(private router: Router) { }
   constructor(public auth: AuthService,
               private afAuth: AngularFireAuth,
               private cookieService: CookieService,
@@ -40,35 +37,28 @@ export class LoginComponent  {
     let router = this.router;
     let zone = this.zone;
     cookieService.delete('__session');
-    this.afAuth.auth.getRedirectResult().then(function(result: any) {
+    let firebase = this.afAuth;
+    firebase.auth.getRedirectResult().then(function(result: any) {
       console.log(result);
       if (result.credential) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
         
-        var token = result.credential.idToken;
-        //this.cookie.set('__session', token);
-        console.log(token);
-        
-        cookieService.set('__session', token);
-        zone.run(() => router.navigate(['/home'])).then();
-        // router.navigateByUrl('/home');
-        // ...
+        firebase.auth.currentUser.getIdToken(true).then(function(idToken) {          
+          console.log(idToken);
+          cookieService.set('__session', idToken);
+          zone.run(() => router.navigate(['/home'])).then();          
+        }).catch(function(error) {
+          // Handle error
+        });
+
       }
       console.log(result);
     }).catch(function(error) {
-      // Handle Errors here.
+      
       var errorCode = error.code;
       var errorMessage = error.message;
-      // The email of the user's account used.
       var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
+      var credential = error.credential; 
       console.log(error);
     });
   }
-
-  // handleClick(event: Event) {
-  //   this.router.navigateByUrl('/home');
-  // }
 }
