@@ -23,8 +23,15 @@
                 <br>
                 <div class="row">
                     <div class="col-sm-12">
-                        <p id="test"></p>
-                    </div>    
+                        <label for="titleFormControlInput1" style="color: yellow">Tutor Name</label>
+                        <input type="text" class="form-control" style="color: white;background-color: #303030;"  [(ngModel)]="this.tutorName" />
+                        <br>
+                        <label for="titleFormControlInput1" style="color: yellow">Description</label>
+                        <textarea class="form-control" rows="3" style="color: white;background-color: #303030;"  [(ngModel)]="this.tutorDesc" ></textarea>
+                        <br>
+                        <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "SaveData($event)">Save</button>
+                    </div>   
+                   
                 </div>
             </div>
         </div>
@@ -36,7 +43,7 @@
                 <div class="icon-bar">
                     
                     <a (click)= "tutorDash($event)"><img class="img-responsive" src="assets/img/profile.png" width="45" height="45"></a> 
-                    <a  (click)= "tutorProfile($event)" style="float: right"><img class="img-responsive" src="assets/img/study_active.png" width="45" height="45"></a>
+                    <a  (click)= "tutorProfile($event)" style="float: right"><img class="img-responsive" src="assets/img/study.png" width="45" height="45"></a>
                 </div> 
 
             </footer>

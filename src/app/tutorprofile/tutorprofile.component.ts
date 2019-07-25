@@ -9,6 +9,8 @@ import {
   AngularFirestore,
   AngularFirestoreDocument
 } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 
 
 @Component({
@@ -17,13 +19,17 @@ import {
   styleUrls: ['./tutorprofile.component.css']
 })
 export class TutorprofileComponent implements OnInit {
+  private profile: Observable<any[]> ; 
+  idToken = '';
+  profileObservable: Observable<Object>;
 
   // constructor() { }
   constructor(private router: Router,private cookieService: CookieService, 
     public auth: AuthService,
     private afAuth: AngularFireAuth,
     private zone: NgZone,
-    private afs: AngularFirestore,) { }
+    private afs: AngularFirestore,
+    private http: HttpClient) { }
   
     tutorProfile(event: Event) {
         this.router.navigateByUrl('/tutorprofile');
@@ -48,7 +54,6 @@ export class TutorprofileComponent implements OnInit {
         }, function(error) {
           console.error('Sign Out Error', error);
         });
-
       }
       tutorDesc(event: Event) {
         this.router.navigateByUrl('/tutordescription');

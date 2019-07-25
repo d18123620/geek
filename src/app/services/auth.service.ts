@@ -38,17 +38,6 @@ export class AuthService {
     // );
     this.user$=afAuth.authState;
   }
-
-  
-
-  // async signIn() {
-  //   const provider = new auth.GoogleAuthProvider();
-  //   const googleAuthResponse: any = await this.afAuth.auth.signInWithRedirect(provider);
-  //   // return this.updateUserData(credential.user);
-  //   this.cookieService.set('__session', googleAuthResponse.credential.idToken);
-  //   this.router.navigateByUrl('/home');
-  // }
-
   async signIn() {
     /*
       const provider = new auth.GoogleAuthProvider();
