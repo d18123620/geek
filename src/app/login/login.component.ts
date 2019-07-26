@@ -40,6 +40,8 @@ export class LoginComponent  {
     let firebase = this.afAuth;
     firebase.auth.getRedirectResult().then(function(result: any) {
       console.log(result);
+      console.log(result.additionalUserInfo.profile.picture);
+      
       if (result.credential) {
         
         firebase.auth.currentUser.getIdToken(true).then(function(idToken) {          
