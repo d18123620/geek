@@ -8,7 +8,8 @@ import {
   AngularFirestoreDocument
 } from '@angular/fire/firestore';
 import { CookieService } from 'ngx-cookie-service';
-
+// import { Profile } from 'selenium-webdriver/firefox';
+// import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @Component({
   selector: 'app-login',
@@ -40,7 +41,9 @@ export class LoginComponent  {
     let firebase = this.afAuth;
     firebase.auth.getRedirectResult().then(function(result: any) {
       console.log(result);
-      console.log(result.additionalUserInfo.profile.picture);
+      // console.log(result.additionalUserInfo.profile.picture);
+      let Profilepic = result.additionalUserInfo.profile.picture;
+      cookieService.set('__profilepic', Profilepic);
       
       if (result.credential) {
         

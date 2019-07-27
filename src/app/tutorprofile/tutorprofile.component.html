@@ -17,29 +17,33 @@
             <br>
             <div class="row ">
                 <div class="col-sm-12">
-                    <img class="img-responsive center-block" src="assets/img/profile.png" alt="logo" width="75" height="75" style="display: block;"> 
-                    <br>
+                    <!-- <img class="img-responsive center-block" src="assets/img/profile.png" alt="logo" width="75" height="75" style="display: block;">  -->
+                    <img class="img-responsive center-block img-rounded" src="{{profilepic}}" alt="logo" width="100" height="100" style="display: block;"> 
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-sm-12 text-center" id="toptions">
-                    <a (click)= "tutorDesc($event)" style="color: white">About Tutor</a>
+                    <a (click)= "tutorDesc($event)" style="color: yellow">About Tutor</a>
                     <br>
                     <br>
                 </div>
                 <div class="col-sm-12 text-center" id="toptions">
-                    <a href="#" style="color: white">Notifications</a>
+                    <a href="#" style="color: yellow">Notifications</a><br>
+                    <br>
+                    <app-toggle-button (changed)="checked=$event">
+                    </app-toggle-button>
+                    <!-- <p>The state is {{checked ? 'hi' : 'hello'}}.</p> -->
+                    <!-- <app-toggle-button>loading</app-toggle-button> -->
+                    <!-- <br> -->
+                </div>
+                <div class="col-sm-12 text-center" id="toptions">
+                    <a (click)= "Selection($event)" style="color: yellow">Change Role</a>
                     <br>
                     <br>
                 </div>
                 <div class="col-sm-12 text-center" id="toptions">
-                    <a (click)= "Selection($event)" style="color: white">Change Role</a>
-                    <br>
-                    <br>
-                </div>
-                <div class="col-sm-12 text-center" id="toptions">
-                    <a (click)= "signOut($event)" style="color: white">Sign Out</a>
+                    <a (click)= "signOut($event)" style="color: yellow">Sign Out</a>
                     <br>
                     <br>
                 </div>

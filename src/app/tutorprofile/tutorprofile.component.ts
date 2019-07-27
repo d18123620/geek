@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 
 
+
 @Component({
   selector: 'app-tutorprofile',
   templateUrl: './tutorprofile.component.html',
@@ -21,6 +22,7 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 export class TutorprofileComponent implements OnInit {
   private profile: Observable<any[]> ; 
   idToken = '';
+  profilepic = '';
   profileObservable: Observable<Object>;
 
   // constructor() { }
@@ -46,7 +48,8 @@ export class TutorprofileComponent implements OnInit {
         this.afAuth.auth.signOut().then(function() {
           // this.cookieService.delete('__session');
           cookieService.delete('__session');
-          Cookie.delete('__session', '/path');
+          cookieService.delete('__profilepic');
+          // Cookie.delete('__session', '/path');
           // this.cookieService.set('__session', '');
 
           router.navigateByUrl('/login');
@@ -60,6 +63,8 @@ export class TutorprofileComponent implements OnInit {
       }
 
   ngOnInit() {
+    this.profilepic = this.cookieService.get('__profilepic');
+    console.log(this.profilepic);
   }
 
 }

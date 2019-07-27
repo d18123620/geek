@@ -23,6 +23,9 @@ import { LoadingScreenComponent } from './loading-screen/loading-screen.componen
 import {DataService} from './services/dataService';
 import { HttpClientModule } from '@angular/common/http';
 import { TutorDescriptionComponent } from './tutor-description/tutor-description.component';
+import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
+
+
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -54,7 +57,9 @@ const appRoutes: Routes = [
     QuizdesignComponent,
     ArticledesignComponent,
     LoadingScreenComponent,
-    TutorDescriptionComponent
+    TutorDescriptionComponent,
+    ToggleButtonComponent
+
   ],
   imports: [
     BrowserModule,
