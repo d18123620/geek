@@ -56,14 +56,13 @@ export class TutorDescriptionComponent implements OnInit {
     .subscribe 
     (data => {
       console.log(data);
-
-
     },
     (error: any) => {
       console.log(error);
     }
 
     )
+    this.router.navigateByUrl('/tutorprofile');
   }
   ngOnInit() {
  

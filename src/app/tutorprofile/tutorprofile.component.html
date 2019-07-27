@@ -24,8 +24,21 @@
             <br>
             <div class="row">
                 <div class="col-sm-12 text-center" id="toptions">
-                    <a (click)= "tutorDesc($event)" style="color: yellow">About Tutor</a>
-                    <br>
+                    <!-- <a (click)= "tutorDesc1($event)" style="color: yellow">About Tutor</a> -->
+                    <!-- <br> -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label for="titleFormControlInput1" style="color: yellow">Tutor Name</label>
+                            <input type="text" class="form-control" style="color: white;background-color: #303030;display: inline-block;"  [(ngModel)]="this.tutorName" />
+                            <br>
+                            <br>
+                            <label for="titleFormControlInput1" style="color: yellow">Description</label>
+                            <textarea class="form-control" rows="3" style="color: white;background-color: #303030;"  [(ngModel)]="this.tutorDesc" ></textarea>
+                            <br>
+                            <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "tutorDesc1($event)">Edit</button>
+                        </div>   
+                       
+                    </div>
                     <br>
                 </div>
                 <div class="col-sm-12 text-center" id="toptions">

@@ -4,12 +4,12 @@
             <div class="inner">
             <div class="row">
             <br>
-            <div class="col-sm-12" style="float: left">
-                    <a (click)= "coursedesign1($event)">
+            <div class="col-sm-12">
+                    <!-- <a (click)= "coursedesign1($event)">
                             <img class="img-responsive" src="assets/img/back_btn.png">
                     </a>
             </div>
-                <div class="col-sm-0" >
+                <div class="col-sm-0" > -->
                     <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
                 </div>
             </div>
@@ -33,7 +33,9 @@
                 <form action="corsedescription.component.html" method="post" enctype="multipart/form-data" style="color: white">
                     <input type="file" name="file1"/><br>
                 </form>
-                <button type="button" class="btn btn-primary" style="float:right;" (click)= "tutorFeed($event)">Next</button>
+                <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "tutorFeed($event)">Create Course</button>
+                <br>
+                <button type="button" class="btn btn-danger center-block" style="float:none;" (click)= "tutorFeed($event)">Cancel Course</button>
                 <!-- <button type="button" class="btn btn-primary" style="float:left;" (click)= "backOption($event)">Back</button> -->
             </div>
        
