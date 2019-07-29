@@ -2,23 +2,29 @@
 <div id="wrapper">
     <div id="content">
         <div id="inner">
-        <div class="row">
-        <br>
-        <div class="col-sm-12" style="float: left">
-                <a (click)= "coursedesign1($event)">
-                        <img class="img-responsive" src="assets/img/back_btn.png">
-                </a>
-        </div>
-            <div class="col-sm-0" >
-                <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
-            </div>
-        </div>
+            <div class="row">
+                <br>
+                <div class="col-sm-12">
+                        <!-- <a (click)= "coursedesign1($event)">
+                                <img class="img-responsive" src="assets/img/back_btn.png">
+                        </a>
+                </div>
+                    <div class="col-sm-0" > -->
+                            <a (click)= "coursedesign1($event)" style="float: left;">
+                                    <img class="img-responsive" src="assets/img/back_btn.png">
+                            </a>
+                        <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
+                    </div>
+                </div>
         <br>
         <div class="row">
             <div class="col-sm-12 text-center" style="color: white;">
                 <h1 >Java Script</h1>
                 <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
                 <br>
+                <app-toggle-button (changed)="checked=$event">
+                </app-toggle-button>
+                <p style="color: yellow;">The Course is {{checked ? 'Published' : 'Unpublished'}}.</p>
                 <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" placeholder="Overview of the course" style="color: white;background-color: #303030;"></textarea>
             </div>

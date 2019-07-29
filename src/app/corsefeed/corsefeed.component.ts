@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./corsefeed.component.css']
 })
 export class CorsefeedComponent implements OnInit {
+  checked = '';
 
   // constructor() { }
   constructor(private router: Router) { }
