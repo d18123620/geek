@@ -27,7 +27,7 @@
                     <!-- <a (click)= "tutorDesc1($event)" style="color: yellow">About Tutor</a> -->
                     <!-- <br> -->
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-12" style="border: 1px solid yellowgreen;">
                             <label for="titleFormControlInput1" style="color: yellow">Tutor Name</label>
                             <input type="text" class="form-control" style="color: white;background-color: #303030;display: inline-block;"  [(ngModel)]="this.tutorName" />
                             <br>
@@ -35,18 +35,18 @@
                             <label for="titleFormControlInput1" style="color: yellow">Description</label>
                             <textarea class="form-control" rows="3" style="color: white;background-color: #303030;"  [(ngModel)]="this.tutorDesc" ></textarea>
                             <br>
-                            <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "SaveData($event)">Save</button>
+                            <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "SaveData($event)">Save</button><br>
                         </div>   
                        
                     </div>
                     <br>
                 </div>
-                <div class="col-sm-12 text-center" id="toptions">
+                <div class="col-sm-12 text-center" id="toptions" style="border: 1px solid yellowgreen;">
 
                     <div style="display: flex;">
 
                     </div>
-
+                    <br>
                     <a href="#" style="color: yellow; ">Notifications: </a>                     
                     <app-toggle-button >
                     </app-toggle-button>
@@ -54,15 +54,13 @@
                     <!-- <app-toggle-button>loading</app-toggle-button> -->
                     <!-- <br> -->
                 </div>
-                <div class="col-sm-12 text-center" id="toptions">
+                <div class="col-sm-12 text-center" id="toptions" style="border: 1px solid yellowgreen;">
                     <a (click)= "Selection($event)" style="color: yellow">Change Role</a>
                     <br>
                     <br>
                 </div>
-                <div class="col-sm-12 text-center" id="toptions">
+                <div class="col-sm-12 text-center" id="toptions" style="border: 1px solid yellowgreen;">
                     <a (click)= "signOut($event)" style="color: yellow">Sign Out</a>
-                    <br>
-                    <br>
                 </div>
                 
             </div>
