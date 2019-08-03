@@ -22,7 +22,6 @@ import { CookieService } from 'ngx-cookie-service';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 import {DataService} from './services/dataService';
 import { HttpClientModule } from '@angular/common/http';
-import { TutorDescriptionComponent } from './tutor-description/tutor-description.component';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 
 
@@ -39,7 +38,6 @@ const appRoutes: Routes = [
   { path: 'quizdesign', component: QuizdesignComponent},
   {path:'articledesign', component: ArticledesignComponent},
   {path: 'loadingScreen', component: LoadingScreenComponent},
-  {path: 'tutordescription', component: TutorDescriptionComponent},
   {path: '', redirectTo: '/loadingScreen', pathMatch: 'full'} 
 ];
 
@@ -57,7 +55,6 @@ const appRoutes: Routes = [
     QuizdesignComponent,
     ArticledesignComponent,
     LoadingScreenComponent,
-    TutorDescriptionComponent,
     ToggleButtonComponent
 
   ],
