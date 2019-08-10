@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import {AngularFireModule} from '@angular/fire';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { TutordashboardComponent } from './tutordashboard/tutordashboard.component';
@@ -23,8 +24,6 @@ import { LoadingScreenComponent } from './loading-screen/loading-screen.componen
 import {DataService} from './services/dataService';
 import { HttpClientModule } from '@angular/common/http';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
-
-
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -63,6 +62,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     CoreModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule,
     AngularFireDatabaseModule,
     FormsModule,
     HttpClientModule 

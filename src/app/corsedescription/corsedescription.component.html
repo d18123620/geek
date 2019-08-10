@@ -31,8 +31,9 @@
                 <br>
                 <label for="iconFormControlInput1" style="color: white">Course Icon</label>
                 <form action="corsedescription.component.html" method="post" enctype="multipart/form-data" style="color: white">
-                    <input type="file" name="file1"/><br>
+                    <input type="file" name="file1" (change)="uploadFile($event)" /><br>
                 </form>
+                <div>{{ downloadURL }}</div>
                 <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "tutorFeed($event)">Create Course</button>
                 <br>
                 <button type="button" class="btn btn-danger center-block" style="float:none;" (click)= "coursedesign1($event)">Cancel Course</button>
