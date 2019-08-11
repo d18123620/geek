@@ -66,6 +66,35 @@ export class CorsedescriptionComponent implements OnInit {
         this.router.navigateByUrl('/tutordashboard');
       }
 
+      uploadVideo(event) {
+
+        console.log('upload files');
+        
+
+        const file = event.target.files[0];
+        const filePath = '/course/'+Math.floor(Date.now())+'_'+file.name;
+        const fileRef = this.storage.ref(filePath);
+        const task = this.storage.upload(filePath, file);
+
+        // observe percentage changes
+        this.uploadPercent = task.percentageChanges();
+        // get notified when the download URL is available
+        task.snapshotChanges().pipe(
+            finalize(() =>{
+
+              // when this function is executed
+              var getDownloadURL = fileRef.getDownloadURL();
+              getDownloadURL.subscribe(url => {
+                console.log(url);
+                this.downloadURL = url;        
+              });
+            })
+            )
+        .subscribe()
+      }
+      
+      
+      
       uploadFile(event) {
 
         console.log('upload files');
@@ -89,12 +118,7 @@ export class CorsedescriptionComponent implements OnInit {
                 this.downloadURL = url;
                 this.disableFields = false;        
               });
-              //this.downloadURL = fileRef.getDownloadURL();
-              //console.log(this.downloadURL);
-              //console.log(fileRef);
-              
             })
-        
             )
         .subscribe()
       }
