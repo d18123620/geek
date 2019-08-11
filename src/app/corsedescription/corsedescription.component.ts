@@ -1,8 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 import { Observable, Subject, asapScheduler, pipe, of, from, interval, merge, fromEvent } from 'rxjs';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument
+} from '@angular/fire/firestore';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
+
+
+
+interface CourseDescription {
+  name: string,
+  description: string,
+  previewVideo: string,
+  courseIcon: ''
+}
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 // import {DataService} from '../services/dataService';
 
@@ -15,8 +36,19 @@ export class CorsedescriptionComponent implements OnInit {
 
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;
+  idToken = '';
+  courseName='';
+  courseDesc='';
+  coursePreview='';
+  courseIcon='';
+  disableFields = true;
 
-  constructor(private router: Router,private storage: AngularFireStorage) { 
+  constructor(private router: Router,private storage: AngularFireStorage,private cookieService: CookieService, 
+    public auth: AuthService,
+    private afAuth: AngularFireAuth,
+    private zone: NgZone,
+    private afs: AngularFirestore,
+    private http: HttpClient) { 
     
   }
 
@@ -37,6 +69,7 @@ export class CorsedescriptionComponent implements OnInit {
       uploadFile(event) {
 
         console.log('upload files');
+        
 
         const file = event.target.files[0];
         const filePath = '/course/'+Math.floor(Date.now())+'_'+file.name;
@@ -47,13 +80,54 @@ export class CorsedescriptionComponent implements OnInit {
         this.uploadPercent = task.percentageChanges();
         // get notified when the download URL is available
         task.snapshotChanges().pipe(
-            finalize(() => this.downloadURL = fileRef.getDownloadURL() )
-         )
+            finalize(() =>{
+
+              // when this function is executed
+              var getDownloadURL = fileRef.getDownloadURL();
+              getDownloadURL.subscribe(url => {
+                console.log(url);
+                this.downloadURL = url;
+                this.disableFields = false;        
+              });
+              //this.downloadURL = fileRef.getDownloadURL();
+              //console.log(this.downloadURL);
+              //console.log(fileRef);
+              
+            })
+        
+            )
         .subscribe()
       }
 
-      ngOnInit() {
 
+      SaveData(event: Event){
+
+        let courseData = {"name": this.courseName,  "description": this.courseDesc, "previewVideo": this.coursePreview, "courseIcon": this.downloadURL};
+        this.idToken = this.cookieService.get('__session');
+        console.log(this.idToken);
+        let idTokenBearer =  'Bearer '+this.idToken;
+        const requestOptions = {                                                                                                                                                                                 
+          headers: new HttpHeaders({'Authorization': idTokenBearer})
+        };
+      
+    
+        this.http.post('https://geekcharge.firebaseapp.com/api/v1/tutor/courseCreate',courseData, requestOptions)
+        .subscribe 
+        (data => {
+          console.log(data);
+          
+    
+        },
+        (error: any) => {
+          console.log(error);
+        }
+    
+        )
+      }
+
+
+      ngOnInit() {
+        this.disableFields = true;
       }
 
 }
