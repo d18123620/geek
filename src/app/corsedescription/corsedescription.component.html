@@ -5,13 +5,8 @@
             <div class="row">
             <br>
             <div class="col-sm-12">
-                    <!-- <a (click)= "coursedesign1($event)">
-                            <img class="img-responsive" src="assets/img/back_btn.png">
-                    </a>
-            </div>
-                <div class="col-sm-0" > -->
                     <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
-                </div>
+            </div>
             </div>
             <br>
             <div class="row ">
@@ -27,19 +22,17 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" placeholder="Overview of the course" style="color: white;background-color: #303030;" [(ngModel)]="this.courseDesc"></textarea>
                 <br>
                 <label for="previewFormControlInput1" style="color: white">Preview Video</label>
-                <!-- <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Youtube embed link for preview video" style="color: white;background-color: #303030;" [(ngModel)]="this.coursePreview"> -->
-                <form action="corsedescription.component.html" method="post" enctype="multipart/form-data" style="color: white">
+                <form  enctype="multipart/form-data" style="color: white">
                     <input type="file" name="file2" (change)="uploadVideo($event)" /><br>
                 </form>
 
 
                 <br>
                 <label for="iconFormControlInput1" style="color: white">Course Icon</label>
-                <form action="corsedescription.component.html" method="post" enctype="multipart/form-data" style="color: white">
+                <form  enctype="multipart/form-data" style="color: white">
                     <input type="file" name="file1" (change)="uploadFile($event)" /><br>
                 </form>
-                <!-- <div>{{ downloadURL }}</div> -->
-                <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "tutorFeed($event)" (click)= "SaveData($event)" [disabled]="disableFields">Create Course</button>
+                <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "tutorDash($event)" (click)= "SaveData($event)" [disabled]="disableFields">Create Course</button>
                 <br>
                 <button type="button" class="btn btn-danger center-block" style="float:none;" (click)= "coursedesign1($event)">Cancel Course</button>
             </div>

@@ -36,6 +36,7 @@ export class CorsedescriptionComponent implements OnInit {
 
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;
+  downloadURL1: Observable<string>;
   idToken = '';
   courseName='';
   courseDesc='';
@@ -59,9 +60,9 @@ export class CorsedescriptionComponent implements OnInit {
       tutorDash(event: Event) {
         this.router.navigateByUrl('/tutordashboard');
       }
-      tutorFeed(event: Event) {
-        this.router.navigateByUrl('/corsefeed');
-      }
+      // tutorFeed(event: Event) {
+      //   this.router.navigateByUrl('/corsefeed');
+      // }
       coursedesign1(event: Event) {
         this.router.navigateByUrl('/tutordashboard');
       }
@@ -83,10 +84,10 @@ export class CorsedescriptionComponent implements OnInit {
             finalize(() =>{
 
               // when this function is executed
-              var getDownloadURL = fileRef.getDownloadURL();
-              getDownloadURL.subscribe(url => {
+              var getDownloadURL1 = fileRef.getDownloadURL();
+              getDownloadURL1.subscribe(url => {
                 console.log(url);
-                this.downloadURL = url;        
+                this.downloadURL1 = url;        
               });
             })
             )
@@ -126,7 +127,7 @@ export class CorsedescriptionComponent implements OnInit {
 
       SaveData(event: Event){
 
-        let courseData = {"name": this.courseName,  "description": this.courseDesc, "previewVideo": this.coursePreview, "courseIcon": this.downloadURL};
+        let courseData = {"name": this.courseName,  "description": this.courseDesc, "previewVideo": this.downloadURL1, "courseIcon": this.downloadURL};
         this.idToken = this.cookieService.get('__session');
         console.log(this.idToken);
         let idTokenBearer =  'Bearer '+this.idToken;

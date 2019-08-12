@@ -12,7 +12,7 @@ export const environment = {
     authDomain: "geekcharge.firebaseapp.com",
     databaseURL: "https://geekcharge.firebaseio.com",
     projectId: "geekcharge",
-    storageBucket: "",
+    storageBucket: "geekcharge.appspot.com",
     messagingSenderId: "434016830830",
     appId: "1:434016830830:web:c35d4e3e916f08eb"
 

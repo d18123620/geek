@@ -24,6 +24,7 @@ import { LoadingScreenComponent } from './loading-screen/loading-screen.componen
 import {DataService} from './services/dataService';
 import { HttpClientModule } from '@angular/common/http';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
+import { SuperSecretComponent } from './super-secret/super-secret.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -54,8 +55,8 @@ const appRoutes: Routes = [
     QuizdesignComponent,
     ArticledesignComponent,
     LoadingScreenComponent,
-    ToggleButtonComponent
-
+    ToggleButtonComponent,
+    SuperSecretComponent
   ],
   imports: [
     BrowserModule,
