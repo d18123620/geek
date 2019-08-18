@@ -5,7 +5,7 @@
             <div class="row">
                 <br>
                 <div class="col-sm-12">
-                            <a (click)= "coursedesign1($event)" style="float: left; position: absolute;">
+                            <a (click)= "back($event)" style="float: left; position: absolute;">
                                     <img class="img-responsive" src="assets/img/back_btn.png">
                             </a>
                         <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
@@ -14,21 +14,26 @@
         <br>
         <div class="row">
             <div class="col-sm-12 text-center" style="color: white;">
-                <h1 >Java Script</h1>
-                <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
+                <h1>{{name}}</h1>
+                <img class="img-responsive center-block" src="{{courseIcon}}" alt="logo" width="150" height="345" style="display: block;"> 
                 <br>
                 <app-toggle-button (changed)="checked=$event">
                 </app-toggle-button>
                 <p style="color: yellow;">The Course is {{checked ? 'Published' : 'Unpublished'}}.</p>
                 <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" placeholder="Overview of the course" style="color: white;background-color: #303030;"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" placeholder="Overview of the course" style="color: white;background-color: #303030;">{{description}}</textarea>
+                <br>
+                <label for="descriptionFormControlTextarea1" style="color: white;float: left;">Prewview Video</label>
+                <video width="320" height="240" controls src="{{previewVideo}}">
+                    <!-- <source src="{{previewVideo}}" type="video/mp4">
+                    <source src="{{previewVideo}}" type="video/ogg"> -->
+                </video>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12" style="color: white;float: left;">
-                <a href="#" style="font-weight: bold;">Students Enrolled <span class="badge">5</span></a><br>
                 <br>
-                <p>playlist</p>
+                <p>Playlist</p>
             </div>
         </div>
         <div class="row">
