@@ -85,17 +85,10 @@ export class CorsefeedComponent implements OnInit {
         this.name = data.name;
         this.description = data.description;
         this.courseIcon = data.courseIcon;
+        console.log(data);
         this.courseItems = data.courseItems;
         this.previewVideo = data.previewVideo;
         console.log(this.previewVideo);
-
-        // previewVideo: '',
-        // courseIcon: '',
-        // published: '',
-        // tutorId: '',
-        // courseItems:''
-        // description: ,
-        // name:
       },
      (error: any) => {
        console.log(error.error);
