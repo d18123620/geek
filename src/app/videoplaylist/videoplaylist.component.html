@@ -25,11 +25,16 @@
                 <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Youtube embed link for intro video" style="color: white;background-color: #303030;"> -->
                 <br> 
                 <label for="previewFormControlInput1" style="color: white">Lecture Video</label>
-                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter the title of the video" style="color: white;background-color: #303030;">
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter the title of the video" style="color: white;background-color: #303030;" [(ngModel)]="this.videoTitle">
                 <br>
-                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Youtube embed link for preview video" style="color: white;background-color: #303030;">
+                <label for="previewFormControlInput1" style="color: white">Upload Video</label>
+                <!-- <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Youtube embed link for preview video" style="color: white;background-color: #303030;"> -->
                 <br>
-                <button class="btn btn-primary center-block" (click)= "Coursefeed($event)"> Add Item </button>
+                <form  enctype="multipart/form-data" style="color: white">
+                    <input type="file" name="file2" (change)="uploadVideo($event)" /><br>
+                </form>
+                <br>
+                <button class="btn btn-primary center-block" (click)= "SaveData($event)"> Add Item </button>
                 <br>
                 <button class="btn btn-primary center-block" (click)= "Playlistmenu($event)"> Playlist menu </button>
             </div>
