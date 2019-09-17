@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit {
       this.router.navigateByUrl('/tutordashboard');
     }
 
+  studentScope(event: Event) {
+      this.router.navigateByUrl('/studentdashboard');
+    }
+    
   ngOnInit() {
   }
 

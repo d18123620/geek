@@ -25,6 +25,7 @@ import {DataService} from './services/dataService';
 import { HttpClientModule } from '@angular/common/http';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 import { SuperSecretComponent } from './super-secret/super-secret.component';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
   { path: 'quizdesign', component: QuizdesignComponent},
   {path:'articledesign', component: ArticledesignComponent},
   {path: 'loadingScreen', component: LoadingScreenComponent},
+  {path: 'studentdashboard', component: StudentDashboardComponent},
   {path: '', redirectTo: '/loadingScreen', pathMatch: 'full'} 
 ];
 
@@ -56,7 +58,8 @@ const appRoutes: Routes = [
     ArticledesignComponent,
     LoadingScreenComponent,
     ToggleButtonComponent,
-    SuperSecretComponent
+    SuperSecretComponent,
+    StudentDashboardComponent
   ],
   imports: [
     BrowserModule,
