@@ -9,7 +9,6 @@
                                     <img class="img-responsive" src="assets/img/back_btn.png">
                             </a>
                             <h1 class="text-center" style="color: white;">{{name}}</h1>
-                        <!-- <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;">  -->
                     </div>
                 </div>
         <br>
@@ -20,29 +19,17 @@
                 <br>
                 <span style="color: yellow;font-size: 20px ">Publish:</span> &nbsp;<app-toggle-button (changed)="checked=$event">
                 </app-toggle-button>
-                <!-- <p style="color: yellow;">The Course is {{checked ? 'Published' : 'Unpublished'}}.</p> -->
                 <br>
-                
                     <span class="col-sm-3" style="color: yellow;font-size: 20px ">
                         Description:
                     </span>
                         <textarea class="form-control" id="exampleFormControlTextarea1"   placeholder="Overview of the course" style="color: white;background-color: #303030;" readonly>{{description}}</textarea>
-                       
-               
                 <br>
                 <label for="descriptionFormControlTextarea1" style="color: white;float: left;">Preview Video</label>
                 <video width="320" height="240" controls src="{{previewVideo}}">
-                    <!-- <source src="{{previewVideo}}" type="video/mp4">
-                    <source src="{{previewVideo}}" type="video/ogg"> -->
                 </video>
             </div>
         </div>
-        <!-- <div class="row">
-            <div class="col-sm-12" style="color: white;float: left;">
-                <br>
-                <p>Playlist</p>
-            </div>
-        </div> -->
         <div class="row ">
             <div class="col-sm-12">
                 <div class="well well-sm" style="font-weight: bold;">Playlist</div>
@@ -52,33 +39,18 @@
             <ng-container *ngFor="let cour of courseItems; let i = index;">
             <ng-container *ngIf= "cour.playlistType === 'video'">
                 <div class="col-sm-12" style="color:yellow;" >
-                    
-                   
                     <div class="col-sm-4" style="display: inline-block">
                         <img [src]="imgSrc" width="80" height="80" />
                     </div>
-                    <!-- <img [src]="imgSrc" (mouseover)="onMouseOver_video()" (mouseout)="onMouseOut_video()"  width="40" height="35"/> -->
                     <div class="col-sm-8" style="display: inline-block">
                         <div style="font-size: 20px">{{cour.videoTitle}} </div> 
                         <br>
-                        <!-- <div >{{cour.name}}</div> -->
                     </div>
                     <hr>
-                    
-                    
-                    <!-- <tr style="color: red;" *ngFor="let ci of courseItems; let i = index">
-                        <td>{{ci.index}}</td> 
-                    </tr> -->
-                    <!-- <td>{{cour.description}} </td> 
-                    <td>{{cour.name}}</td> -->
-                    <!-- <td><img src={{cour.previewVideo}} width="150" height="150" style="display: block;"/></td>  -->
-                    <!-- <td>{{cour.previewVideo}}</td>   -->
-                
                 </div>
             </ng-container>
             </ng-container>
-        </div>
-        
+        </div>  
         <div class="row">
             <div class="col-sm-12" style="color: white;float: left;">
                 <span>
@@ -86,9 +58,7 @@
                         <img class="img-responsive" src="assets/img/circle.png">
                     </a>
                 </span>
-                <br>
-                
-                
+                <br>               
             </div>
         </div>
     </div>
@@ -97,13 +67,11 @@
 </div>
 <div class="container">
         <div class="row ">
-                <footer class="fixed-bottom" >
-                    <div class="icon-bar">
-                        
-                        <a (click)= "tutorDash($event)"><img class="img-responsive" src="assets/img/profile.png" width="45" height="45"></a> 
-                        <a  (click)= "tutorProfile($event)" style="float: right"><img class="img-responsive" src="assets/img/study.png" width="45" height="45"></a>
-                    </div> 
-
-                </footer>
+            <footer class="fixed-bottom" >
+                <div class="icon-bar">  
+                    <a (click)= "tutorDash($event)"><img class="img-responsive" src="assets/img/profile.png" width="45" height="45"></a> 
+                    <a  (click)= "tutorProfile($event)" style="float: right"><img class="img-responsive" src="assets/img/study.png" width="45" height="45"></a>
+                </div> 
+            </footer>
         </div>
 </div>
