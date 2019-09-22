@@ -30,7 +30,9 @@ footer {
 .icon-bar {
   width: 100%;
   background-color: #555;
+  padding: 0.5em;
 }
+
 
 .icon-bar a {
   float: left;
@@ -52,4 +54,10 @@ footer {
   height: 100%;
   overflow: auto;
   position: relative;
+}
+
+.page-title{
+  background: transparent;
+  color: white;
+  border: 0px;
 }

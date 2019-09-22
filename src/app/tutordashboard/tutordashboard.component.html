@@ -11,36 +11,27 @@
         <br>
         <div class="row ">
             <div class="col-sm-12">
-                <div class="well well-sm" style="font-weight: bold">My Courses</div>
+                <div class="well well-sm page-title" style="font-weight: bold">Courses</div>
                 <a (click)= "coursedesign1($event)">
-                    <img class="img-responsive" src="assets/img/circle.png">
+                    <img class="img-responsive" src="assets/img/circle.png" height="35px" width="35px">
                 </a>
             </div>
         </div>
+        <br>
         <div class="row ">
+            
             <ng-container *ngFor="let cour of course; let i = index;">
-                <div class="col-sm-12" style="color:yellow;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >
+                <div class="col-sm-12" style="color:white;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >
                     
                    
                     <div class="col-sm-4" style="display: inline-block">
                         <img src={{cour.courseIcon}} width="80" height="80" />
                     </div>
                     <div class="col-sm-8" style="display: inline-block">
-                        <div >{{cour.description}} </div> 
-                        <br>
                         <div >{{cour.name}}</div>
                     </div>
                     <hr>
                     
-                    
-                    <!-- <tr style="color: red;" *ngFor="let ci of courseItems; let i = index">
-                        <td>{{ci.index}}</td> 
-                    </tr> -->
-                    <!-- <td>{{cour.description}} </td> 
-                    <td>{{cour.name}}</td> -->
-                    <!-- <td><img src={{cour.previewVideo}} width="150" height="150" style="display: block;"/></td>  -->
-                    <!-- <td>{{cour.previewVideo}}</td>   -->
-                
                 </div>
             </ng-container>
         </div>
@@ -53,8 +44,8 @@
             <footer class="fixed-bottom" >
                 <div class="icon-bar">
                     
-                    <a (click)= "tutorDash($event)" class="active"><img class="img-responsive" src="assets/img/profile_active.png"  width="45" height="45"></a> 
-                    <a  (click)= "tutorProfile($event)" style="float: right" ><img class="img-responsive" src="assets/img/study.png" width="45" height="45"></a>
+                    <a (click)= "tutorDash($event)" class="active"><img class="img-responsive" src="assets/img/profile_active.png"  width="30" height="30"></a> 
+                    <a  (click)= "tutorProfile($event)" style="float: right" ><img class="img-responsive" src="assets/img/study.png" width="30" height="30"></a>
                 </div> 
 
             </footer>

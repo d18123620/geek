@@ -38,7 +38,9 @@ export class CorsefeedComponent implements OnInit {
   previewVideo = '';
   courseIcon = '';
   courseItems = '';
-  imgSrc: string = "assets/img/video_white.png";
+  videoImgSrc: string = "assets/img/video_white.png";
+  quizImgSrc: string = "assets/img/Quiz_white.png";
+  NoteImgSrc: string = "assets/img/notes_white.png";
 
   // constructor() { }
   constructor(private router: Router, private cookieService: CookieService,public auth: AuthService,

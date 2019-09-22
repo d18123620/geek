@@ -13,32 +13,38 @@
                     </div>
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <h1 style="color: white;" >Java Script</h1>
                     <br>
-                    <div class="well well-sm" style="font-weight: bold">Add Quiz Questions</div>
+                    <div class="well well-sm page-title" style="font-weight: bold">Create Quiz Questions</div>
                     <!-- <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" placeholder="Overview of the course" style="color: white;background-color: #303030;"></textarea> -->
                 </div>
             </div> 
-            <div class="form-group" style="background-color: #303030">
-                <label for="previewFormControlInput1" style="color: white">Quiz section title</label>
-                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Quiz title" style="color: white;background-color: #303030;">
-                <br> 
+            <div class="form-group" style="background-color: #303030">                
                 <label for="previewFormControlInput1" style="color: white">Question</label>
-                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter Question" style="color: white;background-color: #303030;">
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter Question" style="color: white;background-color: #303030;" [(ngModel)]="this.question">
                 <br>
+
                 <label for="previewFormControlInput1" style="color: white">Options</label>
-                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option1:" style="color: white;background-color: #303030;">
-                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option2:" style="color: white;background-color: #303030;">
-                <!-- <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option3:" style="color: white;background-color: #303030;">
-                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option4:" style="color: white;background-color: #303030;"> -->
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option1" style="color: white;background-color: #303030;" [(ngModel)]="this.optionA">
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option2" style="color: white;background-color: #303030;" [(ngModel)]="this.optionB">
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option3" style="color: white;background-color: #303030;" [(ngModel)]="this.optionC">
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option4" style="color: white;background-color: #303030;" [(ngModel)]="this.optionD">
                 <br>
-                <label for="previewFormControlInput1" style="color: white">Correct Answer</label>
-                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter Answer" style="color: white;background-color: #303030;">
+                
+                <label for="previewFormControlInput1" style="color: white">Correct Answer is: </label>
+
+                &nbsp;
+                <select name='corretAnswer' [(ngModel)]="this.optionCorrect">
+                  <option value="optionA">optionA</option>
+                  <option value="optionB">optionB</option>
+                  <option value="optionC">optionC</option>
+                  <option value="optionD">optionD</option>
+                </select>
+
+                <br>
                 <br>
                 <button class="btn btn-primary center-block" (click)= "Coursefeed($event)" > Add Item </button>
-                <br>
-                <!-- <button class="btn btn-primary center-block" (click)= "Playlistmenu($event)"> Playlist menu </button> -->
+                <br>                
             </div>
         </div>
     </div>

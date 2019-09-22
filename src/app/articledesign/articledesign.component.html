@@ -12,20 +12,18 @@
                                 </div>
                     </div>
             <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h1 style="color: white;" >Java Script</h1>
-                    <br>
-                    <div class="well well-sm" style="font-weight: bold">Add Article</div>
+                <div class="col-sm-12 text-center">                    
+                    <div class="well well-sm page-title" style="font-weight: bold">Add Article</div>
                     <!-- <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" placeholder="Overview of the course" style="color: white;background-color: #303030;"></textarea> -->
                 </div>
             </div>
             <div class="form-group">
                     <label for="descriptionFormControlTextarea1" style="color: white">Title</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" style="color: white;background-color: #303030;">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" style="color: white;background-color: #303030;" [(ngModel)]='articleTitle' ngDefaultControl>
                     <br>
-                    <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1"  rows="5" placeholder="Enter Article" style="color: white;background-color: #303030;"></textarea>
+                    <label for="descriptionFormControlTextarea1" style="color: white" >Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1"  rows="5" placeholder="Enter Article" style="color: white;background-color: #303030;" [(ngModel)]='articleBody' ngDefaultControl></textarea>
                     <br>
                     <button class="btn btn-primary center-block" (click)= "Coursefeed($event)"> Add Item </button>
                     <br>

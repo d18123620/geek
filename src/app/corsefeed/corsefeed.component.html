@@ -40,7 +40,7 @@
             <ng-container *ngIf= "cour.playlistType === 'video'">
                 <div class="col-sm-12" style="color:yellow;" >
                     <div class="col-sm-4" style="display: inline-block">
-                        <img [src]="imgSrc" width="80" height="80" />
+                        <img [src]="videoImgSrc" width="80" height="80" />
                     </div>
                     <div class="col-sm-8" style="display: inline-block">
                         <div style="font-size: 20px">{{cour.videoTitle}} </div> 
@@ -49,6 +49,30 @@
                     <hr>
                 </div>
             </ng-container>
+            <ng-container *ngIf= "cour.playlistType === 'quiz'">
+                <div class="col-sm-12" style="color:yellow;" >
+                    <div class="col-sm-4" style="display: inline-block">
+                        <img [src]="quizImgSrc" width="80" height="80" />
+                    </div>
+                    <div class="col-sm-8" style="display: inline-block">
+                        <div style="font-size: 20px">{{cour.quizQuestion}} </div> 
+                        <br>
+                    </div>
+                    <hr>
+                </div>
+            </ng-container> 
+            <ng-container *ngIf= "cour.playlistType === 'note'">
+                <div class="col-sm-12" style="color:yellow;" >
+                    <div class="col-sm-4" style="display: inline-block">
+                        <img [src]="NoteImgSrc" width="80" height="80" />
+                    </div>
+                    <div class="col-sm-8" style="display: inline-block">
+                        <div style="font-size: 20px">{{cour.noteHead}} </div> 
+                        <br>
+                    </div>
+                    <hr>
+                </div>
+            </ng-container>                        
             </ng-container>
         </div>  
         <div class="row">
