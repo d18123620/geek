@@ -21,6 +21,7 @@ export class ArticledesignComponent implements OnInit {
 
   articleTitle:any = '';
   articleBody:any = '';
+  idToken:any = '';
 
   constructor(private router: Router,private storage: AngularFireStorage,private cookieService: CookieService, 
     public auth: AuthService,

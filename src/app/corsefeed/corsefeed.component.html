@@ -12,33 +12,43 @@
                     </div>
                 </div>
         <br>
-        <div class="row">
-            <div class="col-sm-12 text-center" style="color: white;">
-                
-                <img class="img-responsive center-block" src="{{courseIcon}}" alt="logo" width="150" height="345" style="display: block;"> 
-                <br>
-                <span style="color: yellow;font-size: 20px ">Publish:</span> &nbsp;<app-toggle-button (changed)="checked=$event">
-                </app-toggle-button>
-                <br>
-                    <span class="col-sm-3" style="color: yellow;font-size: 20px ">
-                        Description:
-                    </span>
-                        <textarea class="form-control" id="exampleFormControlTextarea1"   placeholder="Overview of the course" style="color: white;background-color: #303030;" readonly>{{description}}</textarea>
-                <br>
-                <label for="descriptionFormControlTextarea1" style="color: white;float: left;">Preview Video</label>
-                <video width="320" height="240" controls src="{{previewVideo}}">
-                </video>
-            </div>
+
+        <div class="container">
+            <ul id="myTabs" class="nav nav-pills text-center" role="tablist" data-tabs="tabs">
+                <li class="active col-sm-6">
+                    <a href="#courseData" data-toggle="tab" class="col-sm-6">Course Data</a>
+                </li>
+                <li class="col-sm-6">
+                    <a href="#playlist" data-toggle="tab" class="col-sm-6">Playlist</a>
+                </li>
+            </ul>
         </div>
-        <div class="row ">
-            <div class="col-sm-12">
-                <div class="well well-sm" style="font-weight: bold;">Playlist</div>
+
+        <br>
+        <div class="tab-content"> 
+            <div role="tabpanel" class="tab-pane fade in active" id='courseData' >
+                <div class="col-sm-12 text-center" style="color: white;">
+                    
+                    <img class="img-responsive center-block" src="{{courseIcon}}" alt="logo" width="150" height="345" style="display: block;"> 
+                    <br>
+                    <span style="font-size: 20px ">Publish:</span> &nbsp;<app-toggle-button (changed)="checked=$event">
+                    </app-toggle-button>
+                    <br>
+                    <textarea class="form-control" id="exampleFormControlTextarea1"   placeholder="Overview of the course" style="color: white;background-color: #303030;" readonly>Description: {{description}}</textarea>
+                    <br>
+                    <label for="descriptionFormControlTextarea1" style="color: white;float: left;">Preview Video</label>
+                    <video width="100%" height="200" controls src="{{previewVideo}}">
+                    </video>
+                </div>
             </div>
-        </div>
-        <div class="row ">
+
+
+
+
+            <div role="tabpanel" class="tab-pane fade" id='playlist'>          
             <ng-container *ngFor="let cour of courseItems; let i = index;">
             <ng-container *ngIf= "cour.playlistType === 'video'">
-                <div class="col-sm-12" style="color:yellow;" >
+                <div class="col-sm-12" style="color:white;" >
                     <div class="col-sm-4" style="display: inline-block">
                         <img [src]="videoImgSrc" width="80" height="80" />
                     </div>
@@ -50,7 +60,7 @@
                 </div>
             </ng-container>
             <ng-container *ngIf= "cour.playlistType === 'quiz'">
-                <div class="col-sm-12" style="color:yellow;" >
+                <div class="col-sm-12" style="color:white;" >
                     <div class="col-sm-4" style="display: inline-block">
                         <img [src]="quizImgSrc" width="80" height="80" />
                     </div>
@@ -62,7 +72,7 @@
                 </div>
             </ng-container> 
             <ng-container *ngIf= "cour.playlistType === 'note'">
-                <div class="col-sm-12" style="color:yellow;" >
+                <div class="col-sm-12" style="color:white;" >
                     <div class="col-sm-4" style="display: inline-block">
                         <img [src]="NoteImgSrc" width="80" height="80" />
                     </div>
@@ -74,21 +84,27 @@
                 </div>
             </ng-container>                        
             </ng-container>
+            <div class="row">
+                <div class="col-sm-12" style="color: white;float: left;">
+                    <span>
+                        <a (click)= "playlisyMenu($event)">
+                            <img class="img-responsive" src="assets/img/circle.png">
+                        </a>
+                    </span>
+                    <br>               
+                </div>
+            </div>            
         </div>  
-        <div class="row">
-            <div class="col-sm-12" style="color: white;float: left;">
-                <span>
-                    <a (click)= "playlisyMenu($event)">
-                        <img class="img-responsive" src="assets/img/circle.png">
-                    </a>
-                </span>
-                <br>               
-            </div>
-        </div>
+
+    </div>
     </div>
     </div>
 </div>
 </div>
+
+
+
+
 <div class="container">
         <div class="row ">
             <footer class="fixed-bottom" >

@@ -12,7 +12,7 @@ import { HttpClient, HttpHeaders, HttpParams  } from '@angular/common/http';
 
 interface CourseFeed {
   description: string,
-  name: string,
+  name: string = 'Geek Charge',
   previewVideo: '',
   courseIcon: '',
   published: '',
