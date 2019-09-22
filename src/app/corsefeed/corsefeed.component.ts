@@ -12,7 +12,7 @@ import { HttpClient, HttpHeaders, HttpParams  } from '@angular/common/http';
 
 interface CourseFeed {
   description: string,
-  name: string = 'Geek Charge',
+  name: string,
   previewVideo: '',
   courseIcon: '',
   published: '',
@@ -33,7 +33,7 @@ export class CorsefeedComponent implements OnInit {
   checked = '';
   CourseId = '';
   idToken = '';
-  name = '';
+  name = 'Geek Charge';
   description = '';
   previewVideo = '';
   courseIcon = '';
