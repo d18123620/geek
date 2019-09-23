@@ -70,6 +70,10 @@ export class StudentProfileComponent implements OnInit {
     this.router.navigateByUrl('/home');
   }
 
+  studentHome(event: Event) {
+    this.router.navigateByUrl('/studentdashboard');  	
+  }
+
   signOut(event: Event) {
     let cookieService = this.cookieService;
     let router = this.router;
