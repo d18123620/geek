@@ -31,8 +31,15 @@
                     
                     <img class="img-responsive center-block" src="{{courseIcon}}" alt="logo" width="150" height="345" style="display: block;"> 
                     <br>
-                    <span style="font-size: 20px ">Publish:</span> &nbsp;<app-toggle-button (changed)="checked=$event">
-                    </app-toggle-button>
+                    
+<!--                <app-toggle-button (changed)="checked=$event">
+                    </app-toggle-button> -->                    
+
+                    <label class="checkbox-container">Publish: &nbsp;
+                      <input type="checkbox" [checked]="coursePublish"
+                      (change)="coursePublish = !coursePublish">
+                      <span class="checkbox-checkmark"></span>
+                    </label>
                     <br>
                     <textarea class="form-control" id="exampleFormControlTextarea1"   placeholder="Overview of the course" style="color: white;background-color: #303030;" readonly>Description: {{description}}</textarea>
                     <br>

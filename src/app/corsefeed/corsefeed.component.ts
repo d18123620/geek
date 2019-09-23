@@ -41,6 +41,7 @@ export class CorsefeedComponent implements OnInit {
   videoImgSrc: string = "assets/img/video_white.png";
   quizImgSrc: string = "assets/img/Quiz_white.png";
   NoteImgSrc: string = "assets/img/notes_white.png";
+  coursePublish: boolean = false;
 
   // constructor() { }
   constructor(private router: Router, private cookieService: CookieService,public auth: AuthService,
@@ -88,6 +89,7 @@ export class CorsefeedComponent implements OnInit {
         this.name = data.name;
         this.description = data.description;
         this.courseIcon = data.courseIcon;
+        this.coursePublish = (data.published.toLowerCase() === "true"? true :  false);
         console.log(data);
         this.courseItems = data.courseItems;
         this.previewVideo = data.previewVideo;

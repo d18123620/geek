@@ -2,7 +2,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-toggle-button',
-  // templateUrl: './toggle-button.component.html',
   template: `
     <input type="checkbox" id="toggle-button-checkbox"
       (change)="changed.emit($event.target.checked)">
@@ -80,4 +79,3 @@ export class ToggleButtonComponent {
   
 
 }
-// export class ToggleButtonComponent {}
