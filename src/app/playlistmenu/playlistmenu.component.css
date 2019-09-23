@@ -30,8 +30,9 @@ footer {
 .icon-bar {
   width: 100%;
   background-color: #555;
+  padding: 0.5em;
 }
-
+  
 .icon-bar a {
   float: left;
   text-align: center;

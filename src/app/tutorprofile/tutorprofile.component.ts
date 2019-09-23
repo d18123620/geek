@@ -68,6 +68,7 @@ export class TutorprofileComponent implements OnInit {
           // this.cookieService.delete('__session');
           cookieService.delete('__session');
           cookieService.delete('__profilepic');
+          cookieService.delete('__emailHD');
           // Cookie.delete('__session', '/path');
           // this.cookieService.set('__session', '');
 

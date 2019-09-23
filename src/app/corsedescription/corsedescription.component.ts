@@ -12,8 +12,6 @@ import {
 } from '@angular/fire/firestore';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 
-
-
 interface CourseDescription {
   name: string,
   description: string,
@@ -53,16 +51,13 @@ export class CorsedescriptionComponent implements OnInit {
     
   }
 
-  imgsrc="assets/img/back_btn.png";
-    tutorProfile(event: Event) {
+      imgsrc="assets/img/back_btn.png";
+      tutorProfile(event: Event) {
         this.router.navigateByUrl('/tutorprofile');
       }
       tutorDash(event: Event) {
         this.router.navigateByUrl('/tutordashboard');
       }
-      // tutorFeed(event: Event) {
-      //   this.router.navigateByUrl('/corsefeed');
-      // }
       coursedesign1(event: Event) {
         this.router.navigateByUrl('/tutordashboard');
       }
@@ -93,9 +88,7 @@ export class CorsedescriptionComponent implements OnInit {
             )
         .subscribe()
       }
-      
-      
-      
+                 
       uploadFile(event) {
 
         console.log('upload files');
@@ -150,10 +143,8 @@ export class CorsedescriptionComponent implements OnInit {
         )
       }
 
-
       ngOnInit() {
         this.disableFields = true;
       }
 
 }
-// , private dataService:DataService

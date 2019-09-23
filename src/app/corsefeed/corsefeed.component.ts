@@ -33,7 +33,7 @@ export class CorsefeedComponent implements OnInit {
   checked = '';
   CourseId = '';
   idToken = '';
-  name = 'Geek Charge';
+  name = ' ';
   description = '';
   previewVideo = '';
   courseIcon = '';

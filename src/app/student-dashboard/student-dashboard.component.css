@@ -51,3 +51,8 @@ footer {
   overflow: auto;
   position: relative;
 }
+.page-title{
+    background-color: transparent;
+    color: white;
+    border: 0px;
+}

@@ -54,8 +54,10 @@ export class LoginComponent  {
       console.log(result);
       // console.log(result.additionalUserInfo.profile.picture);
       let Profilepic = result.additionalUserInfo.profile.picture;
+      let emailHD = result.additionalUserInfo.profile.hd;
       cookieService.set('__profilepic', Profilepic);
-      
+      cookieService.set('__emailHD', emailHD);
+
       if (result.credential) {
         
         firebase.auth.currentUser.getIdToken(true).then(function(idToken) {          

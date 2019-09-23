@@ -11,7 +11,7 @@
             <br>
             <div class="row ">
                 <div class="col-sm-12">
-                    <div class="well well-sm" style="font-weight: bold">Profile</div>
+                    <div class="well well-sm page-title" style="font-weight: bold">Profile</div>
                 </div>
             </div>
             <br>
@@ -26,41 +26,35 @@
                 <div class="col-sm-12 text-center" id="toptions">
                     <!-- <a (click)= "tutorDesc1($event)" style="color: yellow">About Tutor</a> -->
                     <!-- <br> -->
-                    <div class="row">
-                        <div class="col-sm-12" style="border: 1px solid yellowgreen;">
-                            <label for="titleFormControlInput1" style="color: yellow">Tutor Name</label>
+                    <div class="col-sm-12">
+                        <div class="col-sm-8" style="border: 1px dashed white; padding: 0.5em;">
+                            <label for="titleFormControlInput1" style="color: white">Tutor Name</label>
                             <input type="text" class="form-control" style="color: white;background-color: #303030;display: inline-block;"  [(ngModel)]="this.tutorName" />
                             <br>
                             <br>
-                            <label for="titleFormControlInput1" style="color: yellow">Description</label>
+                            <label for="titleFormControlInput1" style="color: white">Description</label>
                             <textarea class="form-control" rows="3" style="color: white;background-color: #303030;"  [(ngModel)]="this.tutorDesc" ></textarea>
                             <br>
-                            <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "SaveData($event)">Save</button><br>
+                            <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "SaveData($event)">Save</button>
                         </div>   
                        
                     </div>
                     <br>
                 </div>
-                <div class="col-sm-12 text-center" id="toptions" style="border: 1px solid yellowgreen;">
 
-                    <div style="display: flex;">
-
+                <div class="col-sm-12">
+                    <div class="col-sm-8 text-center" id="toptions" >
+                        <div class="btn btn-primary btn-block" (click)= "Selection($event)" style="color: white">
+                            Change Role
+                        </div>
+                        <br>
                     </div>
-                    <br>
-                    <a href="#" style="color: yellow; ">Notifications: </a>                     
-                    <app-toggle-button >
-                    </app-toggle-button>
-                    <!-- <p>The state is {{checked ? 'hi' : 'hello'}}.</p> -->
-                    <!-- <app-toggle-button>loading</app-toggle-button> -->
-                    <!-- <br> -->
-                </div>
-                <div class="col-sm-12 text-center" id="toptions" style="border: 1px solid yellowgreen;">
-                    <a (click)= "Selection($event)" style="color: yellow">Change Role</a>
-                    <br>
-                    <br>
-                </div>
-                <div class="col-sm-12 text-center" id="toptions" style="border: 1px solid yellowgreen;">
-                    <a (click)= "signOut($event)" style="color: yellow">Sign Out</a>
+                    <div class="col-sm-8 text-center" id="toptions" >
+                        <div class="btn btn-danger btn-block" (click)= "signOut($event)" style="color: white">
+                            Sign Out
+                        </div>
+                        <br>
+                    </div>
                 </div>
                 
             </div>
@@ -73,8 +67,8 @@
                 <footer class="fixed-bottom" >
                     <div class="icon-bar">
                         
-                        <a (click)= "tutorDash($event)"><img class="img-responsive" src="assets/img/profile.png" width="45" height="45"></a> 
-                        <a  (click)= "tutorProfile($event)" style="float: right" class="active"><img class="img-responsive" src="assets/img/study_active.png" width="45" height="45"></a>
+                        <a (click)= "tutorDash($event)"><img class="img-responsive" src="assets/img/study.png" width="30" height="30"></a> 
+                        <a  (click)= "tutorProfile($event)" style="float: right" class="active"><img class="img-responsive" src="assets/img/profile_active.png" width="30" height="30"></a>
                     </div> 
 
                 </footer>

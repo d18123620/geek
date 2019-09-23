@@ -18,17 +18,12 @@
                 
                 <h2 style="color: rgb(216, 215, 215);">Login As</h2>
             <br>
-            <div class='btn-group'>
-                <button type="button" class="btn btn-primary btn-lg"  (click)= "tutorScope($event)">Tutor</button>
-            </div>
+            <div class='col-xs-12'>
+                <div class="btn btn-primary btn-lg btn-block"  (click)= "tutorScope($event)">Tutor</div>            
             <br>
             <br>
-            <div class='btn-group'>
-                    <button type="button" class="btn btn-primary btn-lg custom-styles-button" (click)= "studentScope($event)">Student</button>
-                  
-                    <br>
-                    <br>
-                    <br>
+
+                <div class="btn btn-primary btn-lg btn-block" (click)= "studentScope($event)">Student</div>
             </div>
             <!-- <button type="button" class="btn btn-primary btn-lg hide">-</button> -->
             </div>
@@ -38,4 +33,20 @@
     </div>
     </div>
 </div>
+</div>
+
+<div #myModel class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+        <h6 class="modal-title "> <strong> Sorry </strong> </h6>
+        <button type="button" class="close" (click)="closeModel($event)">
+            <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <h4>Only Email IDs with <strong>@mydit.ie</strong> extension can be tutor</h4>
+      </div>
+    </div>
+  </div>
 </div>
