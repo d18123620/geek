@@ -1,5 +1,4 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -8,6 +7,8 @@ import {
   AngularFirestoreDocument
 } from '@angular/fire/firestore';
 import { CookieService } from 'ngx-cookie-service';
+import { Inject, Injectable } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 // import { Profile } from 'selenium-webdriver/firefox';
 // import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
@@ -18,7 +19,15 @@ import { CookieService } from 'ngx-cookie-service';
 })
 
 export class LoginComponent  {
-  constructor(public auth: AuthService,
+
+  showLoadingFacade = true;
+
+  removeLoadingFacade () {
+      this.showLoadingFacade = false;
+  }
+
+  constructor(@Inject(DOCUMENT) private document: any,
+              public auth: AuthService,
               private afAuth: AngularFireAuth,
               private cookieService: CookieService,
               private router: Router,
@@ -26,9 +35,11 @@ export class LoginComponent  {
               private afs: AngularFirestore){
 
 
-                if(this.cookieService.get('fromLogin') === 'true'){
+                if (this.cookieService.get('fromLogin') === 'true') {
                   this.googleAuthRedirectCheck();
                   this.cookieService.delete('fromLogin');
+                } else {
+                  this.removeLoadingFacade();
                 }
 
               }
@@ -52,11 +63,16 @@ export class LoginComponent  {
           cookieService.set('__session', idToken);
           zone.run(() => router.navigate(['/home'])).then();          
         }).catch(function(error) {
-          // Handle error
+          this.removeLoadingFacade();
         });
 
+      } else {
+
+        this.removeLoadingFacade();
+        
       }
       console.log(result);
+
     }).catch(function(error) {
       
       var errorCode = error.code;

@@ -15,7 +15,6 @@ import { AppComponent } from '../app.component';
 interface TutorDescription {
   type: string,
   course: [],
-  
 }
 
 const httpOptions = {

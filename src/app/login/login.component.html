@@ -1,4 +1,14 @@
-<div class="container-fluid" style="padding: 0px !important;margin: 0px !important;">
+<div class="loading-screen-wrapper" id="loading-screen-wrapper" *ngIf="showLoadingFacade">
+    <div class="loading-screen-icon text-center">
+    <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
+    <br> 
+    Loading...
+    </div>
+</div>
+
+
+
+<div class="container-fluid" id='login-section' style="padding: 0px !important;margin: 0px !important;">
 <div id="login_body">
     <div class="row">
       <br>
@@ -13,19 +23,7 @@
             <br>
         </div>
     </div>
-<!-- <h3 class="logo_title">GEEK</h3>
-<div><img src="assets/img/logo.png" id="login_logo"></div>
-<h3 class="logo_title">CHARGE</h3> -->
 
-<!-- <div *ngIf= "auth.user$ | async as user;">
-    <pre>
-        {{ user | json }}
-    </pre>
-    <hr>
-</div> -->
-<!-- <ng-template #login>
-    <button class="button"  (click)="auth.signIn()"><span>Login</span></button>
-</ng-template> -->
 <div class="row">
   <div class="col-sm-12 text-center">
       <div id="gSignInWrapper">
