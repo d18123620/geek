@@ -1,0 +1,71 @@
+<div class="container" id="tprofile_body">
+    <div id="wrapper">
+        <div id="content">
+            <div id="inner">
+            <div class="row">
+            <br>
+                <div class="col-sm-12">
+                    <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
+                </div>
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-sm-12">
+                    <div class="well well-sm page-title" style="font-weight: bold">Profile</div>
+                </div>
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-sm-12">
+                    <!-- <img class="img-responsive center-block" src="assets/img/profile.png" alt="logo" width="75" height="75" style="display: block;">  -->
+                    <img class="img-responsive center-block img-rounded" src="{{profilepic}}" alt="logo" width="100" height="100" style="display: block;"> 
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12 text-center" id="toptions">
+                    <!-- <a (click)= "tutorDesc1($event)" style="color: yellow">About Tutor</a> -->
+                    <!-- <br> -->
+                    <div class="col-sm-12">
+                        <div class="col-sm-8">
+                            <label for="titleFormControlInput1" style="color: white">Student Name</label>
+                            <input type="text" class="form-control" style="color: white;background-color: #303030;display: inline-block;"  [(ngModel)]="this.tutorName" />
+                            <br>
+                        </div>   
+                       
+                    </div>
+                    <br>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="col-sm-8 text-center" id="toptions" >
+                        <div class="btn btn-primary btn-block" (click)= "Selection($event)" style="color: white">
+                            Change Role
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-8 text-center" id="toptions" >
+                        <div class="btn btn-danger btn-block" (click)= "signOut($event)" style="color: white">
+                            Sign Out
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+        <div class="row ">
+                <footer class="fixed-bottom" >
+                    <div class="icon-bar">
+                        
+                        <a (click)= "tutorDash($event)"><img class="img-responsive" src="assets/img/study.png" width="30" height="30"></a> 
+                        <a  (click)= "tutorProfile($event)" style="float: right" class="active"><img class="img-responsive" src="assets/img/profile_active.png" width="30" height="30"></a>
+                    </div> 
+
+                </footer>
+        </div>
+</div>

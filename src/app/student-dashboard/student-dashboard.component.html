@@ -16,11 +16,11 @@
         </div>
         <div class="row" >
             <ng-container *ngFor="let cour of course; let i = index;">
-                <div class="col-sm-4 col-md-4 col-lg-4  col-xs-4" style="color:yellow;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)">
-                    
-                        <img src={{cour.courseIcon}} width="100" height="100" />
-                        <div class="text-center">{{cour.name}}</div>
-                   
+                <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4 text-center" style="color:white;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)">
+                    <div style="border: 1px dashed white; padding: 0.25em;">
+                        <img src={{cour.courseIcon}} width="75" height="75" />
+                        <h4 class="text-center">{{cour.name}}</h4>
+                   </div>
                 </div>
             </ng-container>
         </div>
@@ -34,9 +34,9 @@
             <footer class="fixed-bottom" >
                 <div class="icon-bar">
                     
-                    <a class="active"><img class="img-responsive" src="assets/img/featured_active.png"  width="30" height="30"></a>
+                    <a (click)= "studentHome($event)" class="active"><img class="img-responsive" src="assets/img/featured_active.png"  width="30" height="30"></a>
 
-                    <!-- <a  style="float: right" ><img class="img-responsive" src="assets/img/profile.png" width="30" height="30"></a> -->
+                    <a (click)= "studentProfile($event)" style="float: right" ><img class="img-responsive" src="assets/img/profile.png" width="30" height="30"></a>
                 </div> 
 
             </footer>

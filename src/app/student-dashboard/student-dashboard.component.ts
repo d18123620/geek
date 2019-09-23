@@ -66,10 +66,24 @@ export class StudentDashboardComponent implements OnInit {
           console.log(this.course)      
         },
          (error: any) => {
-           console.log(error.error);
+             console.log(error.error);
+             if (error.error === 'unauthorized'){
+              this.cookieService.delete('__session');
+              this.cookieService.delete('__profilepic');
+
+              this.router.navigateByUrl('/login');
+             }
          }
       
         )
   }
 
+  studentHome(event: Event) {
+    
+  }
+
+  studentProfile(event: Event) {
+    this.router.navigateByUrl('/studentprofile');
+  }
+  
 }
