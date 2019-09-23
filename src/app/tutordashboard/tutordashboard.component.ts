@@ -87,7 +87,13 @@ export class TutordashboardComponent implements OnInit {
       
     },
      (error: any) => {
-       console.log(error.error);
+         console.log(error.error);
+         if (error.error === 'unauthorized'){
+          this.cookieService.delete('__session');
+          this.cookieService.delete('__profilepic');
+
+          this.router.navigateByUrl('/login');
+         }
      }
   
     )

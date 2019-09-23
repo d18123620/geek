@@ -68,40 +68,44 @@ export class CorsefeedComponent implements OnInit {
     back(event: Event) {
       this.router.navigateByUrl('/tutordashboard');
     }
-  ngOnInit() {
-    this.CourseId = this.cookieService.get('__CourseId');
-    // console.log(this.CourseId);
-    this.idToken = this.cookieService.get('__session');
-  console.log(this.idToken);
-  let idTokenBearer =  'Bearer '+this.idToken;
+    ngOnInit() {
+      this.CourseId = this.cookieService.get('__CourseId');
+      // console.log(this.CourseId);
+      this.idToken = this.cookieService.get('__session');
+      console.log(this.idToken);
+      let idTokenBearer =  'Bearer '+this.idToken;
 
       const requestOptions = {                                                                                                                                                                                 
         headers: new HttpHeaders({'Authorization': idTokenBearer}),
       };
+       
+      this.http.get<CourseFeed>('https://geekcharge.firebaseapp.com/api/v1/tutor/course/'+this.CourseId,requestOptions)
+      .subscribe 
+        (data => {
+          console.log(data.name);
+          console.log(data.description);
+          this.name = data.name;
+          this.description = data.description;
+          this.courseIcon = data.courseIcon;
+          this.coursePublish = (data.published.toLowerCase() === "true"? true :  false);
+          console.log(data);
+          this.courseItems = data.courseItems;
+          this.previewVideo = data.previewVideo;
+          console.log(this.previewVideo);
+        },
+       (error: any) => {
+         console.log(error.error);
+         if (error.error === 'unauthorized'){
+          this.cookieService.delete('__session');
+          this.cookieService.delete('__profilepic');
 
-      
+          this.router.navigateByUrl('/login');
+         }
+       }
+    
+      )
 
-    this.http.get<CourseFeed>('https://geekcharge.firebaseapp.com/api/v1/tutor/course/'+this.CourseId,requestOptions)
-    .subscribe 
-      (data => {
-        console.log(data.name);
-        console.log(data.description);
-        this.name = data.name;
-        this.description = data.description;
-        this.courseIcon = data.courseIcon;
-        this.coursePublish = (data.published.toLowerCase() === "true"? true :  false);
-        console.log(data);
-        this.courseItems = data.courseItems;
-        this.previewVideo = data.previewVideo;
-        console.log(this.previewVideo);
-      },
-     (error: any) => {
-       console.log(error.error);
-     }
-  
-    )
-
-  }
+    }
 
 
 }
