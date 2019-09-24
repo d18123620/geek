@@ -141,7 +141,7 @@ footer {
 .correctAnswer{
   background-color: #22AF4B;
   color: white;
-  font-size: 1em;
+  font-size: 1.2em;
   border: transparent;
   border-radius: 6px;
 }
@@ -149,7 +149,7 @@ footer {
 .wrongAnswer{
   background-color: #EE224A;
   color: white;
-  font-size: 1em;  
+  font-size: 1.2em;  
   border: transparent;
   border-radius: 6px;
 }
@@ -157,7 +157,7 @@ footer {
 .notAnswered{
   background-color: white;
   color: black;
-  font-size: 1em;
+  font-size: 1.2em;
   border: transparent;
   border-radius: 6px;
 }

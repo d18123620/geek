@@ -13,7 +13,7 @@
             <ng-container *ngFor="let cour of courseItems; let i = index;">
             <ng-container *ngIf= "cour.playlistType === 'video'">
                 <div class="col-sm-12" style="color:white;" >
-                    <div class="col-sm-4" style="display: inline-block">
+                    <div class="col-sm-4" style="display: inline-block; font-size: 1.2em;">
                         <img [src]="videoImgSrc" width="20" height="20" />
                           &nbsp;
                          {{cour.videoTitle}}
@@ -27,7 +27,7 @@
             </ng-container>
             <ng-container *ngIf= "cour.playlistType === 'quiz'">
                 <div class="col-sm-12" style="color:white;" >
-                    <div class="col-sm-4" style="display: inline-block">
+                    <div class="col-sm-4" style="display: inline-block; font-size: 1.2em;">
                         <img [src]="quizImgSrc" width="20" height="20" />
                         &nbsp;
                         {{cour.quizQuestion}}                      
@@ -53,11 +53,15 @@
                 </div>
             </ng-container> 
             <ng-container *ngIf= "cour.playlistType === 'note'">
-                <div class="col-sm-12" style="color:white;" >
+                <div class="col-sm-12" style="color:white; font-size: 1.2em;" >
                     <div class="col-sm-4" style="display: inline-block">
                         <img [src]="NoteImgSrc" width="20" height="20" />
                         &nbsp;
                         {{cour.noteHead}}
+                    </div>
+                    <br>
+                    <div class="col-sm-12">
+                        {{cour.noteBody}}
                     </div>
                     <hr>
                 </div>
