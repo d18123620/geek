@@ -27,22 +27,26 @@ import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 import { SuperSecretComponent } from './super-secret/super-secret.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { StudentProfileComponent } from './student-profile/student-profile.component';
+import { StudentCoursePlaylistComponent } from './student-course-playlist/student-course-playlist.component';
+import { StudentCoursePreviewComponent } from './student-course-preview/student-course-preview.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'tutordashboard', component: TutordashboardComponent},
-  { path: 'tutorprofile', component: TutorprofileComponent},
+  { path: 'tutordashboard', component: TutordashboardComponent },
+  { path: 'tutorprofile', component: TutorprofileComponent },
   { path: 'coursedescription', component: CorsedescriptionComponent },
   { path: 'corsefeed', component: CorsefeedComponent },
-  { path: 'playlistmenu', component: PlaylistmenuComponent},
-  { path: 'videoplaylist', component: VideoplaylistComponent},
-  { path: 'quizdesign', component: QuizdesignComponent},
-  {path:'articledesign', component: ArticledesignComponent},
-  {path: 'loadingScreen', component: LoadingScreenComponent},
-  {path: 'studentdashboard', component: StudentDashboardComponent},
-  {path: 'studentprofile', component: StudentProfileComponent},
-  {path: '', redirectTo: '/loadingScreen', pathMatch: 'full'} 
+  { path: 'playlistmenu', component: PlaylistmenuComponent },
+  { path: 'videoplaylist', component: VideoplaylistComponent },
+  { path: 'quizdesign', component: QuizdesignComponent },
+  { path:'articledesign', component: ArticledesignComponent },
+  { path: 'loadingScreen', component: LoadingScreenComponent },
+  { path: 'studentdashboard', component: StudentDashboardComponent },
+  { path: 'studentprofile', component: StudentProfileComponent },
+  { path: 'studentplaylist', component: StudentCoursePlaylistComponent },
+  { path: 'studentcoursepreview', component: StudentCoursePreviewComponent },
+  { path: '', redirectTo: '/loadingScreen', pathMatch: 'full' } 
 ];
 
 @NgModule({
@@ -62,7 +66,9 @@ const appRoutes: Routes = [
     ToggleButtonComponent,
     SuperSecretComponent,
     StudentDashboardComponent,
-    StudentProfileComponent        
+    StudentProfileComponent,
+    StudentCoursePlaylistComponent,
+    StudentCoursePreviewComponent        
   ],
   imports: [
     BrowserModule,

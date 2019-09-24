@@ -32,7 +32,7 @@
                     <input type="file" name="file2" (change)="uploadVideo($event)" /><br>
                 </form>
                 <br>
-                <button class="btn btn-primary center-block" (click)= "SaveData($event)"> Add Item </button>
+                <button class="btn btn-primary center-block" (click)= "SaveData($event)" [disabled]="disableFields"> Add Item </button>
                 <br>
             </div>
         </div>

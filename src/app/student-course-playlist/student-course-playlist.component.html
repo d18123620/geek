@@ -1,0 +1,83 @@
+<div class="container" id="tcoursefeed_body">
+<div id="wrapper">
+    <div id="content">
+        <div id="inner">
+            <div class="row">
+                <br>
+                <div class="col-sm-12">
+                            <h1 class="text-center" style="color: white;">{{name}}</h1>
+                    </div>
+                </div>
+        <br>        
+        <hr>
+            <ng-container *ngFor="let cour of courseItems; let i = index;">
+            <ng-container *ngIf= "cour.playlistType === 'video'">
+                <div class="col-sm-12" style="color:white;" >
+                    <div class="col-sm-4" style="display: inline-block">
+                        <img [src]="videoImgSrc" width="20" height="20" />
+                          &nbsp;
+                         {{cour.videoTitle}}
+                    </div>                    
+                    <div style="font-size: 20px"> </div>
+                    <video width="100%" height="200" controls src="{{cour.videoLink}}" preload="none">
+                    </video>
+
+                    <hr>
+                </div>
+            </ng-container>
+            <ng-container *ngIf= "cour.playlistType === 'quiz'">
+                <div class="col-sm-12" style="color:white;" >
+                    <div class="col-sm-4" style="display: inline-block">
+                        <img [src]="quizImgSrc" width="20" height="20" />
+                        &nbsp;
+                        {{cour.quizQuestion}}                      
+                    </div>
+
+                    <div class="well well-sm notAnswered" [attr.isCorrectAnswer]="cour.quizOptionCorrect === 'optionA'" (click)='checkAnswer($event)'>
+                        {{cour.quizOptionA}}
+                    </div>
+
+                    <div class="well well-sm notAnswered" [attr.isCorrectAnswer]="cour.quizOptionCorrect === 'optionB'" (click)='checkAnswer($event)'>
+                        {{cour.quizOptionB}}
+                    </div>
+
+                    <div class="well well-sm notAnswered" [attr.isCorrectAnswer]="cour.quizOptionCorrect === 'optionC'" (click)='checkAnswer($event)'>
+                        {{cour.quizOptionC}}
+                    </div>
+
+                    <div class="well well-sm notAnswered" [attr.isCorrectAnswer]="cour.quizOptionCorrect === 'optionD'" (click)='checkAnswer($event)'>
+                        {{cour.quizOptionD}}
+                    </div>
+
+                    <hr>
+                </div>
+            </ng-container> 
+            <ng-container *ngIf= "cour.playlistType === 'note'">
+                <div class="col-sm-12" style="color:white;" >
+                    <div class="col-sm-4" style="display: inline-block">
+                        <img [src]="NoteImgSrc" width="20" height="20" />
+                        &nbsp;
+                        {{cour.noteHead}}
+                    </div>
+                    <hr>
+                </div>
+            </ng-container>                        
+            </ng-container>    
+    </div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row ">
+            <footer class="fixed-bottom" >
+                <div class="icon-bar">
+                    
+                    <a (click)= "studentHome($event)" class="active"><img class="img-responsive" src="assets/img/featured.png"  width="30" height="30"></a>
+
+                    <a (click)= "studentProfile($event)" style="float: right" ><img class="img-responsive" src="assets/img/profile.png" width="30" height="30"></a>
+                </div> 
+
+            </footer>
+    </div>
+</div>

@@ -45,7 +45,7 @@ export class StudentDashboardComponent implements OnInit {
     navigateToCourse(event: any) {
       let courseNumber = event.currentTarget.getAttribute('course_id');
       this.cookieService.set('__CourseId', courseNumber);
-      this.router.navigateByUrl('/corsefeed');
+      this.router.navigateByUrl('/studentcoursepreview');
     }
 
   ngOnInit() {

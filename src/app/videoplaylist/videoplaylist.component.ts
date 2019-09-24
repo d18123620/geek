@@ -34,7 +34,7 @@ export class VideoplaylistComponent implements OnInit {
   idToken = '';
   videoTitle='';
   videoLink='';
-  
+  disableFields = true;
 
   // constructor() { }
   constructor(private router: Router, private storage: AngularFireStorage,private cookieService: CookieService, 
@@ -79,7 +79,8 @@ export class VideoplaylistComponent implements OnInit {
           var getDownloadURL1 = fileRef.getDownloadURL();
           getDownloadURL1.subscribe(url => {
             console.log(url);
-            this.downloadURL1 = url;        
+            this.downloadURL1 = url;   
+            this.disableFields = false;     
           });
         })
         )
