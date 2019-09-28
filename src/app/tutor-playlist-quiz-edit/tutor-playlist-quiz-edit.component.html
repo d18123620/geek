@@ -1,0 +1,63 @@
+<div class="container" id="tplaylistmenu_body">
+    <div id="wrapper">
+        <div id="content">
+            <div id="inner">
+                    <div class="row">
+                            <br>
+                            <div class="col-sm-12">
+                                    <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
+                                </div>
+                    </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <br>
+                    <div class="well well-sm page-title" style="font-weight: bold">Update Quiz</div>
+                    <!-- <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" placeholder="Overview of the course" style="color: white;background-color: #303030;"></textarea> -->
+                </div>
+            </div> 
+            <div class="form-group" style="background-color: #303030">                
+                <label for="previewFormControlInput1" style="color: white">Question</label>
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter Question" style="color: white;background-color: #303030;" [(ngModel)]="this.question">
+                <br>
+
+                <label for="previewFormControlInput1" style="color: white">Options</label>
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option1" style="color: white;background-color: #303030;" [(ngModel)]="optionA">
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option2" style="color: white;background-color: #303030;" [(ngModel)]="optionB">
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option3" style="color: white;background-color: #303030;" [(ngModel)]="optionC">
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option4" style="color: white;background-color: #303030;" [(ngModel)]="optionD">
+                <br>
+                
+                <label for="previewFormControlInput1" style="color: white">Correct Answer is: </label>
+
+                &nbsp;
+                <select name='corretAnswer' [(ngModel)]="optionCorrect">
+                  <option value="optionA">optionA</option>
+                  <option value="optionB">optionB</option>
+                  <option value="optionC">optionC</option>
+                  <option value="optionD">optionD</option>
+                </select>
+
+                <br>
+                <br>
+                <button class="btn btn-primary center-block" (click)= "updateCourse($event)" > Update </button>
+                <br>
+                <button class="btn btn-danger center-block" (click)= "cancelBtn($event)" > Cancel </button>
+                <br>                
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="container">
+        <div class="row ">
+                <footer class="fixed-bottom" >
+                    <div class="icon-bar">
+                        
+                        <a (click)= "tutorDash($event)"><img class="img-responsive" src="assets/img/profile.png" width="30" height="30"></a> 
+                        <a  (click)= "tutorProfile($event)" style="float: right"><img class="img-responsive" src="assets/img/study.png" width="30" height="30"></a>
+                    </div> 
+
+                </footer>
+        </div>
+</div>

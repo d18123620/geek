@@ -90,7 +90,7 @@
                     </div>
                     <br>
                     <div class="col-sm-4">
-                        <div class="btn btn-primary" playlistItemId='cour.playlistID'>Edit</div>
+                        <div class="btn btn-primary" playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='quizEdit($event,cour.playlistID)'>Edit</div>
                     </div>
                     <hr>
                 </div>
@@ -105,7 +105,7 @@
                     </div>
                     <br>
                     <div class="col-sm-4">
-                        <div class="btn btn-primary" playlistItemId='cour.playlistID'>Edit</div>
+                        <div class="btn btn-primary" playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='noteEdit($event,cour.playlistID)'>Edit</div>
                     </div>                    
 
                     <hr>

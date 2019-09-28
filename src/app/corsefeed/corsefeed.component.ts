@@ -76,6 +76,12 @@ export class CorsefeedComponent implements OnInit {
     videoEdit(event: Event, playlistID) {
      this.router.navigateByUrl('/tutorvideoedit?playlistId='+playlistID); 
     }
+    quizEdit(event: Event, playlistID) {
+     this.router.navigateByUrl('/tutorquizedit?playlistId='+playlistID); 
+    }
+    noteEdit(event: Event, playlistID) {
+     this.router.navigateByUrl('/tutornoteedit?playlistId='+playlistID); 
+    }        
 
     ngOnInit() {
 
