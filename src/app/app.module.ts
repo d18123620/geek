@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { LoginComponent } from './login/login.component';
-// import { HomeComponent } from './home/home.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -36,7 +35,6 @@ import { TutorPlaylistNoteEditComponent } from './tutor-playlist-note-edit/tutor
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  // { path: 'home', component: HomeComponent },
   { path: 'tutordashboard', component: TutordashboardComponent },
   { path: 'tutorprofile', component: TutorprofileComponent },
   { path: 'coursedescription', component: CorsedescriptionComponent },
@@ -61,7 +59,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    // HomeComponent,    
     TutordashboardComponent,
     TutorprofileComponent,
     CorsedescriptionComponent,
