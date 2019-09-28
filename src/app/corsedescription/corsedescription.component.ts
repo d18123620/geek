@@ -133,8 +133,7 @@ export class CorsedescriptionComponent implements OnInit {
         .subscribe 
         (data => {
           console.log(data);
-          
-    
+          this.router.navigateByUrl('/tutordashboard');    
         },
         (error: any) => {
           console.log(error);

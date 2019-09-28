@@ -59,7 +59,7 @@ export class TutorprofileComponent implements OnInit {
         this.router.navigateByUrl('/tutordashboard');
       }
       Selection(event: Event) {
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/studentdashboard');
       }
       signOut(event: Event) {
         let cookieService = this.cookieService;

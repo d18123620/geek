@@ -45,7 +45,7 @@ export class LoadingScreenComponent implements OnInit {
       .subscribe( 
         (res: Response)=> {
           const sachin = res;
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/studentdashboard');
           console.log(sachin);
         },
         (error: any) => {

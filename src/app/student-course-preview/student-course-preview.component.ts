@@ -38,7 +38,7 @@ export class StudentCoursePreviewComponent implements OnInit {
   videoImgSrc: string = "assets/img/video_white.png";
   quizImgSrc: string = "assets/img/Quiz_white.png";
   NoteImgSrc: string = "assets/img/notes_white.png";
-  coursePublish: boolean = false;
+  coursePublish: any = false;
 
   constructor(private router: Router,
   	private cookieService: CookieService, 
@@ -67,7 +67,7 @@ export class StudentCoursePreviewComponent implements OnInit {
           this.name = data.name;
           this.description = data.description;
           this.courseIcon = data.courseIcon;
-          this.coursePublish = (data.published.toLowerCase() === "true"? true :  false);
+          this.coursePublish = data.published;
           console.log(data);
           this.courseItems = data.courseItems;
           this.previewVideo = data.previewVideo;

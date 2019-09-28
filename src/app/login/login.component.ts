@@ -63,7 +63,7 @@ export class LoginComponent  {
         firebase.auth.currentUser.getIdToken(true).then(function(idToken) {          
           console.log(idToken);
           cookieService.set('__session', idToken);
-          zone.run(() => router.navigate(['/home'])).then();          
+          zone.run(() => router.navigate(['/studentdashboard'])).then();          
         }).catch(function(error) {
           this.removeLoadingFacade();
         });

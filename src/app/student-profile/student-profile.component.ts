@@ -67,7 +67,7 @@ export class StudentProfileComponent implements OnInit {
   }
   
   Selection(event: Event) {
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/tutordashboard');
   }
 
   studentHome(event: Event) {

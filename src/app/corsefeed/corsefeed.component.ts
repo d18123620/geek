@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from '../services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -41,14 +41,16 @@ export class CorsefeedComponent implements OnInit {
   videoImgSrc: string = "assets/img/video_white.png";
   quizImgSrc: string = "assets/img/Quiz_white.png";
   NoteImgSrc: string = "assets/img/notes_white.png";
-  coursePublish: boolean = false;
+  coursePublish: any = false;
+  courseInfoTab: boolean = false;
 
   // constructor() { }
   constructor(private router: Router, private cookieService: CookieService,public auth: AuthService,
     private afAuth: AngularFireAuth,
     // private zone: NgZone,
     private afs: AngularFirestore,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private activatedRoute: ActivatedRoute) { }
   
   tutorProfile(event: Event) {
       this.router.navigateByUrl('/tutorprofile');
@@ -68,7 +70,21 @@ export class CorsefeedComponent implements OnInit {
     back(event: Event) {
       this.router.navigateByUrl('/tutordashboard');
     }
+    courseEdit(event: Event) {
+     this.router.navigateByUrl('/courseinfoedit'); 
+    }
+    videoEdit(event: Event, playlistID) {
+     this.router.navigateByUrl('/tutorvideoedit?playlistId='+playlistID); 
+    }
+
     ngOnInit() {
+
+      let courseInfo = this.activatedRoute.snapshot.queryParams["courseInfo"];
+
+      if (courseInfo){
+        this.courseInfoTab = true;
+      }
+
       this.CourseId = this.cookieService.get('__CourseId');
       // console.log(this.CourseId);
       this.idToken = this.cookieService.get('__session');
@@ -87,7 +103,7 @@ export class CorsefeedComponent implements OnInit {
           this.name = data.name;
           this.description = data.description;
           this.courseIcon = data.courseIcon;
-          this.coursePublish = (data.published.toLowerCase() === "true"? true :  false);
+          this.coursePublish = data.published;
           console.log(data);
           this.courseItems = data.courseItems;
           this.previewVideo = data.previewVideo;

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+// import { HomeComponent } from './home/home.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -29,10 +29,12 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { StudentCoursePlaylistComponent } from './student-course-playlist/student-course-playlist.component';
 import { StudentCoursePreviewComponent } from './student-course-preview/student-course-preview.component';
+import { TutorCourseInfoEditComponent } from './tutor-course-info-edit/tutor-course-info-edit.component';
+import { TutorPlaylistVideoEditComponent } from './tutor-playlist-video-edit/tutor-playlist-video-edit.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
+  // { path: 'home', component: HomeComponent },
   { path: 'tutordashboard', component: TutordashboardComponent },
   { path: 'tutorprofile', component: TutorprofileComponent },
   { path: 'coursedescription', component: CorsedescriptionComponent },
@@ -40,12 +42,14 @@ const appRoutes: Routes = [
   { path: 'playlistmenu', component: PlaylistmenuComponent },
   { path: 'videoplaylist', component: VideoplaylistComponent },
   { path: 'quizdesign', component: QuizdesignComponent },
-  { path:'articledesign', component: ArticledesignComponent },
+  { path: 'articledesign', component: ArticledesignComponent },
   { path: 'loadingScreen', component: LoadingScreenComponent },
   { path: 'studentdashboard', component: StudentDashboardComponent },
   { path: 'studentprofile', component: StudentProfileComponent },
   { path: 'studentplaylist', component: StudentCoursePlaylistComponent },
   { path: 'studentcoursepreview', component: StudentCoursePreviewComponent },
+  { path: 'courseinfoedit', component: TutorCourseInfoEditComponent },
+  { path: 'tutorvideoedit', component: TutorPlaylistVideoEditComponent },  
   { path: '', redirectTo: '/loadingScreen', pathMatch: 'full' } 
 ];
 
@@ -53,7 +57,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,    
+    // HomeComponent,    
     TutordashboardComponent,
     TutorprofileComponent,
     CorsedescriptionComponent,
@@ -68,7 +72,9 @@ const appRoutes: Routes = [
     StudentDashboardComponent,
     StudentProfileComponent,
     StudentCoursePlaylistComponent,
-    StudentCoursePreviewComponent        
+    StudentCoursePreviewComponent,
+    TutorCourseInfoEditComponent,
+    TutorPlaylistVideoEditComponent        
   ],
   imports: [
     BrowserModule,
