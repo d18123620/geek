@@ -1,1 +1,46 @@
-<p>tutor-playlist-note-edit works!</p>
+<div class="container" id="tplaylistmenu_body">
+    <div id="wrapper">
+        <div id="content">
+            <div id="inner">
+                    <div class="row">
+                            <br>
+                            <div class="col-sm-12">
+                                    <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
+                                </div>
+                    </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">                    
+                    <div class="well well-sm page-title" style="font-weight: bold">Edit Article</div>
+                    <!-- <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" placeholder="Overview of the course" style="color: white;background-color: #303030;"></textarea> -->
+                </div>
+            </div>
+            <div class="form-group">
+                    <label for="descriptionFormControlTextarea1" style="color: white">Title</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" style="color: white;background-color: #303030;" [(ngModel)]='articleTitle' ngDefaultControl>
+                    <br>
+                    <label for="descriptionFormControlTextarea1" style="color: white" >Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1"  rows="5" placeholder="Enter Article" style="color: white;background-color: #303030;" [(ngModel)]='articleBody' ngDefaultControl></textarea>
+                    <br>
+                    <button class="btn btn-primary center-block" (click)= "updateCourse($event)"> Update </button>
+                    <br>
+                    <button class="btn btn-danger center-block" (click)= "cancelEdit($event)"> Cancel </button>
+
+            </div>  
+        </div>
+            
+        </div> 
+    </div>
+</div>
+<div class="container">
+        <div class="row ">
+                <footer class="fixed-bottom" >
+                    <div class="icon-bar">
+                        
+                        <a (click)= "tutorDash($event)"><img class="img-responsive" src="assets/img/study.png" height="30" width="30"></a> 
+                        <a  (click)= "tutorProfile($event)" style="float: right"><img class="img-responsive" src="assets/img/profile.png"  height="30" width="30"></a>
+                    </div> 
+
+                </footer>
+        </div>
+</div>

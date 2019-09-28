@@ -47,6 +47,10 @@ export class TutorPlaylistQuizEditComponent implements OnInit {
     private http: HttpClient,
     private activatedRoute: ActivatedRoute) { }
 
+  cancelEdit (event){
+    this.router.navigateByUrl('/corsefeed');
+  }
+  
   updateCourse(event: Event){
 
         let quizData = {"playlistType":'quiz',          
