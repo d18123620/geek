@@ -5,9 +5,6 @@
             <div class="row">
                     <br>
                     <div class="col-sm-12">
-                                <a (click)= "coursedesign1($event)" style="float: left;position: absolute;">
-                                        <img height="30" width="30" class="img-responsive" src="assets/img/back_btn.png">
-                                </a>
                             <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
                         </div>
                     </div>
@@ -25,14 +22,19 @@
                 <label for="previewFormControlInput1" style="color: white">Lecture Video</label>
                 <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter the title of the video" style="color: white;background-color: #303030;" [(ngModel)]="this.videoTitle">
                 <br>
-                <label for="previewFormControlInput1" style="color: white">Upload Video</label>
-                <!-- <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Youtube embed link for preview video" style="color: white;background-color: #303030;"> -->
+
+                <div class="col-sm-12" style="border: 1px dashed white;">
+	                <video width="100%" height="200px" controls src="{{this.videoLink}}"></video>
+	                <label for="previewFormControlInput1" style="color: white">Upload Video</label>
+	                <br>
+	                <form  enctype="multipart/form-data" style="color: white">
+	                    <input type="file" name="file2" (change)="uploadVideo($event)" /><br>
+	                </form>
+                </div>
                 <br>
-                <form  enctype="multipart/form-data" style="color: white">
-                    <input type="file" name="file2" (change)="uploadVideo($event)" /><br>
-                </form>
+                <button class="btn btn-primary center-block" (click)= "updateCourse($event)" [disabled]="disableFieldsVideo"> Update </button>
                 <br>
-                <button class="btn btn-primary center-block" (click)= "SaveData($event)" [disabled]="disableFields"> Update </button>
+                <button class="btn btn-danger center-block" (click)= "cancelEdit($event)" > Cancel </button>
                 <br>
             </div>
         </div>
