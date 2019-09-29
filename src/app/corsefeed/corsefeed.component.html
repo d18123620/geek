@@ -53,7 +53,7 @@
                     <div class="col-sm-8">
                         <div class="btn btn-primary btn-block" (click)='courseEdit($event)'>Edit Course Info</div>
                         <br>
-                        <div class="btn btn-danger btn-block disabled">Delete Course</div>
+                        <div class="btn btn-danger btn-block" (click)='deleteCourse($event)'>Delete Course</div>
                     </div>
 
                 </div>
@@ -74,7 +74,8 @@
                     </div>
                     <br>
                     <div class="col-sm-4">
-                        <div class="btn btn-primary" playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='videoEdit($event,cour.playlistID)'>Edit</div>
+                        <div class="btn btn-primary" style='width: 100px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='videoEdit($event,cour.playlistID)'>Edit</div>
+                        <div class="btn btn-danger pull-right" style='width: 100px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='deletePlaylist($event,cour.playlistID)'>Delete</div>                        
                     </div>                    
                     <hr>
                 </div>
@@ -90,7 +91,8 @@
                     </div>
                     <br>
                     <div class="col-sm-4">
-                        <div class="btn btn-primary" playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='quizEdit($event,cour.playlistID)'>Edit</div>
+                        <div class="btn btn-primary" style='width: 100px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='quizEdit($event,cour.playlistID)'>Edit</div>
+                        <div class="btn btn-danger pull-right"style='width: 100px;'  playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='deletePlaylist($event,cour.playlistID)'>Delete</div>                         
                     </div>
                     <hr>
                 </div>
@@ -105,7 +107,8 @@
                     </div>
                     <br>
                     <div class="col-sm-4">
-                        <div class="btn btn-primary" playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='noteEdit($event,cour.playlistID)'>Edit</div>
+                        <div class="btn btn-primary" style='width: 100px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='noteEdit($event,cour.playlistID)'>Edit</div>
+                        <div class="btn btn-danger pull-right" style='width: 100px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='deletePlaylist($event,cour.playlistID)'>Delete</div>                         
                     </div>                    
 
                     <hr>

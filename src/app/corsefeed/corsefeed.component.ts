@@ -43,6 +43,7 @@ export class CorsefeedComponent implements OnInit {
   NoteImgSrc: string = "assets/img/notes_white.png";
   coursePublish: any = false;
   courseInfoTab: boolean = false;
+  courseInfo: any;  
 
   // constructor() { }
   constructor(private router: Router, private cookieService: CookieService,public auth: AuthService,
@@ -51,7 +52,62 @@ export class CorsefeedComponent implements OnInit {
     private afs: AngularFirestore,
     private http: HttpClient,
     private activatedRoute: ActivatedRoute) { }
-  
+
+    deleteCourse(event: Event) {
+      let idTokenBearer =  'Bearer '+this.idToken;
+
+      const requestOptions = {                                                                                                                                                                                 
+        headers: new HttpHeaders({'Authorization': idTokenBearer}),
+      };
+       
+      this.http.delete<any>('https://geekcharge.firebaseapp.com/api/v1/tutor/course/'+this.CourseId,requestOptions)
+      .subscribe 
+        (data => {
+          console.log(data.name);
+          //window.location.reload();
+          this.router.navigateByUrl('/tutordashboard');
+        }),
+       (error: any) => {
+         console.log(error.error);
+         if (error.error === 'unauthorized'){
+          this.cookieService.delete('__session');
+          this.cookieService.delete('__profilepic');
+
+          this.router.navigateByUrl('/login');
+         } else {
+           this.router.navigateByUrl('/tutordashboard');
+         }
+       },
+       this.router.navigateByUrl('/tutordashboard');
+    }
+    
+    deletePlaylist(event: Event, playlistId) {
+      let idTokenBearer =  'Bearer '+this.idToken;
+
+      const requestOptions = {                                                                                                                                                                                 
+        headers: new HttpHeaders({'Authorization': idTokenBearer}),
+      };
+       
+      this.http.delete<any>('https://geekcharge.firebaseapp.com/api/v1/tutor/course/'+this.CourseId + '/' + playlistId,requestOptions)
+      .subscribe 
+        (data => {
+          console.log(data.name);
+          window.location.reload();
+        }),
+       (error: any) => {
+         console.log(error.error);
+         if (error.error === 'unauthorized'){
+          this.cookieService.delete('__session');
+          this.cookieService.delete('__profilepic');
+
+          this.router.navigateByUrl('/login');
+         } else {
+           window.location.reload();
+         }
+       },
+       window.location.reload();
+    }
+
     tutorProfile(event: Event) {
       this.router.navigateByUrl('/tutorprofile');
     }
@@ -85,9 +141,9 @@ export class CorsefeedComponent implements OnInit {
 
     ngOnInit() {
 
-      let courseInfo = this.activatedRoute.snapshot.queryParams["courseInfo"];
+      this.courseInfo = this.activatedRoute.snapshot.queryParams["courseInfo"];
 
-      if (courseInfo){
+      if (this.courseInfo){
         this.courseInfoTab = true;
       }
 

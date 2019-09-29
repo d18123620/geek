@@ -35,7 +35,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
   description = '';
   previewVideo = '';
   courseIcon = '';
-  courseItems = '';
+  courseItems:any = '';
   videoImgSrc: string = "assets/img/video_white.png";
   quizImgSrc: string = "assets/img/Quiz_white.png";
   NoteImgSrc: string = "assets/img/notes_white.png";
