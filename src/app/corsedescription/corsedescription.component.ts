@@ -40,7 +40,9 @@ export class CorsedescriptionComponent implements OnInit {
   courseDesc='';
   coursePreview='';
   courseIcon='';
-  disableFields = true;
+  disableFields = false;
+  disableFieldsImg = false;
+  disableFieldsVideo = false;  
 
   constructor(private router: Router,private storage: AngularFireStorage,private cookieService: CookieService, 
     public auth: AuthService,
@@ -66,7 +68,7 @@ export class CorsedescriptionComponent implements OnInit {
 
         console.log('upload files');
         
-
+        this.disableFieldsVideo = true;
         const file = event.target.files[0];
         const filePath = '/course/'+Math.floor(Date.now())+'_'+file.name;
         const fileRef = this.storage.ref(filePath);
@@ -82,7 +84,8 @@ export class CorsedescriptionComponent implements OnInit {
               var getDownloadURL1 = fileRef.getDownloadURL();
               getDownloadURL1.subscribe(url => {
                 console.log(url);
-                this.downloadURL1 = url;        
+                this.downloadURL1 = url;    
+                this.disableFieldsVideo = false;    
               });
             })
             )
@@ -92,7 +95,7 @@ export class CorsedescriptionComponent implements OnInit {
       uploadFile(event) {
 
         console.log('upload files');
-        
+        this.disableFieldsImg = true;
 
         const file = event.target.files[0];
         const filePath = '/course/'+Math.floor(Date.now())+'_'+file.name;
@@ -110,7 +113,7 @@ export class CorsedescriptionComponent implements OnInit {
               getDownloadURL.subscribe(url => {
                 console.log(url);
                 this.downloadURL = url;
-                this.disableFields = false;        
+                this.disableFieldsImg = false;        
               });
             })
             )
@@ -143,7 +146,6 @@ export class CorsedescriptionComponent implements OnInit {
       }
 
       ngOnInit() {
-        this.disableFields = true;
       }
 
 }

@@ -40,6 +40,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
   quizImgSrc: string = "assets/img/Quiz_white.png";
   NoteImgSrc: string = "assets/img/notes_white.png";
   coursePublish: boolean = false;
+  activePlaylistItem:any;
 
   constructor(private router: Router,
     private cookieService: CookieService, 
@@ -68,7 +69,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
             this.name = data.name;
             this.description = data.description;
             this.courseIcon = data.courseIcon;
-            this.coursePublish = (data.published.toLowerCase() === "true"? true :  false);
+            this.coursePublish = data.published;
             console.log(data);
             this.courseItems = data.courseItems;
             this.previewVideo = data.previewVideo;

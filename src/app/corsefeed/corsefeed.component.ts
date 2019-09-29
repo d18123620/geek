@@ -52,7 +52,7 @@ export class CorsefeedComponent implements OnInit {
     private http: HttpClient,
     private activatedRoute: ActivatedRoute) { }
   
-  tutorProfile(event: Event) {
+    tutorProfile(event: Event) {
       this.router.navigateByUrl('/tutorprofile');
     }
     tutorDash(event: Event) {

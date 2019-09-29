@@ -33,6 +33,13 @@ export class TutorPlaylistNoteEditComponent implements OnInit {
     private http: HttpClient,
     private activatedRoute: ActivatedRoute) { }
 
+   tutorProfile(event: Event) {
+      this.router.navigateByUrl('/tutorprofile');
+    }
+    tutorDash(event: Event) {
+      this.router.navigateByUrl('/tutordashboard');
+    }
+
   cancelEdit (event){
     this.router.navigateByUrl('/corsefeed');
   }
