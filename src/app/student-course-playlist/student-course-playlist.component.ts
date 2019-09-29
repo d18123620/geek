@@ -40,6 +40,8 @@ export class StudentCoursePlaylistComponent implements OnInit {
   quizImgSrc: string = "assets/img/Quiz_white.png";
   NoteImgSrc: string = "assets/img/notes_white.png";
   coursePublish: any = false;
+  sidenavVisible:any = false;
+  activePlaylistItem:any = '';
 
   constructor(private router: Router,
     private cookieService: CookieService, 
@@ -48,6 +50,32 @@ export class StudentCoursePlaylistComponent implements OnInit {
     private zone: NgZone,
     private afs: AngularFirestore,
     private http: HttpClient) { }
+
+    selectPlaylist(event: Event, index) {
+      this.activePlaylistItem = index;
+      this.closeNav(event);
+    }
+
+    previousPlaylistItem(event: Event){
+      if(this.activePlaylistItem != 0) {
+        this.activePlaylistItem--;
+      }
+    }
+
+    nextPlaylistItem(event: Event){
+      if(this.activePlaylistItem != (this.courseItems.length - 1) ) {
+        this.activePlaylistItem++;
+      }
+    }
+
+    openSideNav(event: Event) {
+        this.sidenavVisible = true;
+    }
+
+    /* Set the width of the side navigation to 0 */
+    closeNav(event: Event) {
+        this.sidenavVisible = false;
+    }
 
     ngOnInit() {
         this.CourseId = this.cookieService.get('__CourseId');
@@ -73,6 +101,13 @@ export class StudentCoursePlaylistComponent implements OnInit {
             this.courseItems = data.courseItems;
             this.previewVideo = data.previewVideo;
             console.log(this.previewVideo);
+
+            if (this.courseItems.length > 0){
+              //this.activePlaylistItem = this.courseItems[0].playlistID;
+              this.activePlaylistItem = 0;
+            }
+
+
           },
          (error: any) => {
            console.log(error.error);

@@ -167,7 +167,6 @@ footer {
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
-    top: 50px;
     left: 0;
     background-color: #111; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
@@ -209,4 +208,29 @@ footer {
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+
+
+#mySidenav.active{
+  width: 100%;
+}
+
+#mySidenav{
+  width: 0px;
+  z-index: 20000;
+}
+
+.navbar-default{
+  background-color: transparent;
+  border-color: transparent;  
+}
+
+.navbar-brand{
+  float: right;
+  color: white;
+}
+
+.navbar-active{
+  background-color: #d02a2a87;
+  color: white;
 }
