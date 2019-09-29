@@ -40,7 +40,6 @@ export class StudentCoursePlaylistComponent implements OnInit {
   quizImgSrc: string = "assets/img/Quiz_white.png";
   NoteImgSrc: string = "assets/img/notes_white.png";
   coursePublish: boolean = false;
-  activePlaylistItem:any;
 
   constructor(private router: Router,
     private cookieService: CookieService, 
