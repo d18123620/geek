@@ -39,7 +39,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
   videoImgSrc: string = "assets/img/video_white.png";
   quizImgSrc: string = "assets/img/Quiz_white.png";
   NoteImgSrc: string = "assets/img/notes_white.png";
-  coursePublish: boolean = false;
+  coursePublish: any = false;
 
   constructor(private router: Router,
     private cookieService: CookieService, 
