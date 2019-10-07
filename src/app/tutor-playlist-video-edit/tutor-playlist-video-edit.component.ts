@@ -89,7 +89,7 @@ export class TutorPlaylistVideoEditComponent implements OnInit {
 
   updateCourse(event: Event){
 
-        let videoData = {"playlistType":'video', "videoTitle": this.videoTitle,  "videoLink": this.downloadURL1};
+        let videoData = {"playlistType":'video', "videoTitle": this.videoTitle,  "videoLink": this.videoLink};
 
         this.idToken = this.cookieService.get('__session');
         console.log(this.idToken);

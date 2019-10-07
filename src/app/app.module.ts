@@ -32,6 +32,7 @@ import { TutorCourseInfoEditComponent } from './tutor-course-info-edit/tutor-cou
 import { TutorPlaylistVideoEditComponent } from './tutor-playlist-video-edit/tutor-playlist-video-edit.component';
 import { TutorPlaylistQuizEditComponent } from './tutor-playlist-quiz-edit/tutor-playlist-quiz-edit.component';
 import { TutorPlaylistNoteEditComponent } from './tutor-playlist-note-edit/tutor-playlist-note-edit.component';
+import { StudentSearchComponent } from './student-search/student-search.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -48,10 +49,12 @@ const appRoutes: Routes = [
   { path: 'studentprofile', component: StudentProfileComponent },
   { path: 'studentplaylist', component: StudentCoursePlaylistComponent },
   { path: 'studentcoursepreview', component: StudentCoursePreviewComponent },
+  { path: 'studentsearch', component: StudentSearchComponent }, 
   { path: 'courseinfoedit', component: TutorCourseInfoEditComponent },
   { path: 'tutorvideoedit', component: TutorPlaylistVideoEditComponent },
   { path: 'tutorquizedit', component: TutorPlaylistQuizEditComponent },
   { path: 'tutornoteedit', component: TutorPlaylistNoteEditComponent }, 
+  { path: 'studentsearch', component: StudentSearchComponent }, 
   { path: '', redirectTo: '/loadingScreen', pathMatch: 'full' } 
 ];
 
@@ -77,7 +80,8 @@ const appRoutes: Routes = [
     TutorCourseInfoEditComponent,
     TutorPlaylistVideoEditComponent,
     TutorPlaylistQuizEditComponent,
-    TutorPlaylistNoteEditComponent        
+    TutorPlaylistNoteEditComponent,
+    StudentSearchComponent        
   ],
   imports: [
     BrowserModule,

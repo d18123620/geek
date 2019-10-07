@@ -17,11 +17,11 @@ interface TutorDescription {
 }
 
 @Component({
-  selector: 'app-student-dashboard',
-  templateUrl: './student-dashboard.component.html',
-  styleUrls: ['./student-dashboard.component.css']
+  selector: 'app-student-search',
+  templateUrl: './student-search.component.html',
+  styleUrls: ['./student-search.component.css']
 })
-export class StudentDashboardComponent implements OnInit {
+export class StudentSearchComponent implements OnInit {
   idToken = '';
   type='';
   course= [];
@@ -34,6 +34,7 @@ export class StudentDashboardComponent implements OnInit {
   tutorId = '';
   profileObservable: Observable<Object>;
   courseIcon: any;
+  searchKey: any;
 
   constructor(private router: Router,private cookieService: CookieService, 
     public auth: AuthService,
@@ -78,8 +79,13 @@ export class StudentDashboardComponent implements OnInit {
         )
   }
 
+  searchOnKey(event: any) {
+    console.log(event.target.value);
+    this.searchKey = event.target.value.toLowerCase();
+  }
+
   studentSearch(event: Event) {
-    this.router.navigateByUrl('/studentsearch');
+    
   }
 
   studentCourse(event: Event){
@@ -87,11 +93,11 @@ export class StudentDashboardComponent implements OnInit {
   }
 
   studentHome(event: Event) {
-    
+    this.router.navigateByUrl('/studentdashboard');
   }
 
   studentProfile(event: Event) {
     this.router.navigateByUrl('/studentprofile');
   }
-  
+
 }

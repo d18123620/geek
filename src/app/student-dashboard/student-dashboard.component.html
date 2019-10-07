@@ -25,12 +25,16 @@
             </ng-container>
 
             <ng-container *ngFor="let cour of course; let i = index;">
-                <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4 text-center" style="color:white;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)">
-                    <div style="border: 1px dashed white; padding: 0.25em;">
-                        <img src={{cour.courseIcon}} width="75" height="75" />
-                        <h4 class="text-center">{{cour.name}}</h4>
-                   </div>
-                </div>
+                <ng-container *ngIf='cour.published'>
+
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4 text-center" style="color:white;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)">
+                        <div style="border: 1px dashed white; padding: 0.25em;">
+                            <img src={{cour.courseIcon}} width="75" height="75" />
+                            <h4 class="text-center">{{cour.name}}</h4>
+                        </div>
+                    </div>
+
+                </ng-container>
             </ng-container>
 
         </div>
@@ -43,11 +47,23 @@
 <div class="container">
     <div class="row ">
             <footer class="fixed-bottom" >
-                <div class="icon-bar">
+                <div class="icon-bar col-sm-12">
                     
-                    <a (click)= "studentHome($event)" class="active"><img class="img-responsive" src="assets/img/featured_active.png"  width="30" height="30"></a>
+                    <div class="col-xs-3 text-center">
+                        <a (click)= "studentHome($event)" class="active"><img class="img-responsive" src="assets/img/featured_active.png"  width="30" height="30"></a>
+                    </div>
 
-                    <a (click)= "studentProfile($event)" style="float: right" ><img class="img-responsive" src="assets/img/profile.png" width="30" height="30"></a>
+                    <div class="col-xs-3 text-center">
+                            <a (click)= "studentSearch($event)"><img class="img-responsive" src="assets/img/search.png"  width="30" height="30"></a>
+                    </div>
+
+                    <div class="col-xs-3 text-center">
+                            <a (click)= "studentCourse($event)"><img class="img-responsive" src="assets/img/study.png"  width="30" height="30"></a>
+                    </div>
+
+                    <div class="col-xs-3 text-center">
+                        <a (click)= "studentProfile($event)"><img class="img-responsive" src="assets/img/profile.png" width="30" height="30"></a>
+                    </div>
                 </div> 
 
             </footer>

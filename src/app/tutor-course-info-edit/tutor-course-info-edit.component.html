@@ -2,23 +2,24 @@
     <div id="wrapper">
         <div id="content">
             <div class="inner">
-            <div class="row">
-            <br>
-            <div class="col-sm-12">
-                    <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
-            </div>
-            </div>
-            <br>
-            <div class="row ">
-                <div class="col-sm-12">
-                    <div class="well well-sm page-title" style="font-weight: bold">Edit Course Information</div>              
+                <div class="row">
+                    <br>
+                    <div class="col-sm-12">
+                            <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
+                    </div>
                 </div>
-            </div>
+                
+                <br>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="well well-sm page-title" style="font-weight: bold">Edit Course Information</div>              
+                    </div>
+                </div>
 
-            <div>
-                <div class="btn btn-success" (click)='publishChange($event, true)' *ngIf='!coursePublish'>Publish Course</div>
-                <div class="btn btn-danger" (click)='publishChange($event, false)' *ngIf='coursePublish'>Unpublish Course</div>
-            </div>
+                <div>
+                    <div class="btn btn-success" (click)='publishChange($event, true)' *ngIf='!coursePublish'>Publish Course</div>
+                    <div class="btn btn-danger" (click)='publishChange($event, false)' *ngIf='coursePublish'>Unpublish Course</div>
+                </div>
 
             <br>
             

@@ -191,7 +191,8 @@ export class TutorCourseInfoEditComponent implements OnInit {
           this.coursePublish = data.published;
           console.log(data);
           this.courseItems = data.courseItems;
-          this.previewVideo = data.previewVideo;
+					this.previewVideo = data.previewVideo;
+					this.coursePreview = data.previewVideo;
           console.log(this.previewVideo);
         },
        (error: any) => {
