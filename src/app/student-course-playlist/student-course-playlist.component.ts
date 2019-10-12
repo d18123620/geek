@@ -58,13 +58,15 @@ export class StudentCoursePlaylistComponent implements OnInit {
 
     previousPlaylistItem(event: Event){
       if(this.activePlaylistItem != 0) {
-        this.activePlaylistItem--;
+         
+         this.activePlaylistItem--;
       }
     }
 
     nextPlaylistItem(event: Event){
       if(this.activePlaylistItem != (this.courseItems.length - 1) ) {
-        this.activePlaylistItem++;
+        
+         this.activePlaylistItem++;
       }
     }
 
@@ -139,5 +141,9 @@ export class StudentCoursePlaylistComponent implements OnInit {
         event.currentTarget.classList.add('wrongAnswer');
         event.currentTarget.classList.remove('notAnswered');
       }
+    }
+
+    clearAnswers(){
+
     }
 }
