@@ -74,8 +74,8 @@
             
             <ng-container>
             
-            <div class="btn btn-primary" [ngClass]="{'hideClass': activePlaylistItem === 0}" (click)='previousPlaylistItem($event)'> Previous</div>
-            <div class="btn btn-primary pull-right" [ngClass]="{'hideClass': activePlaylistItem === (courseItems.length - 1) }" (click)='nextPlaylistItem($event)'> Next</div>
+            <div class="btn"  style="background-color: #666b6a7a;color: white;" [ngClass]="{'hideClass': activePlaylistItem === 0}" (click)='previousPlaylistItem($event)'> Previous</div>
+            <div class="btn pull-right" style="background-color: #666b6a7a;color: white;" [ngClass]="{'hideClass': activePlaylistItem === (courseItems.length - 1) }" (click)='nextPlaylistItem($event)'> Next</div>
 
             <br>
             <br>
