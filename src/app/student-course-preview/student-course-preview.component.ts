@@ -86,8 +86,38 @@ export class StudentCoursePreviewComponent implements OnInit {
       )    
   }
 
+  studentEnroll(event: Event) {
+    let courseData = {"courseId": this.CourseId };
+        this.idToken = this.cookieService.get('__session');
+        console.log(this.idToken);
+        let idTokenBearer =  'Bearer '+this.idToken;
+        const requestOptions = {                                                                                                                                                                                 
+          headers: new HttpHeaders({'Authorization': idTokenBearer})
+        };
+      
+    
+        this.http.post('https://geekcharge.firebaseapp.com/api/v1/student/enroll',courseData, requestOptions)
+        .subscribe 
+        (data => {
+          console.log(data);    
+        },
+        (error: any) => {
+          console.log(error);
+        }
+    
+        )
+  }
+
+  studentSearch(event: Event) {
+    this.router.navigateByUrl('/studentsearch');
+  }
+  
   studentHome(event: Event) {
     this.router.navigateByUrl('/studentdashboard');
+  }
+
+  studentCourse(event: Event) {
+    this.router.navigateByUrl('/studentmycourse');
   }
 
   studentProfile(event: Event) {

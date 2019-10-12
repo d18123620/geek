@@ -152,11 +152,23 @@
 <div class="container">
     <div class="row ">
             <footer class="fixed-bottom" >
-                <div class="icon-bar">
+                <div class="icon-bar col-sm-12">
                     
-                    <a (click)= "studentHome($event)" class="active"><img class="img-responsive" src="assets/img/featured.png"  width="30" height="30"></a>
+                    <div class="col-xs-3 text-center">
+                        <a (click)= "studentHome($event)"><img class="img-responsive" src="assets/img/featured.png"  width="30" height="30"></a>
+                    </div>
 
-                    <a (click)= "studentProfile($event)" style="float: right" ><img class="img-responsive" src="assets/img/profile.png" width="30" height="30"></a>
+                    <div class="col-xs-3 text-center">
+                            <a (click)= "studentSearch($event)" class="active"><img class="img-responsive" src="assets/img/search.png"  width="30" height="30"></a>
+                    </div>
+
+                    <div class="col-xs-3 text-center">
+                            <a (click)= "studentCourse($event)"><img class="img-responsive" src="assets/img/study.png"  width="30" height="30"></a>
+                    </div>
+
+                    <div class="col-xs-3 text-center">
+                        <a (click)= "studentProfile($event)"><img class="img-responsive" src="assets/img/profile.png" width="30" height="30"></a>
+                    </div>
                 </div> 
 
             </footer>

@@ -27,27 +27,30 @@ footer {
   height: 100%;
 }
 
-.icon-bar {
+/* .icon-bar {
   width: 100%;
   background-color: #555;
   padding: 0.5em;
-}
+} */
 
 .icon-bar a {
-  float: left;
   text-align: center;
   transition: all 0.3s ease;
   color: white;
   font-size: 36px;
 }
 
+.icon-bar a img{ 
+  display: inline !important;
+}
+
 .icon-bar a:hover {
   background-color: #000;
 }
-/*
-.active {
+
+/* .active {
   background-color: #4885ED;
-}*/
+} */
 
 .inner {
   height: 100%;

@@ -145,10 +145,18 @@ export class StudentCoursePlaylistComponent implements OnInit {
         )    
     }
 
+    studentSearch(event: Event) {
+      this.router.navigateByUrl('/studentsearch');
+    }
+    
     studentHome(event: Event) {
       this.router.navigateByUrl('/studentdashboard');
     }
-
+  
+    studentCourse(event: Event) {
+      this.router.navigateByUrl('/studentmycourse');
+    }
+  
     studentProfile(event: Event) {
       this.router.navigateByUrl('/studentprofile');
     }  

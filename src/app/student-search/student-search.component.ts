@@ -85,11 +85,11 @@ export class StudentSearchComponent implements OnInit {
   }
 
   studentSearch(event: Event) {
-    
+    this.router.navigateByUrl('/studentsearch'); 
   }
 
-  studentCourse(event: Event){
-
+  studentCourse(event: Event) {
+    this.router.navigateByUrl('/studentmycourse');  	
   }
 
   studentHome(event: Event) {

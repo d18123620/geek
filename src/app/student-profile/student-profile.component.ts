@@ -70,8 +70,20 @@ export class StudentProfileComponent implements OnInit {
     this.router.navigateByUrl('/tutordashboard');
   }
 
+  studentSearch(event: Event) {
+    this.router.navigateByUrl('/studentsearch');  	
+  }
+
   studentHome(event: Event) {
     this.router.navigateByUrl('/studentdashboard');  	
+  }
+
+  studentCourse(event: Event) {
+    this.router.navigateByUrl('/studentmycourse');  	
+  }
+
+  studentProfile(event: Event) {
+    this.router.navigateByUrl('/studentprofile');  	
   }
 
   signOut(event: Event) {

@@ -82,12 +82,14 @@ export class StudentDashboardComponent implements OnInit {
     this.router.navigateByUrl('/studentsearch');
   }
 
-  studentCourse(event: Event){
-
-  }
+ 
 
   studentHome(event: Event) {
-    
+    this.router.navigateByUrl('/studentdashboard');
+  }
+
+  studentCourse(event: Event) {
+    this.router.navigateByUrl('/studentmycourse');
   }
 
   studentProfile(event: Event) {
