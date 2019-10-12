@@ -42,6 +42,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
   coursePublish: any = false;
   sidenavVisible:any = false;
   activePlaylistItem:any = '';
+  isLoaded = false;
 
   constructor(private router: Router,
     private cookieService: CookieService, 
@@ -114,6 +115,9 @@ export class StudentCoursePlaylistComponent implements OnInit {
         this.http.get<CourseFeed>('https://geekcharge.firebaseapp.com/api/v1/tutor/course/'+this.CourseId,requestOptions)
         .subscribe 
           (data => {
+
+            this.isLoaded = true;
+
             console.log(data.name);
             console.log(data.description);
             this.name = data.name;
