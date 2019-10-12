@@ -40,7 +40,7 @@
                     <br>
 
                     <div class="col-sm-8">
-                        <div (click)='enrollCourse($event)' class="btn btn-primary btn-block">Enroll Course</div>
+                        <div class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal">Enroll Course</div>
                     </div>
 
                     <br>
@@ -67,3 +67,27 @@
             </footer>
     </div>
 </div>
+
+
+
+
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">{{name}}</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)='enrollCourse($event)'>Get Started</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
