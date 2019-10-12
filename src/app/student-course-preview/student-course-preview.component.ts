@@ -39,6 +39,8 @@ export class StudentCoursePreviewComponent implements OnInit {
   quizImgSrc: string = "assets/img/Quiz_white.png";
   NoteImgSrc: string = "assets/img/notes_white.png";
   coursePublish: any = false;
+  studentMyCourse: any;
+  isLoaded = false;
 
   constructor(private router: Router,
   	private cookieService: CookieService, 
@@ -49,41 +51,49 @@ export class StudentCoursePreviewComponent implements OnInit {
     private http: HttpClient) { }
 
   ngOnInit() {
-      this.CourseId = this.cookieService.get('__CourseId');
-      // console.log(this.CourseId);
-      this.idToken = this.cookieService.get('__session');
-      console.log(this.idToken);
-      let idTokenBearer =  'Bearer '+this.idToken;
 
-      const requestOptions = {                                                                                                                                                                                 
-        headers: new HttpHeaders({'Authorization': idTokenBearer}),
-      };
-       
-      this.http.get<CourseFeed>('https://geekcharge.firebaseapp.com/api/v1/tutor/course/'+this.CourseId,requestOptions)
-      .subscribe 
-        (data => {
-          console.log(data.name);
-          console.log(data.description);
-          this.name = data.name;
-          this.description = data.description;
-          this.courseIcon = data.courseIcon;
-          this.coursePublish = data.published;
-          console.log(data);
-          this.courseItems = data.courseItems;
-          this.previewVideo = data.previewVideo;
-          console.log(this.previewVideo);
-        },
-       (error: any) => {
-         console.log(error.error);
-         if (error.error === 'unauthorized'){
-          this.cookieService.delete('__session');
-          this.cookieService.delete('__profilepic');
-
-          this.router.navigateByUrl('/login');
-         }
-       }
+      this.studentMyCourseAjax();
     
-      )    
+  }
+
+  showPreviewPage() {
+    
+    this.CourseId = this.cookieService.get('__CourseId');
+    // console.log(this.CourseId);
+    this.idToken = this.cookieService.get('__session');
+    console.log(this.idToken);
+    let idTokenBearer =  'Bearer '+this.idToken;
+
+    const requestOptions = {                                                                                                                                                                                 
+      headers: new HttpHeaders({'Authorization': idTokenBearer}),
+    };
+     
+    this.http.get<CourseFeed>('https://geekcharge.firebaseapp.com/api/v1/tutor/course/'+this.CourseId,requestOptions)
+    .subscribe 
+      (data => {
+        this.isLoaded = true;
+        console.log(data.name);
+        console.log(data.description);
+        this.name = data.name;
+        this.description = data.description;
+        this.courseIcon = data.courseIcon;
+        this.coursePublish = data.published;
+        console.log(data);
+        this.courseItems = data.courseItems;
+        this.previewVideo = data.previewVideo;
+        console.log(this.previewVideo);
+      },
+     (error: any) => {
+       console.log(error.error);
+       if (error.error === 'unauthorized'){
+        this.cookieService.delete('__session');
+        this.cookieService.delete('__profilepic');
+
+        this.router.navigateByUrl('/login');
+       }
+     }
+  
+    )
   }
 
   studentEnroll(event: Event) {
@@ -105,6 +115,47 @@ export class StudentCoursePreviewComponent implements OnInit {
           console.log(error);
         }
     
+        )
+  }
+
+  studentMyCourseAjax() {
+    this.idToken = this.cookieService.get('__session');
+    console.log(this.idToken);
+    let idTokenBearer =  'Bearer '+this.idToken;
+
+      const requestOptions = {                                                                                                                                                                                 
+        headers: new HttpHeaders({'Authorization': idTokenBearer})
+      };
+
+      this.http.get<any>('https://geekcharge.firebaseapp.com/api/v1/student/myCourse', requestOptions )
+      .subscribe 
+        (data => {
+          this.studentMyCourse = data.enrollCourse;
+          console.log(this.studentMyCourse);
+
+          this.CourseId = this.cookieService.get('__CourseId');
+
+          for (let i = 0; i < this.studentMyCourse.length; i++) {
+            if (this.studentMyCourse[i] === this.CourseId) {
+                this.router.navigateByUrl('/studentplaylist');
+
+                return;
+            }
+          }
+
+          this.showPreviewPage();
+
+        },
+         (error: any) => {
+             console.log(error.error);
+             if (error.error === 'unauthorized'){
+              this.cookieService.delete('__session');
+              this.cookieService.delete('__profilepic');
+
+              this.router.navigateByUrl('/login');
+             }
+         }
+      
         )
   }
 
