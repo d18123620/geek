@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from '../services/auth.service';
@@ -49,17 +49,37 @@ export class StudentCoursePlaylistComponent implements OnInit {
     private afAuth: AngularFireAuth,
     private zone: NgZone,
     private afs: AngularFirestore,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private elem: ElementRef) { }
+
+
+    resetButtons() {
+      let quizBtns = this.elem.nativeElement.querySelectorAll('.quizbtn');
+      
+      for(let i = 0; i<quizBtns.length; i++){
+        quizBtns[i].classList.remove('correctAnswer');
+        quizBtns[i].classList.remove('wrongAnswer');
+        
+        if(!quizBtns[i].classList.contains('notAnswered')) {
+          quizBtns[i].classList.add('notAnswered');
+        }
+        
+
+      }
+    
+    }
 
     selectPlaylist(event: Event, index) {
       this.activePlaylistItem = index;
       this.closeNav(event);
+      this.resetButtons();
     }
 
     previousPlaylistItem(event: Event){
       if(this.activePlaylistItem != 0) {
          
          this.activePlaylistItem--;
+         this.resetButtons();
       }
     }
 
@@ -67,6 +87,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
       if(this.activePlaylistItem != (this.courseItems.length - 1) ) {
         
          this.activePlaylistItem++;
+         this.resetButtons();
       }
     }
 
