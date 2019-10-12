@@ -5,25 +5,38 @@
             <div class="row">
                 <br>
                 <div class="col-sm-12">
-                            <h1 class="text-center" style="color: white;">{{name}}</h1>
+                            <div class="text-center" style="color: white;">
+                                <img class="img-responsive center-block" src="{{courseIcon}}" alt="logo" width="52" height="auto" style="display: block; padding: 0px;">
+                                
+                                <div style="font-size:1.9em;padding-top: .5em;">
+                                    {{name}}
+                                </div>
+
+                            </div>
                     </div>
                 </div>
-
-        <br>
 
         <div class="tab-content"> 
             
                 <div class="col-sm-12 text-center" style="color: white;">
-                    
-                    <img class="img-responsive center-block" src="{{courseIcon}}" alt="logo" width="100" height="100" style="display: block;"> 
+                
                     <br> 
 
-                    <label for="descriptionFormControlTextarea1" style="color: white;float: left;">Curriculum Overview</label>
+                    <div class="col-sm-12" for="descriptionFormControlTextarea1" style="padding: 0px; color: white;float: left;">
+                        <b>Curriculum Video</b>
+                    </div>
                     <video width="100%" height="200" controls src="{{previewVideo}}">
                     </video>
 
                     <br>
-                    <textarea class="form-control" id="exampleFormControlTextarea1"   placeholder="Overview of the course" style="color: white;background-color: #303030; height: 17vh;" readonly>Description: {{description}}</textarea>
+                    <!-- <textarea class="form-control" id="exampleFormControlTextarea1"   placeholder="Overview of the course" style="color: white;background-color: #303030;" readonly>Description: {{description}}</textarea>
+
+                    <hr> -->
+
+                    <div class="col-sm-12" style="color: white;background-color: #303030; text-align: left; padding: 0px;">
+                        <b>Description:</b> {{description}}
+                    </div>
+
                     <br>
 
                     <div class="col-sm-8">
