@@ -129,11 +129,21 @@ export class StudentCoursePlaylistComponent implements OnInit {
             this.previewVideo = data.previewVideo;
             console.log(this.previewVideo);
 
-            if (this.courseItems.length > 0){
+            let courseItemArray = []
+
+            if (data.courseItems.length > 0){
               //this.activePlaylistItem = this.courseItems[0].playlistID;
               this.activePlaylistItem = 0;
+            
+              for(let j = 0; j< data.courseItems.length; j++ ) {
+                if (data.courseItems[j]['playlistType']) {                
+                  courseItemArray.push(data.courseItems[j]);
+                }
+              }
+            
             }
 
+            this.courseItems = courseItemArray;
 
           },
          (error: any) => {
