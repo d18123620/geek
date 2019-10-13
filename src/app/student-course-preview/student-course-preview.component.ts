@@ -17,6 +17,10 @@ interface CourseFeed {
   courseItems:''
 }
 
+interface TutorDescription {
+  name: string
+}
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -41,6 +45,7 @@ export class StudentCoursePreviewComponent implements OnInit {
   coursePublish: any = false;
   studentMyCourse: any;
   isLoaded = false;
+  tutorName='....';
 
   constructor(private router: Router,
   	private cookieService: CookieService, 
@@ -53,6 +58,26 @@ export class StudentCoursePreviewComponent implements OnInit {
   ngOnInit() {
 
       this.studentMyCourseAjax();
+	    this.idToken = this.cookieService.get('__session');
+	  console.log(this.idToken);
+	  let idTokenBearer =  'Bearer '+this.idToken;
+
+	      const requestOptions = {                                                                                                                                                                                 
+	        headers: new HttpHeaders({'Authorization': idTokenBearer})
+	      };
+	      
+	 
+	  this.http.get<TutorDescription>('https://geekcharge.firebaseapp.com/api/v1/profile/', requestOptions )
+	  .subscribe 
+	    (data => {
+	      console.log(data.name);
+	      this.tutorName= data.name;
+	    },
+	     (error: any) => {
+	       console.log(error.error);
+	     }
+	  
+	    )
     
   }
 
