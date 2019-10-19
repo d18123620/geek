@@ -155,6 +155,9 @@ footer {
   font-size: 1.2em;  
   border: transparent;
   border-radius: 6px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1.5s linear;
 }
 
 .notAnswered{

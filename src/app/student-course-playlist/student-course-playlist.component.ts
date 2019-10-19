@@ -53,6 +53,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
     private http: HttpClient,
     private elem: ElementRef) { }
 
+    
 
     resetButtons() {
       let quizBtns = this.elem.nativeElement.querySelectorAll('.quizbtn');
@@ -65,9 +66,10 @@ export class StudentCoursePlaylistComponent implements OnInit {
           quizBtns[i].classList.add('notAnswered');
         }
         
-
       }
-    
+      
+      
+
     }
 
     selectPlaylist(event: Event, index) {
@@ -163,6 +165,10 @@ export class StudentCoursePlaylistComponent implements OnInit {
       this.router.navigateByUrl('/studentsearch');
     }
     
+    backBtn(event: Event) {
+      this.router.navigateByUrl('/studentdashboard');
+    }
+
     studentHome(event: Event) {
       this.router.navigateByUrl('/studentdashboard');
     }
@@ -176,14 +182,24 @@ export class StudentCoursePlaylistComponent implements OnInit {
     }  
 
     checkAnswer(event: any){
-      let isCorrect = event.currentTarget.getAttribute('isCorrectAnswer');
-      if (isCorrect === 'true') {
-        event.currentTarget.classList.add('correctAnswer');
-        event.currentTarget.classList.remove('notAnswered');
-      } else {
-        event.currentTarget.classList.add('wrongAnswer');
-        event.currentTarget.classList.remove('notAnswered');
+
+      console.log('check answer');
+
+      let quizBtns = this.elem.nativeElement.querySelectorAll('.quizbtn');
+
+      for(let i = 0; i<quizBtns.length; i++){ 
+        let isCorrect = quizBtns[i].getAttribute('isCorrectAnswer');
+
+        if (isCorrect === 'true') {
+          quizBtns[i].classList.add('correctAnswer');
+          quizBtns[i].classList.remove('notAnswered');
+        } else {
+          quizBtns[i].classList.add('wrongAnswer');
+          quizBtns[i].classList.remove('notAnswered');
+        }        
+
       }
+
     }
 
     clearAnswers(){

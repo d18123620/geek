@@ -1,4 +1,4 @@
-<div class="container" id="tcoursefeed_body">
+<div class="container" id="tcoursefeed_body" >
 <div id="wrapper">
     <div id="content" [hidden]='isLoaded' style="color:white;">
             <br>
@@ -16,7 +16,9 @@
     </div>
     
     <div id="content" [hidden]='!isLoaded'>
+
         <div id="inner">
+
             <div class="row">
                 <br>
 
@@ -24,15 +26,14 @@
                     <nav class="navbar navbar-default navbar-fixed-top">
                       <div class="container">
                         <div class="navbar-header">
-    <!--                       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                          </button> -->
-                          <a class="navbar-brand">
+
+                        <a (click)= "backBtn($event)" style="float: left; position: absolute; padding: 15px;">
+                            <img height="30" width="30" class="img-responsive" src="assets/img/back_btn.png">
+                        </a>
+
+                        <a class="navbar-brand">
                             <span class="glyphicon glyphicon-menu-hamburger" (click)="openSideNav($event)"></span>
-                          </a>
+                        </a>
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
 
@@ -43,55 +44,69 @@
                     <div id="mySidenav" class="sidenav" [ngClass]="{'active': sidenavVisible}">
                       <a class="closebtn" (click)="closeNav($event)">&times;</a>
 
-                        <ng-container *ngFor="let cour of courseItems; let i = index;">
-                        <ng-container *ngIf= "cour.playlistType === 'video'">
-                            <div class="col-sm-12" style="color:white;" [ngClass]="{'navbar-active': activePlaylistItem === i }" (click)='selectPlaylist($event,i)'>
-                                <div class="col-sm-4" style="display: inline-block; font-size: 1.2em;">
-                                    <img [src]="videoImgSrc" width="20" height="20" />
-                                      &nbsp;
-                                     {{cour.videoTitle}}
-                                </div>
-                                <hr>
-                            </div>
-                        </ng-container>
+                        <div class="col-sm-2">
 
-                        <ng-container *ngIf= "cour.playlistType === 'quiz'">
-                            <div class="col-sm-12" style="color:white;" [ngClass]="{'navbar-active': activePlaylistItem === i }" (click)='selectPlaylist($event,i)'>
-                                <div class="col-sm-4" style="display: inline-block; font-size: 1.2em;">
-                                    <img [src]="quizImgSrc" width="20" height="20" />
-                                    &nbsp;
-                                    {{cour.quizQuestion}}                      
-                                </div>
-                                <hr>
-                            </div>
-                        </ng-container> 
-                        <ng-container *ngIf= "cour.playlistType === 'note'">
-                            <div class="col-sm-12" style="color:white; font-size: 1.2em;" [ngClass]="{'navbar-active': activePlaylistItem === i }" (click)='selectPlaylist($event,i)'>
-                                <div class="col-sm-4" style="display: inline-block">
-                                    <img [src]="NoteImgSrc" width="20" height="20" />
-                                    &nbsp;
-                                    {{cour.noteHead}}
-                                </div>
-                                <hr>
-                            </div>
-                        </ng-container>                        
-                        </ng-container> 
+                        </div>
 
+                        <div class="col-sm-10">
+
+                                <ng-container *ngFor="let cour of courseItems; let i = index;">
+                                        <ng-container *ngIf= "cour.playlistType === 'video'">
+                                            <div class="col-sm-12" style="color:white; padding: 0.8em;" [ngClass]="{'navbar-active': activePlaylistItem === i }" (click)='selectPlaylist($event,i)'>
+                                                <div class="col-sm-4" style="display: inline-block; font-size: 1.2em;">
+                                                    <img [src]="videoImgSrc" width="20" height="20" />
+                                                      &nbsp;
+                                                     {{cour.videoTitle}}
+                                                </div>
+                                                <!-- <hr style="margin: 0px; padding: 0px; border-top: 1px solid #726f6f;"> -->
+                                            </div>
+                                        </ng-container>
+                
+                                        <ng-container *ngIf= "cour.playlistType === 'quiz'">
+                                            <div class="col-sm-12" style="color:white; padding: 0.8em;" [ngClass]="{'navbar-active': activePlaylistItem === i }" (click)='selectPlaylist($event,i)'>
+                                                <div class="col-sm-4" style="display: inline-block; font-size: 1.2em;">
+                                                    <img [src]="quizImgSrc" width="20" height="20" />
+                                                    &nbsp;
+                                                    {{cour.quizQuestion}}                      
+                                                </div>
+                                                <!-- <hr style="margin: 0px; padding: 0px; border-top: 1px solid #726f6f;"> -->
+                                            </div>
+                                        </ng-container> 
+                                        <ng-container *ngIf= "cour.playlistType === 'note'">
+                                            <div class="col-sm-12" style="color:white; font-size: 1.2em; padding: 0.8em;" [ngClass]="{'navbar-active': activePlaylistItem === i }" (click)='selectPlaylist($event,i)'>
+                                                <div class="col-sm-4" style="display: inline-block">
+                                                    <img [src]="NoteImgSrc" width="20" height="20" />
+                                                    &nbsp;
+                                                    {{cour.noteHead}}
+                                                </div>
+                                                <!-- <hr style="margin: 0px; padding: 0px; border-top: 1px solid #726f6f;"> -->
+                                            </div>
+                                        </ng-container>                        
+                                        </ng-container> 
+                
+                        </div>
+
+                        <div class="col-sm-2">
+
+                        </div>
+                        
                     </div>
                 </ng-container>
 
+                <br>
                 <div class="col-sm-12">
-                            <h1 class="text-center" style="color: white;">{{name}}</h1>
+                            <h1 class="text-center" style="color: white;height: 1.2em;overflow: hidden;">{{name}}</h1>
                     </div>
                 </div>
                                 
-            <hr style="margin-top: 0px;">
+            <hr style="margin-top: 0px; border-top: 1px solid #726f6f;">
             
             <ng-container *ngIf='isLoaded'>
             
             <div class="btn"  style="background-color: #666b6a7a;color: white;" [ngClass]="{'hideClass': activePlaylistItem === 0}" (click)='previousPlaylistItem($event)'> Previous</div>
             <div class="btn pull-right" style="background-color: #666b6a7a;color: white;" [ngClass]="{'hideClass': activePlaylistItem === (courseItems.length - 1) }" (click)='nextPlaylistItem($event)'> Next</div>
 
+            <br>
             <br>
             <br>
 
@@ -122,19 +137,19 @@
                     <br>
                     <br>
 
-                    <div class="well well-sm notAnswered quizbtn" [attr.isCorrectAnswer]="courseItems[activePlaylistItem].quizOptionCorrect === 'optionA'" (click)='checkAnswer($event)'>
+                    <div class="well well-sm notAnswered quizbtn quizOption1" [attr.isCorrectAnswer]="courseItems[activePlaylistItem].quizOptionCorrect === 'optionA'" (click)='checkAnswer($event)'>
                         {{courseItems[activePlaylistItem].quizOptionA}}
                     </div>
 
-                    <div class="well well-sm notAnswered quizbtn" [attr.isCorrectAnswer]="courseItems[activePlaylistItem].quizOptionCorrect === 'optionB'" (click)='checkAnswer($event)'>
+                    <div class="well well-sm notAnswered quizbtn quizOption2" [attr.isCorrectAnswer]="courseItems[activePlaylistItem].quizOptionCorrect === 'optionB'" (click)='checkAnswer($event)'>
                         {{courseItems[activePlaylistItem].quizOptionB}}
                     </div>
 
-                    <div class="well well-sm notAnswered quizbtn" [attr.isCorrectAnswer]="courseItems[activePlaylistItem].quizOptionCorrect === 'optionC'" (click)='checkAnswer($event)'>
+                    <div class="well well-sm notAnswered quizbtn quizOption3" [attr.isCorrectAnswer]="courseItems[activePlaylistItem].quizOptionCorrect === 'optionC'" (click)='checkAnswer($event)'>
                         {{courseItems[activePlaylistItem].quizOptionC}}
                     </div>
 
-                    <div class="well well-sm notAnswered quizbtn" [attr.isCorrectAnswer]="courseItems[activePlaylistItem].quizOptionCorrect === 'optionD'" (click)='checkAnswer($event)'>
+                    <div class="well well-sm notAnswered quizbtn quizOption4" [attr.isCorrectAnswer]="courseItems[activePlaylistItem].quizOptionCorrect === 'optionD'" (click)='checkAnswer($event)'>
                         {{courseItems[activePlaylistItem].quizOptionD}}
                     </div>
 
@@ -164,7 +179,7 @@
 </div>
 </div>
 
-<div class="container">
+<div class="container" style="display:none;">
     <div class="row ">
             <footer class="fixed-bottom" >
                 <div class="icon-bar col-sm-12">

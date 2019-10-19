@@ -27,8 +27,8 @@
             <ng-container *ngFor="let cour of course; let i = index;">
                 <ng-container *ngIf='cour.published'>
 
-                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4 text-center" style="color:white;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)">
-                        <div style="border: 1px dashed white; padding: 0.25em;">
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-center" style="color:white; word-wrap: break-word;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)">
+                        <div style="border: 1px white; padding: 0.25em;">
                             <img src={{cour.courseIcon}} width="75" height="75" />
                             <h4 class="text-center">{{cour.name}}</h4>
                         </div>
