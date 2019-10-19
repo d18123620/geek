@@ -18,25 +18,30 @@
             </div>
         </div>
         <br>
-        <div class="row ">
-            
-            <ng-container *ngFor="let cour of course; let i = index;">
-                <div class="col-sm-12" style="color:white;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >
-                    
-                   <div class="col-sm-8" style="background-color: transparent; border:0.5px dashed white; border-radius: 6px; padding: 0.5em;">
-                    <div class="col-sm-4" style="display: inline-block">
-                        <img src={{cour.courseIcon}} width="80" height="80" />
-                    </div>
-                    <div class="col-sm-8" style="display: inline-block">
-                        <div >{{cour.name}}</div>
-                    </div>
-                   </div>
-                    
-                   <br>
 
-                </div>
-            </ng-container>
-        </div>
+        <ng-container *ngFor="let cour of course; let i = index;">
+            <div class="row ">
+                
+                
+                    <div class="col-sm-12" style="color:white;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >
+                        
+                    <div class="col-sm-8" style="background-color: transparent; padding: 1em;">
+                        <div class="col-xs-4" style="display: inline-block">
+                            <img src={{cour.courseIcon}} width="80" height="80" />
+                        </div>
+                        <div class="col-xs-8" style="display: inline-block; word-wrap: break-word;">
+                            {{cour.name}}
+                        </div>
+                    </div>
+                    </div>
+            </div>
+
+
+                <hr style="border-top: 1px solid #726f6f;">
+            
+        
+        </ng-container>
+
     </div>
     </div>
 </div>

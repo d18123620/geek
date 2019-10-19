@@ -8,7 +8,9 @@
                             <a (click)= "back($event)" style="float: left; position: absolute;">
                                     <img height="30" width="30" class="img-responsive" src="assets/img/back_btn.png">
                             </a>
-                            <h1 class="text-center" style="color: white;">{{name}}</h1>
+                            <h1 class="text-center" style="color: white;height: 1.2em;overflow: hidden; padding: 0 0.7em;">
+                                {{name}}
+                            </h1>
                     </div>
             </div>
         <br>
@@ -33,6 +35,11 @@
                     <img src="{{courseIcon}}" alt="logo" width="50" height="50" style="display: block;"> 
                     <br>                                
 
+                    <div class="col-sm-12" style="padding:0px; margin:0px;word-break: break-all;">
+                            <b>Course Title:</b> {{name}}
+                    </div>
+                    <br>
+                    
                     <label class="checkbox-container">Publish: &nbsp;
                       <input type="checkbox" [checked]="coursePublish"
                       (change)="coursePublish = !coursePublish" disabled>
@@ -89,8 +96,7 @@
                         <img [src]="quizImgSrc" width="80" height="80" />
                     </div>
                     <div class="col-sm-8" style="display: inline-block">
-                        <div style="font-size: 20px">{{cour.quizQuestion}} </div> 
-                        
+                        <div style="font-size: 20px">{{cour.quizQuestion}} </div>                         
                     </div>
                     <br>
                     <div class="col-sm-4">
