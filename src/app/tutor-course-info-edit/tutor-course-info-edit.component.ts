@@ -81,6 +81,36 @@ export class TutorCourseInfoEditComponent implements OnInit {
 	coursedesign1(event: Event) {
 		this.router.navigateByUrl('/corsefeed?courseInfo=true');
 	}
+
+	
+	deleteCourse(event: Event) {
+		let idTokenBearer =  'Bearer '+this.idToken;
+
+		const requestOptions = {                                                                                                                                                                                 
+			headers: new HttpHeaders({'Authorization': idTokenBearer}),
+		};
+		 
+		this.http.delete<any>('https://geekcharge.firebaseapp.com/api/v1/tutor/course/'+this.CourseId,requestOptions)
+		.subscribe 
+			(data => {
+				console.log(data.name);
+				//window.location.reload();
+				this.router.navigateByUrl('/tutordashboard');
+			}),
+		 (error: any) => {
+			 console.log(error.error);
+			 if (error.error === 'unauthorized'){
+				this.cookieService.delete('__session');
+				this.cookieService.delete('__profilepic');
+
+				this.router.navigateByUrl('/login');
+			 } else {
+				 this.router.navigateByUrl('/tutordashboard');
+			 }
+		 },
+		 this.router.navigateByUrl('/tutordashboard');
+	}
+
 	updateCourse(event: Event){
 
         let courseData = {"name": this.courseName,  "description": this.courseDesc, "previewVideo": this.coursePreview, "courseIcon": this.courseIcon, "published": this.coursePublish};

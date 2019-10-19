@@ -21,13 +21,16 @@
             </div> 
             <div class="form-group" style="background-color: #303030">                
                 <label for="previewFormControlInput1" style="color: white">Question</label>
-                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter Question" style="color: white;background-color: #303030;" [(ngModel)]="this.question">
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter Question" style="color: white;background-color: #303030; height: 50px;" [(ngModel)]="this.question">
                 <br>
 
                 <label for="previewFormControlInput1" style="color: white">Options</label>
                 <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option1" style="color: white;background-color: #303030;" [(ngModel)]="this.optionA">
+                <br>
                 <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option2" style="color: white;background-color: #303030;" [(ngModel)]="this.optionB">
+                <br>
                 <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option3" style="color: white;background-color: #303030;" [(ngModel)]="this.optionC">
+                <br>
                 <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option4" style="color: white;background-color: #303030;" [(ngModel)]="this.optionD">
                 <br>
                 
@@ -55,8 +58,8 @@
                 <footer class="fixed-bottom" >
                     <div class="icon-bar">
                         
-                        <a (click)= "tutorDash($event)"><img class="img-responsive" src="assets/img/profile.png" width="30" height="30"></a> 
-                        <a  (click)= "tutorProfile($event)" style="float: right"><img class="img-responsive" src="assets/img/study.png" width="30" height="30"></a>
+                        <a (click)= "tutorDash($event)"><img class="img-responsive" src="assets/img/study.png"  width="30" height="30"></a> 
+                        <a  (click)= "tutorProfile($event)" style="float: right"><img class="img-responsive" src="assets/img/profile.png" width="30" height="30"></a>
                     </div> 
 
                 </footer>

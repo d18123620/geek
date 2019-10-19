@@ -120,6 +120,12 @@ export class CorsedescriptionComponent implements OnInit {
         .subscribe()
       }
 
+      autogrow(event: Event){
+        let  textArea: any = event.target;       
+        textArea.style.overflow = 'hidden';
+        textArea.style.height = '0px';
+        textArea.style.height = textArea.scrollHeight + 'px';
+      }
 
       SaveData(event: Event){
 
