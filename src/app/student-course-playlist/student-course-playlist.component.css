@@ -6,7 +6,7 @@
   background-color: #303030 !important;
   height: 100vh;
   margin: 0;
-  height: calc(100vh - 50px);
+  height: calc(100vh);
   overflow: auto;
 }
 
@@ -159,6 +159,7 @@ footer {
   opacity: 0;
   transition: visibility 1s, opacity 1.5s linear;
 }
+
 
 .notAnswered{
   background-color: white;

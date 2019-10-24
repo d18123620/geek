@@ -25,15 +25,28 @@
                 <ng-container>
                     <nav class="navbar navbar-default navbar-fixed-top">
                       <div class="container">
-                        <div class="navbar-header">
+                        <div class="navbar-header text-center" style="background-color: #292929 !important;">
 
-                        <a (click)= "backBtn($event)" style="float: left; position: absolute; padding: 15px;">
-                            <img height="30" width="30" class="img-responsive" src="assets/img/back_btn.png">
-                        </a>
+                            <div class="col-xs-3">
+                                    <a class="navbar-brand" (click)= "backBtn($event)" style="float: left;">
+                                            <img height="20" width="20" class="img-responsive" src="assets/img/back_btn.png">
+                                    </a>
+                            </div>
 
-                        <a class="navbar-brand">
-                            <span class="glyphicon glyphicon-menu-hamburger" (click)="openSideNav($event)"></span>
-                        </a>
+
+                            <div class="col-xs-6" style="color: white;overflow: hidden;">
+                                <div style="padding: 15px 0px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+                                    {{name}} 
+                                </div>
+                            </div>
+
+                            <div class="col-xs-3">
+                                    <a class="navbar-brand">
+                                            <span class="glyphicon glyphicon-menu-hamburger" (click)="openSideNav($event)"></span>
+                                    </a>
+                            </div>
+
+
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
 
@@ -94,17 +107,14 @@
                 </ng-container>
 
                 <br>
-                <div class="col-sm-12">
+            
+                <!-- <div class="col-sm-12">
                             <h1 class="text-center" style="color: white;height: 1.2em;overflow: hidden;">{{name}}</h1>
-                    </div>
-                </div>
-                                
-            <hr style="margin-top: 0px; border-top: 1px solid #726f6f;">
+                </div> -->
+                
+            </div>                                
             
-            <ng-container *ngIf='isLoaded'>
-            
-            <div class="btn"  style="background-color: #666b6a7a;color: white;" [ngClass]="{'hideClass': activePlaylistItem === 0}" (click)='previousPlaylistItem($event)'> Previous</div>
-            <div class="btn pull-right" style="background-color: #666b6a7a;color: white;" [ngClass]="{'hideClass': activePlaylistItem === (courseItems.length - 1) }" (click)='nextPlaylistItem($event)'> Next</div>
+            <ng-container *ngIf='isLoaded'>            
 
             <br>
             <br>
@@ -113,13 +123,11 @@
             <ng-container *ngIf= "courseItems[activePlaylistItem].playlistType === 'video'">
                 <div class="col-sm-12" style="color:white;" >
                     <div class="col-sm-4" style="display: inline-block; font-size: 1.2em;">
-                        <img [src]="videoImgSrc" width="20" height="20" />
-                          &nbsp;
                          {{courseItems[activePlaylistItem].videoTitle}}
                     </div>                    
                     <br>
                     <br>
-                    <video width="100%" height="300" controls src="{{courseItems[activePlaylistItem].videoLink}}" preload="none">
+                    <video poster="assets/img/login_page_logo.png" width="100%" height="300" controls src="{{courseItems[activePlaylistItem].videoLink}}" preload="metadata" >
                     </video>
 
 
@@ -128,9 +136,7 @@
 
             <ng-container *ngIf= "courseItems[activePlaylistItem].playlistType === 'quiz'">
                 <div class="col-sm-12" style="color:white;" >
-                    <div class="col-sm-4" style="display: inline-block; font-size: 1.5em;">
-                        <img [src]="quizImgSrc" width="20" height="20" />
-                        &nbsp;
+                    <div class="col-sm-4" style="display: inline-block; font-size: 1.5em;">                        
                         {{courseItems[activePlaylistItem].quizQuestion}}                      
                     </div>
 
@@ -158,9 +164,7 @@
 
             <ng-container *ngIf= "courseItems[activePlaylistItem].playlistType === 'note'">
                 <div class="col-sm-12" style="color:white; font-size: 1.2em;" >
-                    <div class="col-sm-4" style="display: inline-block">
-                        <img [src]="NoteImgSrc" width="20" height="20" />
-                        &nbsp;
+                    <div class="col-sm-4" style="display: inline-block">                        
                         {{courseItems[activePlaylistItem].noteHead}}
                     </div>
                     <br>
@@ -171,7 +175,12 @@
                     </div>
 
                 </div>
-            </ng-container>                        
+            </ng-container>
+
+            <br>
+            <div class="btn" style="background-color: transparent; color: #ffffffb0; text-decoration: underline;" [ngClass]="{'hideClass': activePlaylistItem === 0}" (click)='previousPlaylistItem($event)'> Previous</div>
+            <div class="btn pull-right btn-success" [ngClass]="{'hideClass': activePlaylistItem === (courseItems.length - 1) }" (click)='nextPlaylistItem($event)'> Next</div>
+
             </ng-container>    
 
     </div>

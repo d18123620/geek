@@ -37,7 +37,7 @@ export class LoadingScreenComponent implements OnInit {
     {
       let idTokenBearer =  'Bearer '+this.idToken;
 
-      const requestOptions = {                                                                                                                                                                                 
+      const requestOptions = {
         headers: new HttpHeaders({'Authorization': idTokenBearer})
       };
       
