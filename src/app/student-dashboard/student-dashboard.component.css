@@ -54,3 +54,8 @@ footer {
     color: white;
     border: 0px;
 }
+
+.word-limit{
+  min-height: 24px;
+  max-height: 24px;
+}

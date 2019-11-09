@@ -52,7 +52,7 @@ footer {
 .page-title{
     background-color: transparent;
     color: white;
-    border: 0px;
+    border: 1px solid #9794949c;
 }
 
 .searchInput{
@@ -60,12 +60,20 @@ footer {
    background-color: transparent;
    font-size: 1.5em;
    border: 0px;
-   border-bottom: 1px solid white;
-   outline: none;   
-   background: url(/assets/img/search.png) right no-repeat;
-   background-size: 30px 30px;
+   outline: none;
+   height: 35px;
+}
+
+.searchInputImg {
+  height: 25px;
+  width: 25px;
 }
 
 .searchInput:focus{
   outline: none; 
+}
+
+.word-limit{
+  min-height: 24px;
+  max-height: 24px;
 }

@@ -61,3 +61,7 @@
     border: 0px;
     text-align: left;
   }
+  
+  .form-control{
+    border: 1px solid #9794949c !important;
+  }

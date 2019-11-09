@@ -36,16 +36,12 @@
             </ng-container> -->
 
             <ng-container *ngFor="let cour of myCourseArray; let i = index;">
-                    <div class="col-sm-12" style="color:white;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-center" style="color:white; word-wrap: break-word;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >
                         
-                       <div class="col-sm-8" style="background-color: transparent; border:0.5px dashed white; border-radius: 6px; padding: 0.5em;">
-                        <div class="col-sm-4" style="display: inline-block">
-                            <img src={{cour.courseIcon}} width="50" height="50" />
+                        <div style="border: 1px white; padding: 0.25em;">
+                            <img src={{cour.courseIcon}} width="60" height="60" />
+                            <h6 class="text-center word-limit">{{cour.name}}</h6>
                         </div>
-                        <div class="col-sm-8" style="display: inline-block">
-                            <div >{{cour.name}}</div>
-                        </div>
-                       </div>
                         
                        <br>
     
