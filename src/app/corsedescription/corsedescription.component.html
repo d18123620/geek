@@ -1,47 +1,56 @@
-<div class="container" id="tcoursedesc_body">
+<div class="container background-theme-color" id="tcoursedesc_body">
     <div id="wrapper">
         <div id="content">
             <div class="inner">
+                    <div class="row">
+                            <br>
+                            <div class="col-sm-12">
+                                        <a (click)= "coursedesign1($event)" style="float: left; position: absolute;">
+                                                <img height="30" width="30" class="img-responsive" src="assets/img/back_btn.png">
+                                        </a>
+                                        <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
+                                </div>
+                        </div>
             <div class="row">
-            <br>
+            <!-- <br>
             <div class="col-sm-12">
                     <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
-            </div>
+            </div> -->
             </div>
             <br>
             <div class="row ">
                 <div class="col-sm-12">
-                    <div class="well well-sm page-title" style="font-weight: bold">Create new course</div>              
+                    <div class="well well-sm page-title heading-font-size" style="font-weight: bold; padding: 0px;">Create new course</div>              
                 </div>
             </div>
             <div class="form-group">
-                <label for="titleFormControlInput1" style="color: white">Title</label>
+                <label class="subheading-font-size" for="titleFormControlInput1" style="color: white">Title</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title of the course" style="color: white;background-color: #303030;" [(ngModel)]="this.courseName">
                 <br>
-                <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
+                <label  class="subheading-font-size"  for="descriptionFormControlTextarea1" style="color: white">Description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1"  rows="6" placeholder="Overview of the course" style="color: white;background-color: #303030;" [(ngModel)]="this.courseDesc"></textarea>
                 <br>
-                <label for="previewFormControlInput1" style="color: white">Curriculum Overview Video</label>
+                <label  class="subheading-font-size"  for="previewFormControlInput1" style="color: white">Curriculum Overview Video</label>
                 <form  enctype="multipart/form-data" style="color: white">
                     <input type="file" name="file2" (change)="uploadVideo($event)" />
                 </form>
 
 
                 <br>
-                <label for="iconFormControlInput1" style="color: white">Course Icon</label>
+                <label  class="subheading-font-size"  for="iconFormControlInput1" style="color: white">Course Icon</label>
                 <form  enctype="multipart/form-data" style="color: white">
                     <input type="file" name="file1" (change)="uploadFile($event)" /><br>
                 </form>
-                <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "SaveData($event)" [disabled]="disableFields || disableFieldsImg || disableFieldsVideo">Create Course</button>
+                <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "SaveData($event)" [disabled]="disableFieldsImg || disableFieldsVideo">Create Course</button>
                 <br>
-                <button type="button" class="btn btn-danger center-block" style="float:none;" (click)= "coursedesign1($event)">Cancel Course</button>
+                <!-- <button type="button" class="btn btn-danger center-block" style="float:none;" (click)= "coursedesign1($event)">Cancel Course</button> -->
             </div>
        
         </div>
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container surface-theme-color">
         <div class="row ">
                 <footer class="fixed-bottom" >
                         

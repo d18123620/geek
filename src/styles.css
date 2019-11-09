@@ -1,1 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
+
+.heading-font-size {
+    font-size: 2.4rem !important;
+}
+
+.subheading-font-size {
+    font-size: 1.6rem  !important;
+    font-style: italic;
+}
+
+.content-font-size {
+    font-size: 1.4rem  !important;
+}
+
+#myModal .btn-primary{
+    background-color: #305664 !important;
+}
+
+#myModal .close{
+    text-shadow: none;
+    color: red;
+    font-size: 24px;
+    opacity: 1;
+}
+
+#myModal{
+    background-color: #000000a6; 
+    color: white;
+}
+
+#myModal .modal-content{
+    background-color: #222222;
+    color: white;
+}
+
+
+.background-theme-color {
+    background-color: #1c1b1b !important;
+    color: white;
+}
+
+.surface-theme-color {
+    background-color: #121212 !important;
+    color: white;
+}
+
+.error-theme-color {
+    background-color: #CF6679 !important;
+    color: black;
+}
+
+.primary-theme-color {
+    background-color: #305664 !important;
+    color: white;
+}
+
+.primary-theme-color:hover {
+    background-color: #305664 !important;
+    color: white;
+}
+
+.secondary-theme-color {
+    background-color: #03DAC6 !important;
+    color: black !important;
+}
+
+.primary-text-color {
+    color: #305664 !important;
+}
+
+.error-text-color {
+    color: #CF6679 !important;
+}
+
+.secondary-text-color{
+    color: #03DAC6 !important;
+}
+
+.text-theme-color {
+    color: #ffffff !important;
+}
+
+.video-background-color {
+    background-color: #22221f;
+}

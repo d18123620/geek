@@ -1,4 +1,4 @@
-<div class="container" id="tprofile_body">
+<div class="container background-theme-color" id="tprofile_body">
     <div id="wrapper">
         <div id="content">
             <div id="inner">
@@ -11,7 +11,7 @@
             <br>
             <div class="row ">
                 <div class="col-sm-12">
-                    <div class="well well-sm page-title" style="font-weight: bold">Profile</div>
+                    <div class="well well-sm page-title heading-font-size" style="font-weight: bold">Profile</div>
                 </div>
             </div>
             <br>
@@ -26,8 +26,10 @@
                 <div class="col-sm-12 text-center" id="toptions">
                     <!-- <a (click)= "tutorDesc1($event)" style="color: yellow">About Tutor</a> -->
                     <!-- <br> -->
-                    <div class="col-sm-12">
-                        <div class="col-sm-8" style="border: 1px dashed white; padding: 0.5em;">
+                    <div class="col-sm-12 subheading-font-size">
+                        {{ this.tutorName }}
+
+                        <!-- <div class="col-sm-8" style="border: 1px dashed white; padding: 0.5em;">
                             <label for="titleFormControlInput1" style="color: white">Author Name</label>
                             <input type="text" class="form-control" style="color: white;background-color: #303030;display: inline-block;"  [(ngModel)]="this.tutorName" />
                             <br>
@@ -36,7 +38,7 @@
                             <textarea class="form-control" rows="3" style="color: white;background-color: #303030;"  [(ngModel)]="this.tutorDesc" ></textarea>
                             <br>
                             <button type="button" class="btn btn-primary center-block" style="float:none;" (click)= "SaveData($event)">Save</button>
-                        </div>   
+                        </div>    -->
                        
                     </div>
                     <br>
@@ -62,7 +64,7 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container surface-theme-color">
         <div class="row ">
                 <footer class="fixed-bottom" >
                     <div class="icon-bar">

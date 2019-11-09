@@ -11,7 +11,7 @@
             <br>
             <div class="row ">
                 <div class="col-sm-12">
-                    <div class="well well-sm page-title" style="font-weight: bold">Profile</div>
+                    <div class="well well-sm page-title heading-font-size" style="font-weight: bold">Profile</div>
                 </div>
             </div>
             <br>
@@ -27,9 +27,10 @@
                     <!-- <a (click)= "tutorDesc1($event)" style="color: yellow">About Tutor</a> -->
                     <!-- <br> -->
                     <div class="col-sm-12">
-                        <div class="col-sm-8">
-                            <label for="titleFormControlInput1" style="color: white">Student Name</label>
-                            <input type="text" class="form-control" style="color: white;background-color: #303030;display: inline-block;"  [(ngModel)]="this.tutorName" />
+                        <div class="col-sm-8 subheading-font-size">
+                            {{ this.tutorName }}
+                            <!-- <label for="titleFormControlInput1" style="color: white">Student Name</label> -->
+                            <!-- <input type="text" class="form-control" style="color: white;background-color: #303030;display: inline-block;"  [(ngModel)]="this.tutorName" /> -->
                             <br>
                         </div>   
                        
@@ -57,7 +58,7 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container surface-theme-color">
     <div class="row ">
             <footer class="fixed-bottom" >
                 <div class="icon-bar col-sm-12">

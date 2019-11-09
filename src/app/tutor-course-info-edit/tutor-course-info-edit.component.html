@@ -16,27 +16,32 @@
                 <br>
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="well well-sm page-title" style="font-weight: bold; padding: 0px; margin: 0px;">Edit Course Information</div>              
+                        <div class="well well-sm page-title heading-font-size" style="font-weight: bold; padding: 0px; margin: 0px;">Edit Course Information</div>              
                     </div>
                 </div>
-
+                <div class="col-xs-12">
+                    &nbsp;
+                </div>
                 <div>
-                    <div class="btn btn-success" (click)='publishChange($event, true)' *ngIf='!coursePublish'>Publish Course</div>
-                    <div class="btn btn-danger" (click)='publishChange($event, false)' *ngIf='coursePublish'>Unpublish Course</div>
+                    <app-toggle-button (changed)="coursePublish=$event">
+                    </app-toggle-button>
+                    <p class="subheading-font-size">Course is {{coursePublish ? ' Visible' : ' Invisible'}}.</p>
+                    <!-- <div class="btn btn-success" (click)='publishChange($event, true)' *ngIf='!coursePublish'>Publish Course</div>
+                    <div class="btn btn-danger" (click)='publishChange($event, false)' *ngIf='coursePublish'>Unpublish Course</div> -->
                 </div>
 
             <br>
             
             <div class="form-group">
-                <label for="titleFormControlInput1" style="color: white">Title</label>
+                <label class="form-group subheading-font-size" for="titleFormControlInput1" style="color: white">Title</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Loading..." style="color: white;background-color: #303030;" [(ngModel)]="this.courseName">
                 <br>
-                <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
+                <label class="subheading-font-size" for="descriptionFormControlTextarea1" style="color: white">Description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1"  rows="6" placeholder="Loading..." style="color: white;background-color: #303030;" [(ngModel)]="this.courseDesc"></textarea>
                 <br>
 
-                <div class="col-sm-12" >
-                    <label for="previewFormControlInput1" style="color: white">Curriculum Overview Video</label>
+                <div class="col-sm-12" style= "padding: 0px" >
+                    <label class="form-group subheading-font-size" for="previewFormControlInput1" style="color: white">Curriculum Overview Video</label>
                     <video height="200" width="100%" controls src={{previewVideo}}></video>
                     <br>
                     <form  enctype="multipart/form-data" style="color: white">
@@ -48,8 +53,8 @@
                 </div>
                 <br>
 
-                <div class="col-sm-12" >
-                    <label for="iconFormControlInput1" style="color: white">Course Icon</label>
+                <div class="col-sm-12" style= "padding: 0px">
+                    <label class="subheading-font-size" for="iconFormControlInput1" style="color: white">Course Icon</label>
                     <br>
                     <img height="100px" width="100px"  class='imgz-center' src={{courseIcon}}/>
                     <br>
@@ -60,10 +65,10 @@
                 </div>
                 <br>
 
-                <button type="button" class="btn btn-primary btn-block center-block" style="float:none; width: 80%;" (click)= "updateCourse($event)" [disabled]="disableFields || disableFieldsImg || disableFieldsVideo">Update Course</button>
+                <button type="button" class="btn primary-theme-color btn-block center-block" style="float:none; width: 80%;" (click)= "updateCourse($event)" [disabled]="disableFields || disableFieldsImg || disableFieldsVideo">Update Course</button>
                 <br>
                 <!-- <button type="button" class="btn btn-danger btn-block center-block" style="float:none; width: 80%;" (click)= "coursedesign1($event)">Back</button> -->
-                <div class="btn btn-danger btn-block center-block" style="float:none; width: 80%;" data-toggle="modal" data-target="#myModal" >Delete Course</div>
+                <div class="btn error-theme-color btn-block center-block" style="float:none; width: 80%;" data-toggle="modal" data-target="#myModal" >Delete Course</div>
 
             </div>
        
@@ -71,7 +76,7 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container surface-theme-color">
         <div class="row ">
                 <footer class="fixed-bottom" >
                         
@@ -92,15 +97,16 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h3 class="modal-title">Alert!!</h3>
+              <h3 class="modal-title heading-font-size">Delete</h3>
             </div>
-            <div class="modal-body">
-                <h4 style="color: black">Are you sure you want to delete <b>{{this.courseName}}?</b>     </h4>
+            <div class="modal-body ">
+                <h4 class="content-font-size">Are you sure you want to delete <b>{{this.courseName}}?</b>     </h4>
                 <br/>
             </div>
             <div class="modal-footer" style="text-align:center;">
               <br/>  
-              <button type="button" class="btn btn-danger btn-block" data-dismiss="modal" (click)='deleteCourse($event)'>Yes Delete</button>
+              <button type="button" class="btn primary-theme-color" data-dismiss="modal" (click)='deleteCourse($event)'>Yes</button>&nbsp;&nbsp;
+              <button type="button" class="btn error-theme-color" data-dismiss="modal" data-dismiss="modal">No</button>
             </div>
           </div>
           

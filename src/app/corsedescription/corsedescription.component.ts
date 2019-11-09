@@ -40,9 +40,9 @@ export class CorsedescriptionComponent implements OnInit {
   courseDesc='';
   coursePreview='';
   courseIcon='';
-  disableFields = false;
-  disableFieldsImg = false;
-  disableFieldsVideo = false;  
+  disableFields = true;
+  disableFieldsImg = true;
+  disableFieldsVideo = true;  
 
   constructor(private router: Router,private storage: AngularFireStorage,private cookieService: CookieService, 
     public auth: AuthService,

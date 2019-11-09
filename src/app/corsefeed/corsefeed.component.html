@@ -40,13 +40,17 @@
                     </div>
                     <br>
                     
-                    <label class="checkbox-container">Publish: &nbsp;
+                    <!-- <label class="checkbox-container">Publish: &nbsp;
                       <input type="checkbox" [checked]="coursePublish"
                       (change)="coursePublish = !coursePublish" disabled>
                       <span class="checkbox-checkmark"></span>
-                    </label>
-
-                    <br>
+                    </label> -->
+                    <span class="subheading-font-size" *ngIf="coursePublish">Course is Visible</span>
+                    <span class="subheading-font-size" *ngIf="!coursePublish">Course is Invisible</span> 
+                    
+                    <div class="col-xs-12">
+                        &nbsp;
+                    </div>
 
                     <div class="col-sm-12" style="padding:0px; margin:0px;word-break: break-all;">
                         <b>Description:</b> {{description}}
