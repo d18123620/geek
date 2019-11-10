@@ -76,6 +76,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
       this.activePlaylistItem = index;
       this.closeNav(event);
       this.resetButtons();
+      document.querySelector('#wrapper').scrollIntoView();
     }
 
     previousPlaylistItem(event: Event){
@@ -83,7 +84,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
          
          this.activePlaylistItem--;
          this.resetButtons();
-         window.scroll(0, 0);
+         document.querySelector('#wrapper').scrollIntoView();
       }
     }
 
@@ -92,7 +93,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
         
          this.activePlaylistItem++;
          this.resetButtons();
-         window.scroll(0, 0);
+         document.querySelector('#wrapper').scrollIntoView();
       }
     }
 

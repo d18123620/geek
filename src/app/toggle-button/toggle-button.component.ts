@@ -72,10 +72,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
   `],
   styleUrls: ['./toggle-button.component.css']
 })
+
 export class ToggleButtonComponent {
 
   @Output() changed = new EventEmitter<boolean>();
-
-  
 
 }

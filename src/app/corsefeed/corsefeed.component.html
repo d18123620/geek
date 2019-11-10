@@ -54,8 +54,9 @@
                     <img src="{{courseIcon}}" alt="logo" width="50" height="50" style="display: block;"> 
                     <br>                                
 
-                    <div class="col-sm-12 subheading-font-size" style="padding:0px; margin:0px;word-break: break-all;">
-                            <p class="subheading-font-size">Course Title</p> <p class="content-font-size">{{name}}</p>
+                    <div class="col-sm-12" style="padding:0px; margin:0px;word-break: break-all;">
+                            <p class="subheading-font-size">Course Title</p>
+                            <p class="content-font-size">{{name}}</p>
                     </div>
                     <br>
                     
@@ -65,9 +66,14 @@
                       <span class="checkbox-checkmark"></span>
                     </label> -->
                     <p class="subheading-font-size">Course Stauts</p>
-                    <span class="content-font-size" *ngIf="coursePublish">Course is Visible</span>
-                    <span class="content-font-size" *ngIf="!coursePublish">Course is Invisible</span> 
                     
+                    <p>
+                        <span class="content-font-size" style="color:green;" *ngIf="coursePublish">Published</span>&nbsp;
+                        <span class="content-font-size" style="color:red;"*ngIf="!coursePublish">Unpublished</span> &nbsp;
+                        <span class="checkbox-checkmark" style="background-color:green;" *ngIf="coursePublish"></span>
+                        <span class="checkbox-checkmark" style="background-color:red;" *ngIf="!coursePublish"></span>
+                    </p>
+
                     <div class="col-xs-12">
                         &nbsp;
                     </div>

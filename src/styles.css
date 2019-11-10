@@ -7,6 +7,7 @@
 .subheading-font-size {
     font-size: 1.6rem  !important;
     font-style: italic;
+    font-weight: bold;
 }
 
 .content-font-size {
@@ -33,6 +34,10 @@
 #myModal .modal-content{
     background-color: #222222;
     color: white;
+}
+
+#myModal .modal-footer{
+    border-top: none !important;
 }
 
 
@@ -97,4 +102,9 @@
 select, select option, select .active{
     background: white;
     color: black;
+}
+
+.word-limit{
+    overflow: hidden;
+    height: 3rem;
 }

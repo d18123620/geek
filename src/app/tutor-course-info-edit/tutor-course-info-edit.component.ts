@@ -61,6 +61,7 @@ export class TutorCourseInfoEditComponent implements OnInit {
 	quizImgSrc: string = "assets/img/Quiz_white.png";
 	NoteImgSrc: string = "assets/img/notes_white.png";
 	coursePublish:any;
+	dataLoaded: any = false;
 
     constructor(private router: Router,private storage: AngularFireStorage,private cookieService: CookieService, 
 			    public auth: AuthService,
@@ -138,6 +139,7 @@ export class TutorCourseInfoEditComponent implements OnInit {
 
 	publishChange(event: Event, publish) {
 		this.coursePublish = publish;
+		this.updateCourse(event);
 	}
 
 	uploadVideo(event) {
@@ -223,7 +225,8 @@ export class TutorCourseInfoEditComponent implements OnInit {
           this.courseItems = data.courseItems;
 					this.previewVideo = data.previewVideo;
 					this.coursePreview = data.previewVideo;
-          console.log(this.previewVideo);
+					console.log(this.previewVideo);
+					this.dataLoaded = true;
         },
        (error: any) => {
          console.log(error.error);
