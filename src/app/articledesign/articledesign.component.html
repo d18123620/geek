@@ -11,21 +11,22 @@
                                     <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
                                 </div>
                     </div>
+                    <br/>
             <div class="row">
                 <div class="col-sm-12 text-center">                    
-                    <div class="well well-sm page-title" style="font-weight: bold">Add Note</div>
+                    <div class="well well-sm page-title heading-font-size" style="font-weight: bold;padding:0px;">Add Note</div>
                     <!-- <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" placeholder="Overview of the course" style="color: white;background-color: #303030;"></textarea> -->
                 </div>
             </div>
             <div class="form-group">
-                    <label for="descriptionFormControlTextarea1" style="color: white">Title</label>
+                    <label class="subheading-font-size" for="descriptionFormControlTextarea1" style="color: white">Title</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Title" style="color: white;background-color: #303030;" [(ngModel)]='articleTitle' ngDefaultControl>
                     <br>
-                    <label for="descriptionFormControlTextarea1" style="color: white" >Description</label>
+                    <label class="subheading-font-size" for="descriptionFormControlTextarea1" style="color: white" >Description</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1"  rows="5" placeholder="Enter Description" style="color: white;background-color: #303030;" [(ngModel)]='articleBody' ngDefaultControl></textarea>
                     <br>
-                    <button class="btn btn-primary center-block" (click)= "Coursefeed($event)"> Save </button>
+                    <button class="btn primary-theme-color center-block" (click)= "Coursefeed($event)"> Save </button>
                     <br>
             </div>  
         </div>
@@ -33,7 +34,7 @@
         </div> 
     </div>
 </div>
-<div class="container">
+<div class="container surface-theme-color">
         <div class="row ">
                 <footer class="fixed-bottom" >
                     <div class="icon-bar">

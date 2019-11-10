@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-sm-12">                    
                     <br>
-                    <div class="well well-sm page-title" style="font-weight: bold">Edit Video Item</div>
+                    <div class="well well-sm page-title heading-font-size" style="font-weight: bold;padding:0px;">Edit Video Item</div>
                     <!-- <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" placeholder="Overview of the course" style="color: white;background-color: #303030;"></textarea> -->
                 </div>
@@ -28,29 +28,29 @@
             <div class="form-group">
                 <!-- <label for="previewFormControlInput1" style="color: white">Introduction Video</label>
                 <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Youtube embed link for intro video" style="color: white;background-color: #303030;"> -->                
-                <label for="previewFormControlInput1" style="color: white">Lecture Video</label>
+                <label class="subheading-font-size" for="previewFormControlInput1" style="color: white">Lecture Video</label>
                 <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter the title of the video" style="color: white;background-color: #303030;height: 50px;" [(ngModel)]="this.videoTitle">
                 <br>
 
-                <div class="col-sm-12" style="border: 1px dashed white;">
+                <div class="col-sm-12" style="padding: 0px;">
 	                <video width="100%" height="200px" controls src="{{this.videoLink}}"></video>
-	                <label for="previewFormControlInput1" style="color: white">Upload Video</label>
+	                <label class="subheading-font-size" for="previewFormControlInput1" style="color: white">Upload Video</label>
 	                <br>
 	                <form  enctype="multipart/form-data" style="color: white">
 	                    <input type="file" name="file2" (change)="uploadVideo($event)" /><br>
 	                </form>
                 </div>
                 <br>
-                <button class="btn btn-primary center-block" (click)= "updateCourse($event)" [disabled]="disableFieldsVideo"> Update </button>
+                <button class="btn primary-theme-color center-block" (click)= "updateCourse($event)" [disabled]="disableFieldsVideo"> Update </button>
                 <br>
-                <button class="btn btn-danger center-block"   data-toggle="modal" data-target="#myModal" > Delete </button>
+                <button class="btn error-theme-color center-block"   data-toggle="modal" data-target="#myModal" > Delete </button>
                 <br>
             </div>
         </div>
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container surface-theme-color">
         <div class="row ">
                 <footer class="fixed-bottom" >
                     <div class="icon-bar">

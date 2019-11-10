@@ -20,17 +20,17 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <br>
-                    <div class="well well-sm page-title" style="font-weight: bold">Update Quiz</div>
+                    <div class="well well-sm page-title heading-font-size" style="font-weight: bold;padding: 0px;">Update Quiz</div>
                     <!-- <label for="descriptionFormControlTextarea1" style="color: white">Description</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" placeholder="Overview of the course" style="color: white;background-color: #303030;"></textarea> -->
                 </div>
             </div> 
-            <div class="form-group" style="background-color: #303030">                
-                <label for="previewFormControlInput1" style="color: white">Question</label>
+            <div class="form-group">                
+                <label class="subheading-font-size" for="previewFormControlInput1" style="color: white">Question</label>
                 <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter Question" style="color: white;background-color: #303030;" [(ngModel)]="this.question">
                 <br>
 
-                <label for="previewFormControlInput1" style="color: white">Options</label>
+                <label class="subheading-font-size" for="previewFormControlInput1" style="color: white">Options</label>
                 <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option1" style="color: white;background-color: #303030;" [(ngModel)]="optionA">
                 <br>
                 <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option2" style="color: white;background-color: #303030;" [(ngModel)]="optionB">
@@ -40,7 +40,7 @@
                 <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Option4" style="color: white;background-color: #303030;" [(ngModel)]="optionD">
                 <br>
                 
-                <label for="previewFormControlInput1" style="color: white">Correct Answer is: </label>
+                <label class="subheading-font-size" for="previewFormControlInput1" style="color: white">Correct Answer is: </label>
 
                 &nbsp;
                 <select name='corretAnswer' [(ngModel)]="optionCorrect">
@@ -52,9 +52,9 @@
 
                 <br>
                 <br>
-                <button class="btn btn-primary center-block" (click)= "updateCourse($event)" > Update </button>
+                <button class="btn primary-theme-color center-block" (click)= "updateCourse($event)" > Update </button>
                 <br>
-                <button class="btn btn-danger center-block" data-toggle="modal" data-target="#myModal" > Delete </button>
+                <button class="btn error-theme-color center-block" data-toggle="modal" data-target="#myModal" > Delete </button>
                 <!-- <div class="btn btn-danger pull-right glyphicon glyphicon-trash" style='width: 50px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='deletePlaylist($event,cour.playlistID)'></div> -->
 
                 <br>                
@@ -63,7 +63,7 @@
     </div>
     </div>
 </div>
-<div class="container">
+<div class="container surface-theme-color">
         <div class="row ">
                 <footer class="fixed-bottom" >
                     <div class="icon-bar">

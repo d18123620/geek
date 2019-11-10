@@ -36,10 +36,10 @@
 
         <div class="container">
             <ul id="myTabs" class="nav nav-pills text-center" role="tablist" data-tabs="tabs">
-                <li class="col-sm-6" [ngClass]="{'active': courseInfoTab==false}">
+                <li style="padding: 0px;" class="col-sm-6" [ngClass]="{'active': courseInfoTab==false}">
                     <a href="#playlist" data-toggle="tab" class="col-sm-6">Playlist</a>
                 </li>
-                <li class="col-sm-6" [ngClass]="{'active': courseInfoTab==true}">
+                <li style="padding: 0px;" class="col-sm-6" [ngClass]="{'active': courseInfoTab==true}">
                     <a href="#courseData" data-toggle="tab" class="col-sm-6">Course Info</a>
                 </li>
 
@@ -54,8 +54,8 @@
                     <img src="{{courseIcon}}" alt="logo" width="50" height="50" style="display: block;"> 
                     <br>                                
 
-                    <div class="col-sm-12" style="padding:0px; margin:0px;word-break: break-all;">
-                            <b>Course Title:</b> {{name}}
+                    <div class="col-sm-12 subheading-font-size" style="padding:0px; margin:0px;word-break: break-all;">
+                            <p class="subheading-font-size">Course Title</p> <p class="content-font-size">{{name}}</p>
                     </div>
                     <br>
                     
@@ -64,27 +64,28 @@
                       (change)="coursePublish = !coursePublish" disabled>
                       <span class="checkbox-checkmark"></span>
                     </label> -->
-                    <span class="subheading-font-size" *ngIf="coursePublish">Course is Visible</span>
-                    <span class="subheading-font-size" *ngIf="!coursePublish">Course is Invisible</span> 
+                    <p class="subheading-font-size">Course Stauts</p>
+                    <span class="content-font-size" *ngIf="coursePublish">Course is Visible</span>
+                    <span class="content-font-size" *ngIf="!coursePublish">Course is Invisible</span> 
                     
                     <div class="col-xs-12">
                         &nbsp;
                     </div>
 
                     <div class="col-sm-12" style="padding:0px; margin:0px;word-break: break-all;">
-                        <b>Description:</b> {{description}}
+                        <p class="subheading-font-size">Description</p> <p class="content-font-size">{{description}}</p>
                     </div>
 
 
                     <br>
-                    <label for="descriptionFormControlTextarea1" style="color: white;float: left;">Curriculum Overview</label>
+                    <label class="subheading-font-size" for="descriptionFormControlTextarea1" style="color: white;float: left;">Curriculum Overview</label>
                     <video width="100%" height="200" controls src="{{previewVideo}}">
                     </video>
 
                     <br>
 
                     <div class="col-sm-8">
-                        <div class="btn btn-primary btn-block" (click)='courseEdit($event)'>Edit Course Info</div>
+                        <div class="btn primary-theme-color btn-block" (click)='courseEdit($event)'>Edit Course Info</div>
                         <br>
                         <!-- <div class="btn btn-danger btn-block" (click)='deleteCourse($event)'>Delete Course</div> -->
                     </div>
@@ -122,7 +123,7 @@
             
 
             <ng-container *ngIf= "cour.playlistType === 'video'">
-                    <div class="col-xs-12" style="color:white;" >
+                    <div class="col-xs-12" style="color:white; padding: 0px;" >
                         <div class="col-xs-10" style="display: inline-block; padding: 0px;">                        
                             <div class="col-xs-1" style="padding: 0px;">
                                 <img [src]="videoImgSrc" width="30" height="30" />
@@ -158,7 +159,7 @@
                 </div>
             </ng-container>  -->
             <ng-container *ngIf= "cour.playlistType === 'quiz'">
-                    <div class="col-xs-12" style="color:white;" >
+                    <div class="col-xs-12" style="color:white; padding: 0px;" >
                         <div class="col-xs-10" style="display: inline-block; padding: 0px;">                        
                             <div class="col-xs-1" style="padding: 0px;">
                                 <img [src]="quizImgSrc" width="30" height="30" />
@@ -177,7 +178,7 @@
                     </div>                    
             </ng-container>  
             <ng-container *ngIf= "cour.playlistType === 'note'">
-                <div class="col-xs-12" style="color:white;" >
+                <div class="col-xs-12" style="color:white; padding: 0px;" >
                     <div class="col-xs-10" style="display: inline-block; padding: 0px;">                        
                         <div class="col-xs-1" style="padding: 0px;">
                             <img [src]="NoteImgSrc" width="30" height="30" />

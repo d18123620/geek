@@ -14,7 +14,8 @@
 }
 
 #myModal .btn-primary{
-    background-color: #305664 !important;
+    /* background-color: #305664 !important; */
+    background-color: #337ab7 !important;
 }
 
 #myModal .close{
@@ -47,16 +48,18 @@
 
 .error-theme-color {
     background-color: #CF6679 !important;
-    color: black;
+    color: white;
 }
 
 .primary-theme-color {
-    background-color: #305664 !important;
+    /* background-color: #305664 !important; */
+    background-color: #337ab7 !important;
     color: white;
 }
 
 .primary-theme-color:hover {
-    background-color: #305664 !important;
+    /* background-color: #305664 !important; */
+    background-color: #337ab7 !important;
     color: white;
 }
 
@@ -71,7 +74,8 @@
 
 
 .primary-text-color {
-    color: #305664 !important;
+    /* color: #305664 !important; */
+    color: #337ab7 !important;
 }
 
 .error-text-color {
