@@ -65,6 +65,11 @@
     color: black !important;
 }
 
+.transparent-theme-color {
+    background-color: transparent !important;
+}
+
+
 .primary-text-color {
     color: #305664 !important;
 }

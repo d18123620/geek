@@ -83,6 +83,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
          
          this.activePlaylistItem--;
          this.resetButtons();
+         window.scroll(0, 0);
       }
     }
 
@@ -91,6 +92,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
         
          this.activePlaylistItem++;
          this.resetButtons();
+         window.scroll(0, 0);
       }
     }
 

@@ -78,7 +78,7 @@
 
             <div role="tabpanel" class="tab-pane fade playlistTab" [ngClass]="{'in active': courseInfoTab==false}" id='playlist'>          
             <ng-container *ngFor="let cour of courseItems; let i = index;">
-            <ng-container *ngIf= "cour.playlistType === 'video'">
+            <!-- <ng-container *ngIf= "cour.playlistType === 'video'">
                 <div class="col-sm-12" style="color:white;" >            
                     <div class="col-sm-12" style="display: inline-block">
                         
@@ -90,13 +90,32 @@
                     </div>
                     <br>
                     <div class="col-sm-4">
-                        <div class="btn btn-success glyphicon glyphicon-pencil" style='width: 50px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='videoEdit($event,cour.playlistID)'></div>
-                        <!-- <div class="btn btn-danger pull-right glyphicon glyphicon-trash" style='width: 50px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='deletePlaylist($event,cour.playlistID)'></div>                 -->
+                        <div class="btn primary-theme-color glyphicon glyphicon-pencil" style='width: 50px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='videoEdit($event,cour.playlistID)'></div>
                     </div>                    
                     <hr>
                 </div>
-            </ng-container>
-            <ng-container *ngIf= "cour.playlistType === 'quiz'">
+            </ng-container> -->
+
+            <ng-container *ngIf= "cour.playlistType === 'video'">
+                    <div class="col-xs-12" style="color:white;" >
+                        <div class="col-xs-10" style="display: inline-block; padding: 0px;">                        
+                            <div class="col-xs-1" style="padding: 0px;">
+                                <img [src]="videoImgSrc" width="30" height="30" />
+                            </div>
+                            <div class="col-xs-11" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;"> 
+                                {{cour.videoTitle}}
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="btn transparent-theme-color glyphicon glyphicon-pencil" style='width: 50px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='videoEdit($event,cour.playlistID)'></div>
+                        </div>                    
+                        <hr>
+                    </div>
+                    <div class="col-xs-12">
+                            &nbsp;
+                    </div>
+            </ng-container>  
+            <!-- <ng-container *ngIf= "cour.playlistType === 'quiz'">
                 <div class="col-sm-12" style="color:white;" >
                     <div class="col-sm-12" style="display: inline-block">
                        
@@ -108,31 +127,50 @@
                     </div>
                     <br>
                     <div class="col-sm-4">
-                        <div class="btn btn-success glyphicon glyphicon-pencil" style='width: 50px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='quizEdit($event,cour.playlistID)'></div>
-
-                        <!-- <div class="btn btn-danger pull-right glyphicon glyphicon-trash"style='width: 50px;'  playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='deletePlaylist($event,cour.playlistID)'></div>                          -->
+                        <div class="btn primary-theme-color glyphicon glyphicon-pencil" style='width: 50px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='quizEdit($event,cour.playlistID)'></div>
                     </div>
                     <hr>
                 </div>
-            </ng-container> 
-            <ng-container *ngIf= "cour.playlistType === 'note'">
-                <div class="col-sm-12" style="color:white;" >
-                    <div class="col-sm-12" style="display: inline-block">
-                        
-                        <div style="font-size: 30px">
-                            <img [src]="NoteImgSrc" width="30" height="30" />
-                            {{cour.noteHead}} 
+            </ng-container>  -->
+            <ng-container *ngIf= "cour.playlistType === 'quiz'">
+                    <div class="col-xs-12" style="color:white;" >
+                        <div class="col-xs-10" style="display: inline-block; padding: 0px;">                        
+                            <div class="col-xs-1" style="padding: 0px;">
+                                <img [src]="quizImgSrc" width="30" height="30" />
+                            </div>
+                            <div class="col-xs-11" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;"> 
+                                {{cour.quizQuestion}}
+                            </div>
                         </div>
-                        
+                        <div class="col-xs-2">
+                            <div class="btn transparent-theme-color glyphicon glyphicon-pencil" style='width: 50px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='quizEdit($event,cour.playlistID)'></div>
+                        </div>                    
+                        <hr>
                     </div>
-                    <br>
-                    <div class="col-sm-4">
-                        <div class="btn btn-success glyphicon glyphicon-pencil" style='width: 50px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='noteEdit($event,cour.playlistID)'></div>
+                    <div class="col-xs-12">
+                            &nbsp;
+                    </div>                    
+            </ng-container>  
+            <ng-container *ngIf= "cour.playlistType === 'note'">
+                <div class="col-xs-12" style="color:white;" >
+                    <div class="col-xs-10" style="display: inline-block; padding: 0px;">                        
+                        <div class="col-xs-1" style="padding: 0px;">
+                            <img [src]="NoteImgSrc" width="30" height="30" />
+                        </div>
+                        <div class="col-xs-11" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;"> 
+                            {{cour.noteHead}}
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="btn transparent-theme-color glyphicon glyphicon-pencil" style='width: 50px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='noteEdit($event,cour.playlistID)'></div>
                         <!-- <div class="btn btn-danger pull-right glyphicon glyphicon-trash" style='width: 50px;' playlistItemId='cour.playlistID' [attr.playlistID]='cour.playlistID' (click)='deletePlaylist($event,cour.playlistID)'></div>                          -->
                     </div>                    
 
                     <hr>
                 </div>
+                <div class="col-xs-12">
+                        &nbsp;
+                </div>                
             </ng-container>                        
             </ng-container>
             <div class="row" style="padding: 0 2em;">
