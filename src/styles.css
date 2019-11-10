@@ -84,3 +84,8 @@
 .video-background-color {
     background-color: #22221f;
 }
+
+select, select option, select .active{
+    background: white;
+    color: black;
+}

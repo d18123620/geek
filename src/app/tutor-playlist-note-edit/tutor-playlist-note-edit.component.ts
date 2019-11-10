@@ -43,6 +43,32 @@ export class TutorPlaylistNoteEditComponent implements OnInit {
   cancelEdit (event){
     this.router.navigateByUrl('/corsefeed');
   }
+  deletePlaylist(event: Event) {
+    let idTokenBearer =  'Bearer '+this.idToken;
+
+    const requestOptions = {                                                                                                                                                                                 
+      headers: new HttpHeaders({'Authorization': idTokenBearer}),
+    };
+     
+    this.http.delete<any>('https://geekcharge.firebaseapp.com/api/v1/tutor/course/'+this.CourseId + '/' + this.playlistId,requestOptions)
+    .subscribe 
+      ((data => {
+        console.log(data.name);
+        this.router.navigateByUrl('/corsefeed');
+      }),
+     (error: any) => {
+       console.log(error.error);
+       if (error.error === 'unauthorized'){
+        this.cookieService.delete('__session');
+        this.cookieService.delete('__profilepic');
+        this.router.navigateByUrl('/login');
+       } else {
+        this.router.navigateByUrl('/corsefeed');
+       }
+     }).add(() => {
+        this.router.navigateByUrl('/corsefeed');
+     });
+  }
 
   updateCourse(event: Event){
 

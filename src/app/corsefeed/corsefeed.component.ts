@@ -90,7 +90,7 @@ export class CorsefeedComponent implements OnInit {
        
       this.http.delete<any>('https://geekcharge.firebaseapp.com/api/v1/tutor/course/'+this.CourseId + '/' + playlistId,requestOptions)
       .subscribe 
-        (data => {
+        ((data => {
           console.log(data.name);
           window.location.reload();
         }),
@@ -99,13 +99,13 @@ export class CorsefeedComponent implements OnInit {
          if (error.error === 'unauthorized'){
           this.cookieService.delete('__session');
           this.cookieService.delete('__profilepic');
-
           this.router.navigateByUrl('/login');
          } else {
            window.location.reload();
          }
-       },
-       window.location.reload();
+       }).add(() => {
+           window.location.reload();
+       });
     }
 
     tutorProfile(event: Event) {

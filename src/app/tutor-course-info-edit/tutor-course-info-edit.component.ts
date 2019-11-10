@@ -92,9 +92,8 @@ export class TutorCourseInfoEditComponent implements OnInit {
 		 
 		this.http.delete<any>('https://geekcharge.firebaseapp.com/api/v1/tutor/course/'+this.CourseId,requestOptions)
 		.subscribe 
-			(data => {
+			((data => {
 				console.log(data.name);
-				//window.location.reload();
 				this.router.navigateByUrl('/tutordashboard');
 			}),
 		 (error: any) => {
@@ -102,13 +101,14 @@ export class TutorCourseInfoEditComponent implements OnInit {
 			 if (error.error === 'unauthorized'){
 				this.cookieService.delete('__session');
 				this.cookieService.delete('__profilepic');
-
 				this.router.navigateByUrl('/login');
 			 } else {
 				 this.router.navigateByUrl('/tutordashboard');
 			 }
-		 },
-		 this.router.navigateByUrl('/tutordashboard');
+		 }).add(() => {
+			this.router.navigateByUrl('/tutordashboard');
+		 })
+
 	}
 
 	updateCourse(event: Event){
