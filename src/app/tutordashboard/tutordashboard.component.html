@@ -11,44 +11,47 @@
         <br>
         <div class="row ">
             <div class="col-sm-12">
-                <div class="well well-sm page-title" style="font-weight: bold">Courses</div>
+                <div class="well well-sm page-title heading-font-size" style="font-weight: bold">Courses</div>
             </div>
         </div>
-        <br>
-
+        <div class="row" style="padding: 0 2em;">
+                <div class="btn primary-theme-color glyphicon glyphicon-plus" (click)="coursedesign1($event)">                    
+                </div>
+        </div>
+        <br/>
         <ng-container *ngFor="let cour of course; let i = index;">
-            <div class="row ">
+            <!-- <div class="row surface-theme-color" style= "margin: 1em">
                 
                 
-                    <div class="col-sm-12" style="color:white;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >
+                    <div class="col-sm-12 " style="color:white;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >
                         
                     <div class="col-sm-8" style="background-color: transparent; padding: 1em;">
                         <div class="col-xs-4" style="display: inline-block">
-                            <img src={{cour.courseIcon}} width="80" height="80" />
+                            <img src={{cour.courseIcon}} width="50" height="50" />
                         </div>
-                        <div class="col-xs-8" style="display: inline-block; word-wrap: break-word;">
+                        <div class="col-xs-8 content-font-size" style="display: inline-block; word-wrap: break-word;">
                             {{cour.name}}
                         </div>
                     </div>
                     </div>
-            </div>
-
-
-                <hr style="border-top: 1px solid #726f6f;">
+            </div> -->
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4 text-center" style="color:white; word-wrap: break-word;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)">
+                    <div style="border: 1px white; padding: 0.25em;">
+                        <img src={{cour.courseIcon}} width="60" height="60" />
+                        <h6 class="text-center word-limit content-font-size ">{{cour.name}}</h6>
+                    </div>
+                </div>
+                <!-- <hr style="border-top: 1px solid #726f6f;"> -->            
             
-        
         </ng-container>
 
-        <div class="row" style="padding: 0 2em;">
-            <div class="btn btn-primary glyphicon glyphicon-plus" (click)="coursedesign1($event)">                    
-            </div>
-        </div>
+        
 
     </div>
     </div>
 </div>
 </div>
-<div class="container">
+<div class="container surface-theme-color">
     <div class="row ">
             <footer class="fixed-bottom" >
                 <div class="icon-bar">
