@@ -124,7 +124,7 @@
                     </div>                    
                     <br>
                     <br>
-                    <video class="video-background-color" poster="assets/img/login_page_logo.png" width="100%" height="300" controls src="{{courseItems[activePlaylistItem].videoLink}}" preload="metadata" >
+                    <video class="video-background-color" [attr.poster]="courseItems[activePlaylistItem].videoThumbnail? courseItems[activePlaylistItem].videoThumbnail: 'assets/img/login_page_logo.png'" width="100%" height="300" controls src="{{courseItems[activePlaylistItem].videoLink}}" preload="metadata" >
                     </video>
 
 

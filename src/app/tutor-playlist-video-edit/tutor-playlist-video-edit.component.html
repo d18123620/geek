@@ -40,8 +40,20 @@
 	                    <input type="file" name="file2" (change)="uploadVideo($event)" /><br>
 	                </form>
                 </div>
+
+                <div class="col-sm-12" style= "padding: 0px">
+                    <label class="subheading-font-size" for="iconFormControlInput1" style="color: white">Thumbnail</label>
+                    <br>
+                    <img height="100px" width="100px"  class='imgz-center' src={{videoThumbnail}}/>
+                    <br>
+                    <form  enctype="multipart/form-data" style="color: white">
+                        <br>
+                        <input type="file" name="file1" (change)="uploadFile($event)" /><br>
+                    </form>
+                </div>
+
                 <br>
-                <button class="btn primary-theme-color center-block" (click)= "updateCourse($event)" [disabled]="disableFieldsVideo"> Update </button>
+                <button class="btn primary-theme-color center-block" (click)= "updateCourse($event)" [disabled]="disableFieldsVideo || disableFieldsImg"> Update </button>
                 <br>
                 <button class="btn error-theme-color center-block"   data-toggle="modal" data-target="#myModal" > Delete </button>
                 <br>

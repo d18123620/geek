@@ -34,7 +34,9 @@ export class VideoplaylistComponent implements OnInit {
   idToken = '';
   videoTitle='';
   videoLink='';
-  disableFields = true;
+  disableFieldsVideo = true;
+  disableFieldsImg = true;
+  videoThumbnail: any;
 
   // constructor() { }
   constructor(private router: Router, private storage: AngularFireStorage,private cookieService: CookieService, 
@@ -80,7 +82,35 @@ export class VideoplaylistComponent implements OnInit {
           getDownloadURL1.subscribe(url => {
             console.log(url);
             this.downloadURL1 = url;   
-            this.disableFields = false;     
+            this.disableFieldsVideo = false;     
+          });
+        })
+        )
+    .subscribe()
+  }
+
+  uploadFile(event) {
+
+    console.log('upload files');	    
+    this.disableFieldsImg = true;
+
+    const file = event.target.files[0];
+    const filePath = '/video/'+Math.floor(Date.now())+'_'+file.name;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(filePath, file);
+
+    // observe percentage changes
+    this.uploadPercent = task.percentageChanges();
+    // get notified when the download URL is available
+    task.snapshotChanges().pipe(
+        finalize(() =>{
+
+          // when this function is executed
+          var getDownloadURL = fileRef.getDownloadURL();
+          getDownloadURL.subscribe(url => {
+            console.log(url);
+            this.videoThumbnail = url;
+            this.disableFieldsImg = false;
           });
         })
         )
@@ -89,7 +119,7 @@ export class VideoplaylistComponent implements OnInit {
 
   SaveData(event: Event){
     let  CourseId = this.cookieService.get('__CourseId');
-    let videoData = {"videoTitle": this.videoTitle,  "videoLink": this.downloadURL1};
+    let videoData = {"videoTitle": this.videoTitle,  "videoLink": this.downloadURL1, "videoThumbnail": this.videoThumbnail};
     this.idToken = this.cookieService.get('__session');
     console.log(this.idToken);
     let idTokenBearer =  'Bearer '+this.idToken;

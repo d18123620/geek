@@ -32,7 +32,14 @@
                     <input type="file" name="file2" (change)="uploadVideo($event)" /><br>
                 </form>
                 <br>
-                <button class="btn btn-primary center-block" (click)= "SaveData($event)" [disabled]="disableFields"> Save </button>
+                <label for="previewFormControlInput1" class="subheading-font-size" style="color: white">Upload Thumbnail</label>
+                <br>
+                <form  enctype="multipart/form-data" style="color: white">
+                    <input type="file" name="file1" (change)="uploadFile($event)" /><br>
+                </form>
+                <br>
+
+                <button class="btn btn-primary center-block" (click)= "SaveData($event)" [disabled]="disableFieldsVideo || disableFieldsImg"> Save </button>
                 <br>
             </div>
         </div>

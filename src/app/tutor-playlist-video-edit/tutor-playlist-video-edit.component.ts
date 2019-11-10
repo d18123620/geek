@@ -14,7 +14,8 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 
 interface VideoContent {
   videoTitle: string,
-  videoLink: ''
+  videoLink: '',
+  videoThumbnail: any
 }
 
 const httpOptions = {
@@ -34,10 +35,13 @@ export class TutorPlaylistVideoEditComponent implements OnInit {
   idToken = '';
   videoTitle='';
   videoLink='';
+  videoThumbnail='';
   disableFields = true;
   CourseId: any;
   playlistId: any;
+  courseIcon: any;
   disableFieldsVideo:any;
+  disableFieldsImg:any;
 
   // constructor() { }
   constructor(private router: Router, private storage: AngularFireStorage,private cookieService: CookieService, 
@@ -114,9 +118,37 @@ export class TutorPlaylistVideoEditComponent implements OnInit {
     .subscribe()
   }  
 
+  uploadFile(event) {
+
+    console.log('upload files');	    
+    this.disableFieldsImg = true;
+
+    const file = event.target.files[0];
+    const filePath = '/video/'+Math.floor(Date.now())+'_'+file.name;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(filePath, file);
+
+    // observe percentage changes
+    this.uploadPercent = task.percentageChanges();
+    // get notified when the download URL is available
+    task.snapshotChanges().pipe(
+        finalize(() =>{
+
+          // when this function is executed
+          var getDownloadURL = fileRef.getDownloadURL();
+          getDownloadURL.subscribe(url => {
+            console.log(url);
+            this.videoThumbnail = url;
+            this.disableFieldsImg = false;
+          });
+        })
+        )
+    .subscribe()
+  }
+
   updateCourse(event: Event){
 
-        let videoData = {"playlistType":'video', "videoTitle": this.videoTitle,  "videoLink": this.videoLink};
+        let videoData = {"playlistType":'video', "videoTitle": this.videoTitle,  "videoLink": this.videoLink, "videoThumbnail": this.videoThumbnail};
 
         this.idToken = this.cookieService.get('__session');
         console.log(this.idToken);
@@ -164,7 +196,8 @@ export class TutorPlaylistVideoEditComponent implements OnInit {
       (data => {
         console.log(data);
         this.videoTitle = data.videoTitle;
-        this.videoLink = data.videoLink;        
+        this.videoLink = data.videoLink;    
+        this.videoThumbnail = data.videoThumbnail;
       }),
      (error: any) => {
        console.log(error.error);
