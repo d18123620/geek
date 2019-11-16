@@ -39,6 +39,10 @@ export class TutordashboardComponent implements OnInit {
   tutorId = '';
   profileObservable: Observable<Object>;
   courseIcon: any;
+  publishedCourses: any = [];
+  unpublishedCourses: any = [];
+  isLoaded:any = false;
+
     // constructor() { }
     constructor(private router: Router,private cookieService: CookieService, 
       public auth: AuthService,
@@ -77,12 +81,22 @@ export class TutordashboardComponent implements OnInit {
   this.http.get<TutorDescription>('https://geekcharge.firebaseapp.com/api/v1/tutor/myCourses', requestOptions )
   .subscribe 
     (data => {
+      this.isLoaded = true;
       this.type = data.type;
       this.course = data.course;
       console.log(this.type);
       console.log(this.course);
       this.courseIcon = data.course;
 
+      if (this.course.length) {
+        for (let i  = 0; i < this.course.length; i++) {
+          if (this.course[i].published) {
+            this.publishedCourses.push(this.course[i]);
+          } else {
+            this.unpublishedCourses.push(this.course[i]);
+          }
+        }
+      }
       
     },
      (error: any) => {
@@ -93,8 +107,8 @@ export class TutordashboardComponent implements OnInit {
 
           this.router.navigateByUrl('/login');
          }
-     }
-  
+     },
+     
     )
 
 

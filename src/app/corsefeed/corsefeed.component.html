@@ -35,14 +35,13 @@
         <br>
 
         <div class="container">
-            <ul id="myTabs" class="nav nav-pills text-center" role="tablist" data-tabs="tabs">
+            <ul id="myTabs" class="nav nav-pills text-left" role="tablist" data-tabs="tabs">
                 <li style="padding: 0px;" class="col-sm-6" [ngClass]="{'active': courseInfoTab==false}">
-                    <a href="#playlist" data-toggle="tab" class="col-sm-6">Playlist</a>
+                    <a href="#playlist" data-toggle="tab" class="col-sm-6" style="color: white;">Contents</a>
                 </li>
                 <li style="padding: 0px;" class="col-sm-6" [ngClass]="{'active': courseInfoTab==true}">
-                    <a href="#courseData" data-toggle="tab" class="col-sm-6">Course Info</a>
+                    <a href="#courseData" data-toggle="tab" class="col-sm-6" style="color: white;">Course Info</a>
                 </li>
-
             </ul>
         </div>
 
@@ -68,9 +67,9 @@
                     <p class="subheading-font-size">Course Stauts</p>
                     
                     <p>
-                        <span class="content-font-size" style="color:green;" *ngIf="coursePublish">Published</span>&nbsp;
+                        <span class="content-font-size" style="color: #3ccb3c;" *ngIf="coursePublish">Published</span>&nbsp;
                         <span class="content-font-size" style="color:red;"*ngIf="!coursePublish">Unpublished</span> &nbsp;
-                        <span class="checkbox-checkmark" style="background-color:green;" *ngIf="coursePublish"></span>
+                        <span class="checkbox-checkmark" style="background-color: #3ccb3c;" *ngIf="coursePublish"></span>
                         <span class="checkbox-checkmark" style="background-color:red;" *ngIf="!coursePublish"></span>
                     </p>
 

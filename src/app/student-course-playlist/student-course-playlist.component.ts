@@ -43,6 +43,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
   sidenavVisible:any = false;
   activePlaylistItem:any = '';
   isLoaded = false;
+  courseInfoTab = false;
 
   constructor(private router: Router,
     private cookieService: CookieService, 

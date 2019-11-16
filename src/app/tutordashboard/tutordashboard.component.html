@@ -1,11 +1,26 @@
 <div class="container" id="tdashboard_body">
     <div id="wrapper">
-        <div id="content">
+    <div id="content" [hidden]='isLoaded' style="color:white;">
+            <br>
+            <div class="loading-screen-wrapper">
+                    <div class="loading-screen-icon text-center">
+                    <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="75" height="172" style="display: block;">
+                    <br> 
+                    <br> 
+                    <br> 
+                    <br> 
+                    <br> 
+                    Loading...
+                    </div>
+                    </div>
+    </div>
+            
+    <div id="content" [hidden]='!isLoaded'>
         <div id="inner">
         <div class="row">
             <br>
             <div class="col-sm-12">
-                <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="150" height="345" style="display: block;"> 
+                <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="75" height="172" style="display: block;"> 
             </div>
         </div>
         <br>
@@ -19,33 +34,47 @@
                 </div>
         </div>
         <br/>
-        <ng-container *ngFor="let cour of course; let i = index;">
-            <!-- <div class="row surface-theme-color" style= "margin: 1em">
-                
-                
-                    <div class="col-sm-12 " style="color:white;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >
-                        
-                    <div class="col-sm-8" style="background-color: transparent; padding: 1em;">
-                        <div class="col-xs-4" style="display: inline-block">
-                            <img src={{cour.courseIcon}} width="50" height="50" />
-                        </div>
-                        <div class="col-xs-8 content-font-size" style="display: inline-block; word-wrap: break-word;">
-                            {{cour.name}}
-                        </div>
-                    </div>
-                    </div>
-            </div> -->
+        
+
+        <div class="col-xs-12 subheading-font-size" style="font-weight: bold">
+            Unpublished courses
+        </div>
+        <ng-container *ngIf="isLoaded && unpublishedCourses.length === 0">
+                <div class="well well-sm page-title content-font-size" style="font-weight: bold">
+                    {{ "No Courses to be publish "}}
+                </div>
+        </ng-container>
+
+        <ng-container *ngFor="let cour of unpublishedCourses; let i = index;">
             <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4 text-center" style="color:white; word-wrap: break-word;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)">
                     <div style="border: 1px white; padding: 0.25em;">
                         <img src={{cour.courseIcon}} width="60" height="60" />
                         <h6 class="text-center word-limit content-font-size ">{{cour.name}}</h6>
                     </div>
-                </div>
-                <!-- <hr style="border-top: 1px solid #726f6f;"> -->            
-            
-        </ng-container>
+             </div>            
+        </ng-container>   
 
-        
+        <div class="col-xs-12">
+                &nbsp;
+        </div>        
+
+        <div class="col-xs-12 subheading-font-size" style="font-weight: bold">
+            Published courses
+        </div>
+
+        <ng-container *ngIf="isLoaded && publishedCourses.length === 0">
+                <div class="well well-sm page-title content-font-size" style="font-weight: bold">
+                        {{ "No Courses are published "}}
+                </div>
+        </ng-container>
+        <ng-container *ngFor="let cour of publishedCourses; let i = index;">
+                <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4 text-center" style="color:white; word-wrap: break-word;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)">
+                        <div style="border: 1px white; padding: 0.25em;">
+                            <img src={{cour.courseIcon}} width="60" height="60" />
+                            <h6 class="text-center word-limit content-font-size ">{{cour.name}}</h6>
+                        </div>
+                 </div>            
+        </ng-container>        
 
     </div>
     </div>
