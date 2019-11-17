@@ -92,31 +92,36 @@
 <div class="container surface-theme-color">
     <div class="row ">
             <footer class="fixed-bottom" >
-                <div class="icon-bar col-sm-12">
-                    
-                    <div class="col-xs-3 text-center">
-                        <a (click)= "studentHome($event)"><img class="img-responsive" src="assets/img/featured.png"  width="30" height="30"></a>
-                    </div>
-
-                    <div class="col-xs-3 text-center">
-                            <a (click)= "studentSearch($event)" class="active"><img class="img-responsive" src="assets/img/search.png"  width="30" height="30"></a>
-                    </div>
-
-                    <div class="col-xs-3 text-center">
-                            <a (click)= "studentCourse($event)"><img class="img-responsive" src="assets/img/study.png"  width="30" height="30"></a>
-                    </div>
-
-                    <div class="col-xs-3 text-center">
-                        <a (click)= "studentProfile($event)"><img class="img-responsive" src="assets/img/profile.png" width="30" height="30"></a>
-                    </div>
-                </div> 
-
-            </footer>
+                    <div class="icon-bar col-sm-12">
+                        
+                        <div class="col-xs-3 text-center">
+                            <a (click)= "studentHome($event)"><img class="img-responsive" src="assets/img/featured.png"  width="30" height="30">
+                                <p style="padding-top: 3px;"> Featured </p>
+                            </a>
+                        </div>
+    
+                        <div class="col-xs-3 text-center">
+                                <a (click)= "studentSearch($event)"><img class="img-responsive" src="assets/img/search.png"  width="30" height="30">
+                                    <p> Search </p>
+                                </a>
+                        </div>
+    
+                        <div class="col-xs-3 text-center">
+                                <a (click)= "studentCourse($event)"><img class="img-responsive" src="assets/img/study.png"  width="30" height="30">
+                                    <p> My courses </p>
+                                </a>
+                        </div>
+    
+                        <div class="col-xs-3 text-center">
+                            <a (click)= "studentProfile($event)"><img class="img-responsive" src="assets/img/profile.png" width="30" height="30">
+                                <p> Profile </p>
+                            </a>
+                        </div>
+                    </div> 
+    
+                </footer>
     </div>
 </div>
-
-
-
 
 
 <div class="modal fade" id="myModal" role="dialog" style="background-color: #000000a6; color: white;">

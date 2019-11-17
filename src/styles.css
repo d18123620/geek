@@ -108,3 +108,25 @@ select, select option, select .active{
     overflow: hidden;
     height: 3rem;
 }
+
+footer a.active p {
+    color: #f4f450 !important;
+    font-size: 10px  !important;
+}
+
+footer a p {
+    font-size: 10px  !important;
+}
+
+footer a {
+    font-size: 10px  !important;
+}
+
+footer a img{
+    margin-top: 4px;
+}
+
+
+footer .icon-bar a img{
+    display: inline !important;
+  }

@@ -57,7 +57,7 @@
 
         <div class="col-xs-12">
                 &nbsp;
-        </div>        
+        </div>
 
         <div class="col-xs-12 subheading-font-size" style="font-weight: bold">
             Published courses
@@ -87,8 +87,14 @@
             <footer class="fixed-bottom" >
                 <div class="icon-bar">
                     
-                    <a (click)= "tutorDash($event)" class="active"><img class="img-responsive" src="assets/img/study_active.png"  width="30" height="30"></a> 
-                    <a  (click)= "tutorProfile($event)" style="float: right" ><img class="img-responsive" src="assets/img/profile.png" width="30" height="30"></a>
+                    <a (click)= "tutorDash($event)" class="active">
+                        <img class="img-responsive" src="assets/img/study_active.png"  width="30" height="30" style="margin:0px;">
+                        <p> Dashboard </p>
+                    </a> 
+                    <a  (click)= "tutorProfile($event)" style="float: right" >
+                        <img class="img-responsive" src="assets/img/profile.png" width="30" height="30" style="margin:0px;">
+                        <p> Profile </p>
+                    </a>
                 </div> 
 
             </footer>
