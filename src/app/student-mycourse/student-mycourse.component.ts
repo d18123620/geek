@@ -25,6 +25,9 @@ export class StudentMycourseComponent implements OnInit {
   profileObservable: Observable<Object>;
   courseIcon: any;
   myCourseArray: any = [];
+  totalLoadedCourse = 0;
+  totalCourseToLoad = 0;
+  isLoaded = false;
 
   constructor(private router: Router,private cookieService: CookieService, 
     public auth: AuthService,
@@ -87,17 +90,19 @@ export class StudentMycourseComponent implements OnInit {
         });
 
         console.log(this.myCourseArray);
-
+        this.totalLoadedCourse++;
       },
      (error: any) => {
        console.log(error.error);
+       this.totalCourseToLoad--;
+       
        if (error.error === 'unauthorized'){
         this.cookieService.delete('__session');
-        this.cookieService.delete('__profilepic');
-
+        this.cookieService.delete('__profilepic');        
         this.router.navigateByUrl('/login');
        }
-     }
+
+      }
   
     )    
   }  
@@ -114,7 +119,9 @@ export class StudentMycourseComponent implements OnInit {
       this.http.get<TutorDescription>('https://geekcharge.firebaseapp.com/api/v1/student/myCourse', requestOptions )
       .subscribe 
         (data => {
+          this.isLoaded = true;
           this.course = data.enrollCourse;
+          this.totalCourseToLoad = this.course.length;
           console.log(this.course)  
           for (let i = 0; i < this.course.length; i++) {
             this.getCourseInfo(this.course[i]);

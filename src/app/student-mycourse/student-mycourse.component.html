@@ -1,6 +1,21 @@
 <div class="container" id="tdashboard_body">
     <div id="wrapper">
-        <div id="content">
+        <div id="content" [hidden]='isLoaded' style="color:white;">
+            <br>
+            <div class="loading-screen-wrapper">
+                    <div class="loading-screen-icon text-center">
+                    <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="75" height="172" style="display: block;">
+                    <br> 
+                    <br> 
+                    <br> 
+                    <br> 
+                    <br> 
+                    Loading...
+                    </div>
+                    </div>
+        </div>
+        
+        <div id="content" [hidden]='!isLoaded'>
         <div id="inner">
         <div class="row">
             <br>
@@ -16,27 +31,40 @@
         </div>
         <div class="row" >
             
-            <ng-container *ngIf='!myCourseArray.length'>
+            <ng-container *ngIf='myCourseArray.length === 0 && totalCourseToLoad === 0'>
                 <div class="col-sm-12" style="color: white;">
-                    <h4>
-                        .....
-                    </h4>
+                    <a (click)= "studentHome($event)" style="padding: 9px; font-weight: bold; text-decoration: underline;">                   
+                        {{ "Go to all courses page to find your intrest" }}
+                    </a>
                 </div>
             </ng-container>
 
-            <ng-container *ngFor="let cour of myCourseArray; let i = index;">
-                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-center" style="color:white; word-wrap: break-word;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >
-                        
+            <ng-container *ngIf='totalCourseToLoad && myCourseArray.length && totalLoadedCourse !== totalCourseToLoad'>
+                <div id="content" style="color:white;">
+                    <br>
+                    <div class="loading-screen-wrapper">
+                            <div class="loading-screen-icon text-center">                            
+                            <br> 
+                            <br> 
+                            <br> 
+                            Loading...
+                            </div>
+                            </div>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf='myCourseArray.length && totalLoadedCourse === totalCourseToLoad'>
+                <ng-container *ngFor="let cour of myCourseArray; let i = index;">
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-center" style="color:white; word-wrap: break-word;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >                    
                         <div style="border: 1px white; padding: 0.25em;">
                             <img src={{cour.courseIcon}} width="60" height="60" />
                             <h6 class="text-center word-limit content-font-size">{{cour.name}}</h6>
                         </div>
                         
-                       <br>
-    
+                        <br>
                     </div>
                 </ng-container>            
-
+            </ng-container>
         </div>
     </div>
     </div>

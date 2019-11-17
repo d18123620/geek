@@ -34,6 +34,7 @@ export class StudentDashboardComponent implements OnInit {
   tutorId = '';
   profileObservable: Observable<Object>;
   courseIcon: any;
+  isLoaded: any = false;
 
   constructor(private router: Router,private cookieService: CookieService, 
     public auth: AuthService,
@@ -60,6 +61,7 @@ export class StudentDashboardComponent implements OnInit {
       this.http.get<TutorDescription>('https://geekcharge.firebaseapp.com/api/v1/allCourses', requestOptions )
       .subscribe 
         (data => {
+          this.isLoaded = true;
           this.type = data.type;
           this.course = data.course;
           console.log(this.type);

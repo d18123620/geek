@@ -42,6 +42,7 @@ export class TutorPlaylistVideoEditComponent implements OnInit {
   courseIcon: any;
   disableFieldsVideo:any;
   disableFieldsImg:any;
+  isLoaded = false;
 
   // constructor() { }
   constructor(private router: Router, private storage: AngularFireStorage,private cookieService: CookieService, 
@@ -194,6 +195,7 @@ export class TutorPlaylistVideoEditComponent implements OnInit {
     this.http.get<any>('https://geekcharge.firebaseapp.com/api/v1/tutor/course/'+this.CourseId+'/'+this.playlistId,requestOptions)
     .subscribe 
       (data => {
+        this.isLoaded = true;
         console.log(data);
         this.videoTitle = data.videoTitle;
         this.videoLink = data.videoLink;    

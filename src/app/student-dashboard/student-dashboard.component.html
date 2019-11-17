@@ -1,6 +1,21 @@
 <div class="container" id="tdashboard_body">
     <div id="wrapper">
-        <div id="content">
+    <div id="content" [hidden]='isLoaded' style="color:white;">
+        <br>
+        <div class="loading-screen-wrapper">
+                <div class="loading-screen-icon text-center">
+                <img class="img-responsive center-block" src="assets/img/logo.png" alt="logo" width="75" height="172" style="display: block;">
+                <br> 
+                <br> 
+                <br> 
+                <br> 
+                <br> 
+                Loading...
+                </div>
+                </div>
+    </div>
+    
+    <div id="content" [hidden]='!isLoaded'>
         <div id="inner">
         <div class="row">
             <br>
