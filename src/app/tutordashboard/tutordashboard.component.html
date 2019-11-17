@@ -40,7 +40,8 @@
             Unpublished courses
         </div>
         <ng-container *ngIf="isLoaded && unpublishedCourses.length === 0">
-                <div class="well well-sm page-title content-font-size" style="font-weight: bold">
+                <div class="col-xs-12 content-font-size" style="padding: 0.5em; padding-left: 15px;">
+                    
                     {{ "No Courses to be publish "}}
                 </div>
         </ng-container>
@@ -63,8 +64,9 @@
         </div>
 
         <ng-container *ngIf="isLoaded && publishedCourses.length === 0">
-                <div class="well well-sm page-title content-font-size" style="font-weight: bold">
-                        {{ "No Courses are published "}}
+                <div class="col-xs-12 content-font-size" style="padding: 0.5em; padding-left: 15px; ">
+                    
+                    {{ "No Courses are published "}}
                 </div>
         </ng-container>
         <ng-container *ngFor="let cour of publishedCourses; let i = index;">
