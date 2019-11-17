@@ -109,9 +109,23 @@
                             <h1 class="text-center" style="color: white;height: 1.2em;overflow: hidden;">{{name}}</h1>
                 </div> -->
                 
-            </div>                                
+            </div>         
+
+            <ng-container *ngIf='isLoaded && courseItems.length === 0'>
+                        <div class="col-sm-12">
+                            &nbsp;
+                        </div>
+                        <div class="col-sm-12">
+                                &nbsp;
+                        </div>                        
+                        <div class="col-sm-12" style="color: white;">
+                            <a (click)= "studentHome($event)" style="padding: 9px; font-weight: bold; text-decoration: underline;">                   
+                                {{ "No contents available in this course" }}
+                            </a>
+                        </div>
+            </ng-container>
             
-            <ng-container *ngIf='isLoaded'>            
+            <ng-container *ngIf='isLoaded && courseItems.length !== 0'>            
 
             <br>
             <br>

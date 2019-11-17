@@ -153,7 +153,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
             }
 
             this.courseItems = courseItemArray;
-
+            console.log(this.courseItems);
           },
          (error: any) => {
            console.log(error.error);
