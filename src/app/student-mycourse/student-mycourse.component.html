@@ -39,6 +39,16 @@
                 </div>
             </ng-container>
 
+            <!-- <div class="col-xs-12">
+                {{ "totalCourseToLoad : "+ totalCourseToLoad }}
+            </div>
+            <div class="col-xs-12">
+                {{ "totalLoadedCourse : "+ totalLoadedCourse }}
+            </div>
+            <div class="col-xs-12">
+                    {{ "myCourseArray.length : "+ myCourseArray.length }}
+            </div>             -->
+
             <ng-container *ngIf='totalCourseToLoad && myCourseArray.length && totalLoadedCourse !== totalCourseToLoad'>
                 <div id="content" style="color:white;">
                     <br>
@@ -70,6 +80,8 @@
     </div>
 </div>
 </div>
+
+
 
 <div class="container surface-theme-color">
     <div class="row ">

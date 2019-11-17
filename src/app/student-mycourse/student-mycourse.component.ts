@@ -62,6 +62,7 @@ export class StudentMycourseComponent implements OnInit {
   getCourseInfo(CourseId) {
 
     if(!CourseId){
+      this.totalCourseToLoad--;
       return;
     }
 
@@ -122,7 +123,7 @@ export class StudentMycourseComponent implements OnInit {
           this.isLoaded = true;
           this.course = data.enrollCourse;
           this.totalCourseToLoad = this.course.length;
-          console.log(this.course)  
+          console.log(this.course);
           for (let i = 0; i < this.course.length; i++) {
             this.getCourseInfo(this.course[i]);
           }
