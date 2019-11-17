@@ -14,7 +14,8 @@ interface CourseFeed {
   courseIcon: '',
   published: '',
   tutorId: '',
-  courseItems:''
+  courseItems:'',
+  tutorName:''
 }
 
 interface TutorDescription {
@@ -46,6 +47,7 @@ export class StudentCoursePreviewComponent implements OnInit {
   studentMyCourse: any;
   isLoaded = false;
   tutorName='....';
+  authorName="";
 
   constructor(private router: Router,
   	private cookieService: CookieService, 
@@ -107,6 +109,7 @@ export class StudentCoursePreviewComponent implements OnInit {
         this.courseItems = data.courseItems;
         this.previewVideo = data.previewVideo;
         console.log(this.previewVideo);
+        this.authorName = data.tutorName;
       },
      (error: any) => {
        console.log(error.error);

@@ -14,7 +14,8 @@ interface CourseFeed {
   courseIcon: '',
   published: '',
   tutorId: '',
-  courseItems:''
+  courseItems:'',
+  tutorName:''
 }
 
 const httpOptions = {
@@ -44,6 +45,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
   activePlaylistItem:any = '';
   isLoaded = false;
   courseInfoTab = false;
+  authorName= '';
 
   constructor(private router: Router,
     private cookieService: CookieService, 
@@ -133,6 +135,7 @@ export class StudentCoursePlaylistComponent implements OnInit {
             console.log(data);
             this.courseItems = data.courseItems;
             this.previewVideo = data.previewVideo;
+            this.authorName = data.tutorName;
             console.log(this.previewVideo);
 
             let courseItemArray = []
