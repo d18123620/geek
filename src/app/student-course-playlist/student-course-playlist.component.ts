@@ -56,7 +56,13 @@ export class StudentCoursePlaylistComponent implements OnInit {
     private http: HttpClient,
     private elem: ElementRef) { }
 
-    
+    onTabChange(changeToCourseInfo){
+      if (changeToCourseInfo) {
+        this.courseInfoTab = true;
+      } else {
+        this.courseInfoTab = false;
+      }
+    }
 
     resetButtons() {
       let quizBtns = this.elem.nativeElement.querySelectorAll('.quizbtn');

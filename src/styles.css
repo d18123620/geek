@@ -8,10 +8,14 @@
     font-size: 1.6rem  !important;
     font-style: italic;
     font-weight: bold;
+    color: #ddd;
+    opacity: 0.6;
 }
 
 .content-font-size {
     font-size: 1.4rem  !important;
+    color: #fff;
+    opacity: 1;
 }
 
 #myModal .btn-primary{
@@ -88,7 +92,7 @@
 }
 
 .secondary-text-color{
-    color: #f4f450 !important;
+    color: #f9d730 !important;
 }
 
 .text-theme-color {
@@ -110,7 +114,7 @@ select, select option, select .active{
 }
 
 footer a.active p {
-    color: #f4f450 !important;
+    color: #f9d730 !important;
     font-size: 10px  !important;
 }
 

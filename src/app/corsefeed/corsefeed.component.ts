@@ -45,6 +45,14 @@ export class CorsefeedComponent implements OnInit {
   courseInfoTab: boolean = false;
   courseInfo: any;  
 
+  onTabChange(changeToCourseInfo){
+    if (changeToCourseInfo) {
+      this.courseInfoTab = true;
+    } else {
+      this.courseInfoTab = false;
+    }
+  }
+
   // constructor() { }
   constructor(private router: Router, private cookieService: CookieService,public auth: AuthService,
     private afAuth: AngularFireAuth,

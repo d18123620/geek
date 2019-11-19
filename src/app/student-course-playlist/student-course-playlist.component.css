@@ -52,17 +52,29 @@ footer {
 } */
 
 .active, .active a {
-  color: #f4f450 !important;
   background-color: transparent;
+  padding: 4px 25px;
+  color: inherit;
+  opacity: 1 !important;
 }
 
 li.active{
-  border: 1px solid #f4f450;
+  border: 2px solid #FFF;
+  margin: 0px !important;
+  color: #FFF;
+}
+
+li.in-active{
+  border: 2px solid #8d8484;
+  margin: 0px !important;
+  color: #8d8484;
 }
 
 .in-active, .in-active a{
   background-color: transparent;
-  color: white;
+  padding: 4px 25px;
+  color: inherit;
+  opacity: 1 !important;
 }
 
 .active:hover, .active a:hover {

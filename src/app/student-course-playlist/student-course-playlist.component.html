@@ -199,11 +199,11 @@
 
             <div class="container">
                     <ul id="myTabs" class="nav nav-pills text-left" role="tablist" data-tabs="tabs">
-                        <li style="padding: 0px;" class="col-sm-6" [ngClass]="{'active': courseInfoTab==false}">
-                            <a href="#playlist" data-toggle="tab" class="col-sm-6 subheading-font-size" style="color: white;">Contents</a>
+                        <li style="padding: 0px;" class="col-sm-6" [ngClass]="[courseInfoTab? 'in-active' : '', !courseInfoTab? 'active' : '']" (click)='onTabChange(false)'>
+                            <a href="#playlist" data-toggle="tab" class="col-sm-6 subheading-font-size">Contents</a>
                         </li>
-                        <li style="padding: 0px;" class="col-sm-6" [ngClass]="{'active': courseInfoTab==true}">
-                            <a href="#courseData" data-toggle="tab" class="col-sm-6 subheading-font-size" style="color: white;">Course Info</a>
+                        <li style="padding: 0px;" class="col-sm-6" [ngClass]="[!courseInfoTab? 'in-active' : '', courseInfoTab? 'active' : '']" (click)='onTabChange(true)'>
+                            <a href="#courseData" data-toggle="tab" class="col-sm-6 subheading-font-size">Course Info</a>
                         </li>        
                     </ul>
             </div>
@@ -211,12 +211,14 @@
             <div class="tab-content"> 
                     <div role="tabpanel" class="tab-pane fade courseDataTab" [ngClass]="{'in active': courseInfoTab==false}" id='playlist' >
                             <div class="col-xs-12" style="padding: 0px;">
-
+                                    <div class="col-xs-12">
+                                        &nbsp;
+                                    </div>
                                     <ng-container *ngFor="let cour of courseItems; let i = index;">
                                             <ng-container *ngIf= "cour.playlistType === 'video'">
                                                 <div class="col-sm-12" style="color:white; padding: 0.8em 0em;" [ngClass]="{'secondary-text-color': activePlaylistItem === i }" (click)='selectPlaylist($event,i)'>
                                                     <div class="col-sm-4" style="display: inline-block; font-size: 1.2em; height: 23px; overflow: hidden;">
-                                                        <img [src]="videoImgSrc" width="20" height="20" />
+                                                        <img [src]="videoImgSrc" width="20" height="20"  style="opacity: 0.6;"/>
                                                           &nbsp;
                                                          {{cour.videoTitle}}
                                                     </div>
@@ -227,7 +229,7 @@
                                             <ng-container *ngIf= "cour.playlistType === 'quiz'">
                                                 <div class="col-sm-12" style="color:white; padding: 0.8em 0em;" [ngClass]="{'secondary-text-color': activePlaylistItem === i }" (click)='selectPlaylist($event,i)'>
                                                     <div class="col-sm-4" style="display: inline-block; font-size: 1.2em; height: 23px; overflow: hidden;">
-                                                        <img [src]="quizImgSrc" width="20" height="20" />
+                                                        <img [src]="quizImgSrc" width="20" height="20" style="opacity: 1;"/>
                                                         &nbsp;
                                                         {{cour.quizQuestion}}                      
                                                     </div>
@@ -237,7 +239,7 @@
                                             <ng-container *ngIf= "cour.playlistType === 'note'">
                                                 <div class="col-sm-12" style="color:white; padding: 0.8em 0em;" [ngClass]="{'secondary-text-color': activePlaylistItem === i }" (click)='selectPlaylist($event,i)'>
                                                     <div class="col-sm-4" style="display: inline-block; font-size: 1.2em; height: 23px; overflow: hidden;">
-                                                        <img [src]="NoteImgSrc" width="20" height="20" />
+                                                        <img [src]="NoteImgSrc" width="20" height="20" style="opacity: 0.6;"/>
                                                         &nbsp;
                                                         {{cour.noteHead}}
                                                     </div>
@@ -253,32 +255,32 @@
                                     &nbsp;
                             </div>                        
                             
-                            <div class="col-xs-12 subheading-font-size" style="padding: 0px; color: white;float: left;">
+                            <div class="col-xs-12 subheading-font-size" style="padding: 0px; float: left;">
                                     <b>Name</b>
                             </div>
             
-                            <div class="col-xs-12" style="color: white; text-align: left; padding: 0px; word-break: break-word;">
+                            <div class="col-xs-12 content-font-size" style="text-align: left; padding: 0px; word-break: break-word;">
                                     {{ name }}
                             </div> 
                             <div class="col-xs-12">
                                 &nbsp;
                             </div>
 
-                            <div class="col-xs-12 subheading-font-size" style="padding: 0px; color: white;float: left;">
+                            <div class="col-xs-12 subheading-font-size" style="padding: 0px;float: left;">
                                     <b>Description</b>
                             </div>
-                            <div class="col-xs-12" style="color: white; text-align: left; padding: 0px; word-break: break-word;">
+                            <div class="col-xs-12 content-font-size" style=" text-align: left; padding: 0px; word-break: break-word;">
                                     {{ description }}
                             </div>                        
                             <div class="col-xs-12">
                                     &nbsp;
                             </div>
 
-                            <div class="col-xs-12 subheading-font-size" style="padding: 0px; color: white;float: left;">
+                            <div class="col-xs-12 subheading-font-size" style="padding: 0px; float: left;">
                                     <b>Author</b>
                             </div>
         
-                            <div class="col-xs-12" style="color: white; text-align: left; padding: 0px; word-break: break-word;">
+                            <div class="col-xs-12 content-font-size" style="text-align: left; padding: 0px; word-break: break-word;">
                                     {{ authorName }}
                             </div>
                                                    
