@@ -83,11 +83,13 @@ export class StudentMycourseComponent implements OnInit {
 
         let name = data.name;
         let courseIcon = data.courseIcon;
+        let published = data.published;
 
         this.myCourseArray.push({
           name: name,
           courseIcon: courseIcon,
-          courseId: CourseId
+          courseId: CourseId,
+          published: published
         });
 
         console.log(this.myCourseArray);

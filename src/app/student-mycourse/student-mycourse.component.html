@@ -65,14 +65,19 @@
 
             <ng-container *ngIf='myCourseArray.length && totalLoadedCourse === totalCourseToLoad'>
                 <ng-container *ngFor="let cour of myCourseArray; let i = index;">
-                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-center" style="color:white; word-wrap: break-word;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >                    
-                        <div style="border: 1px white; padding: 0.25em;">
-                            <img src={{cour.courseIcon}} width="60" height="60" />
-                            <h6 class="text-center word-limit content-font-size">{{cour.name}}</h6>
+                    
+                    <ng-container *ngIf='cour.published'>
+                    
+                        <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-center" style="color:white; word-wrap: break-word;" [attr.course_id]="cour.courseId" (click)= "navigateToCourse($event)" >                    
+                            <div style="border: 1px white; padding: 0.25em;">
+                                <img src={{cour.courseIcon}} width="60" height="60" />
+                                <h6 class="text-center word-limit content-font-size">{{cour.name}}</h6>
+                            </div>                            
+                            <br>
                         </div>
-                        
-                        <br>
-                    </div>
+
+                    </ng-container>
+
                 </ng-container>            
             </ng-container>
         </div>
