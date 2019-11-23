@@ -35,6 +35,7 @@ export class StudentSearchComponent implements OnInit {
   profileObservable: Observable<Object>;
   courseIcon: any;
   searchKey: any;
+  courseSearchItems: any = [];
 
   constructor(private router: Router,private cookieService: CookieService, 
     public auth: AuthService,
@@ -82,6 +83,12 @@ export class StudentSearchComponent implements OnInit {
   searchOnKey(event: any) {
     console.log(event.target.value);
     this.searchKey = event.target.value.toLowerCase();
+    this.courseSearchItems = [];
+    for (let i = 0; i < this.course.length; i++) {
+      if (this.course[i].name.toLowerCase().includes(this.searchKey)) {
+        this.courseSearchItems.push(this.course[i]);
+      }
+    }
   }
 
   studentSearch(event: Event) {

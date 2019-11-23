@@ -18,16 +18,16 @@
                 </div>
             </div>
             <div class="row" >
-                
-                <ng-container *ngIf='!course.length'>
+
+                <ng-container *ngIf='!courseSearchItems.length && searchKey'>
                     <div class="col-sm-12" style="color: white;">
                         <h4>
-                            
+                            No results found
                         </h4>
                     </div>
                 </ng-container>
     
-                <ng-container *ngFor="let cour of course; let i = index;">
+                <ng-container *ngFor="let cour of courseSearchItems; let i = index;">
                     <ng-container *ngIf='cour.published'>
                         <ng-container *ngIf='searchKey && cour.name.toLowerCase().includes(searchKey)'>
 
